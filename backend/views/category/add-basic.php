@@ -56,6 +56,7 @@ use yii\widgets\ActiveForm;
             </div>
 
             <!-- SHOW -->
+            <?php $category->show = ($category->isNewRecord) ? true : $category->show; ?>
             <?= $addForm->field($category, 'show', [
                 'inputOptions' => [
                     'class' => 'form-control'
