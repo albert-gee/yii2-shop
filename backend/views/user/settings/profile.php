@@ -6,7 +6,7 @@ use yii\widgets\MaskedInput;
 /**
  * @var yii\web\View $this
  * @var yii\widgets\ActiveForm $form
- * @var bl\cms\cart\common\components\user\models\Profile $model
+ * @var xalberteinsteinx\shop\common\components\user\models\Profile $model
  */
 
 $this->title = \Yii::t('cart', 'Profile settings');

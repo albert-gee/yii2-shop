@@ -1,5 +1,5 @@
 <?php
-namespace bl\cms\itpl\shop\backend\assets;
+namespace xalberteinsteinx\shop\backend\assets;
 use yii\web\AssetBundle;
 
 /**

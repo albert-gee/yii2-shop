@@ -5,7 +5,7 @@ use yii\helpers\{
 use bl\multilang\entities\Language;
 use bl\multilang\MultiLangUrlManager;
 use xalberteinsteinx\shop\common\entities\Product;
-use bl\cms\itpl\shop\backend\assets\EditProductAsset;
+use xalberteinsteinx\shop\backend\assets\EditProductAsset;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

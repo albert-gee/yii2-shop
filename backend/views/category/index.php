@@ -7,7 +7,7 @@
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
-use bl\cms\itpl\shop\backend\assets\CategoriesIndexAsset;
+use xalberteinsteinx\shop\backend\assets\CategoriesIndexAsset;
 use xalberteinsteinx\shop\common\entities\Category;
 use bl\multilang\entities\Language;
 use yii\helpers\Html;

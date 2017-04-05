@@ -1,5 +1,5 @@
 <?php
-use bl\cms\cart\common\components\user\models\RecoveryForm;
+use xalberteinsteinx\shop\common\components\user\models\RecoveryForm;
 use yii\bootstrap\Alert;
 use yii\widgets\ActiveForm;
 
