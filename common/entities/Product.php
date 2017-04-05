@@ -1,8 +1,8 @@
 <?php
 namespace xalberteinsteinx\shop\common\entities;
 
-use bl\cms\cart\common\components\user\models\Profile;
-use bl\cms\cart\models\Order;
+use xalberteinsteinx\shop\common\components\user\models\Profile;
+use xalberteinsteinx\shop\models\Order;
 use xalberteinsteinx\shop\common\components\user\models\UserGroup;
 use xalberteinsteinx\shop\helpers\ShopArrayHelper;
 use bl\multilang\behaviors\TranslationBehavior;
