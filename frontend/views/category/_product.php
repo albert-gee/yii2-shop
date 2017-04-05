@@ -2,7 +2,7 @@
 /**
  * @var Product $model
  */
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use xalberteinsteinx\shop\common\entities\Product;
 use yii\helpers\Html;
 use yii\helpers\StringHelper;

@@ -1,5 +1,5 @@
 <?php
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use xalberteinsteinx\shop\common\entities\Category;
 use xalberteinsteinx\shop\common\entities\Combination;
 use xalberteinsteinx\shop\common\entities\Param;

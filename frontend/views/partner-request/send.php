@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /**
  * @var \yii\web\View $this
  * @var \xalberteinsteinx\shop\common\entities\PartnerRequest $partner
- * @var \bl\cms\cart\common\components\user\models\Profile $profile
+ * @var \xalberteinsteinx\shop\common\components\user\models\Profile $profile
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  */

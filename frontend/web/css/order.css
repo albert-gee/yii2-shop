@@ -1,0 +1,148 @@
+/*ORDERS LIST PAGE*/
+
+div#user-orders {
+    display: flex;
+    flex-direction: column;
+}
+div#user-orders div.user-order  {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, .2);
+    transition: .2s;
+    float: left;
+    filter: contrast(95%) brightness(90%);
+    margin: 20px;
+}
+div#user-orders div.user-order:hover {
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, .3);
+    filter: contrast(102%) brightness(100%);
+}
+div#user-orders div.user-order a {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+/*IMAGES BLOCK*/
+div#user-orders div.user-order div.images {
+    display: flex;
+    flex: 1;
+}
+div#user-orders div.user-order div.images div.img {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.2);
+}
+div#user-orders div.user-order div.images div.img:first-child {
+    top: -10px;
+    left: -10px;
+    height: 150px;
+}
+div#user-orders div.user-order div.images div.img:nth-child(2) {
+    top: 10px;
+    left: 10px;
+}
+
+/*INFO BLOCK*/
+div#user-orders div.user-order div.info {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/*HEADER*/
+div#user-orders div.user-order div.info header {
+    display: flex;
+}
+div#user-orders div.user-order div.info header div {
+    display: flex;
+    flex: 1;
+}
+
+/*status*/
+div#user-orders div.user-order div.info header div.status p {
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+div#user-orders div.user-order div.info header div.uid {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+div#user-orders div.user-order div.info div.product-list {
+    display: flex;
+}
+div#user-orders div.user-order div.info header div.uid h2 {
+    display: block;
+    margin: 0;
+    text-align: right;
+}
+div#user-orders div.user-order div.info header div.uid p {
+    display: block;
+    text-align: right;
+}
+
+/*BODY*/
+div#user-orders div.user-order div.info div.body {
+    display: flex;
+    flex-direction: row;
+}
+div#user-orders div.user-order div.info div.body div.product-list {
+    display: flex;
+    flex: 3;
+}
+div#user-orders div.user-order div.info div.body div.shipment-delivery {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+div#user-orders div.user-order div.info div.body div.shipment-delivery img {
+    max-height: 50px;
+    max-width: 100%;
+}
+
+
+/*ORDER PAGE*/
+div#order-view h1 {
+    text-align: center;
+}
+
+@media all and (max-width: 1024px) {
+    div#user-orders div.user-order div.info div.body {
+        flex-direction: column;
+    }
+    div#user-orders div.user-order div.info div.body div.shipment-delivery img {
+        max-height: 20px;
+    }
+    div#user-orders div.user-order {
+        height: auto;
+    }
+    div#user-orders div.user-order div.images div.img:first-child {
+        height: 100px;
+    }
+}
+@media all and (max-width: 650px) {
+    div#user-orders div.user-order {
+        flex-direction: column;
+    }
+    div#user-orders div.user-order div.images div.img:first-child {
+        height: 200px;
+    }
+    div#user-orders div.user-order div.info header {
+        flex-direction: column;
+        align-items: center;
+    }
+    div#user-orders div.user-order div.info header div.uid h2,
+    div#user-orders div.user-order div.info header div.uid h2 {
+        text-align: center;
+    }
+}

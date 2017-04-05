@@ -10,7 +10,7 @@
  * @var $menuItems Category
  * @var $filters Filter
  * @var $products Product
- * @var $cart \bl\cms\cart\models\CartForm
+ * @var $cart \xalberteinsteinx\shop\frontend\components\forms\CartForm
  *
  */
 

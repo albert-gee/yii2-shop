@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 /**
  * @var \yii\web\View $this
  * @var \xalberteinsteinx\shop\common\components\user\models\User $model
- * @var \bl\cms\cart\common\components\user\models\Profile $profile
+ * @var \xalberteinsteinx\shop\common\components\user\models\Profile $profile
  *
  */
 
