@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m170308_053955_add_number_column_for_shop_product_additional extends Migration
+class m170327_053955_add_number_column_for_shop_product_additional extends Migration
 {
     public function up()
     {

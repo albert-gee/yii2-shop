@@ -2,7 +2,6 @@
 
 namespace xalberteinsteinx\shop\frontend\components;
 
-use xalberteinsteinx\shop\common\entities\FilterType;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -69,22 +68,6 @@ class ProductSearch extends Product
         }
 
         $query->andWhere(['status' => Product::STATUS_SUCCESS, 'shop_product.show' => true, 'additional_products' => false]);
-
-        $filterTypes = FilterType::find()->all();
-        foreach ($filterTypes as $filterType) {
-            $className = $filterType->class_name;
-
-            /*Getting get-method name*/
-            $getMethodName = explode("\\", $className);
-            $getMethodName = lcfirst(end($getMethodName));
-
-            $query->joinWith($getMethodName);
-
-            $tableName = $className::tableName();
-            $column = $filterType->column;
-
-            $query->andFilterWhere([$tableName . '.' . 'id' => $this->$column]);
-        }
 
         switch (ArrayHelper::getValue($params, 'sort')) {
             case self::SORT_CHEAP:
