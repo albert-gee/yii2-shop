@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class VendorAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/shop/backend/web';
+    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/backend/web';
 
     public $css = [
         'css/vendor.css',

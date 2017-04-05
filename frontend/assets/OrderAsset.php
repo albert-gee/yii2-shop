@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class OrderAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/shop/frontend/web';
+    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/frontend/web';
 
     public $css = [
         'css/order.css',
