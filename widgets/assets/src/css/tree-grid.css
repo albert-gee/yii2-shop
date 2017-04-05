@@ -1,0 +1,59 @@
+/*Style sheet for Tree widget as grid*/
+
+div#widget-menu {
+}
+div#widget-menu ul {
+    padding-left: 0;
+}
+div#widget-menu ul li {
+    position: relative;
+    list-style: none;
+}
+div#widget-menu ul li:hover {
+}
+
+div#widget-menu ul li span.category-toggle {
+    line-height: 27px;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+}
+div#widget-menu ul li span.category-toggle:hover {
+    right: 8px;
+    color: #4285f4;
+    transition: 0.15s;
+}
+
+div#widget-menu ul[data-level="1"] > li > a + span.category-toggle {
+    font-size: 16px;
+    color: #505050;
+    line-height: 40px;
+}
+div#widget-menu ul[data-level="1"] > li > a + span.category-toggle:hover {
+    font-size: 19px;
+    margin-top: -1px;
+    transition: .15s;
+}
+
+div#widget-menu ul li span.category-toggle.fa-toggle-down, div#widget-menu ul li span.category-toggle.fa-toggle-up {
+    cursor: pointer;
+}
+
+div#widget-menu table {
+    width: 100%;
+    margin-bottom: 0;
+}
+div#widget-menu table thead{
+    border-bottom: 2px solid #e7eaec;
+}
+div#widget-menu table tr {
+    margin-top: 2px;
+    border-bottom: 1px solid #e7eaec;
+    border-top: 2px solid #fff;
+}
+div#widget-menu table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+div#widget-menu table tr td{
+    padding: 15px 10px;
+}

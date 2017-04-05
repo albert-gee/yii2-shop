@@ -1,0 +1,66 @@
+/*Style sheet for Tree widget*/
+
+div#widget-menu {
+}
+div#widget-menu ul {
+    padding-left: 0;
+}
+div#widget-menu ul li {
+    position: relative;
+    list-style: none;
+    margin-top: 2px;
+}
+div#widget-menu ul li:hover {
+}
+div#widget-menu ul li a {
+    display: block;
+    padding-left: 15px;
+}
+div#widget-menu ul[data-level="1"] li > a {
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+div#widget-menu ul li a:hover, div#widget-menu ul li.current a {
+    background-color: #e1f5fe;
+}
+div#widget-menu ul li.current a {
+    border-left: 3px solid #4285f4;
+}
+div#widget-menu ul li a span {
+    color: #505050;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+div#widget-menu ul[data-level="1"] > li > a span {
+    font-size: 14px;
+}
+
+div#widget-menu ul li span.category-toggle {
+    position: absolute;
+    line-height: 27px;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+}
+div#widget-menu ul li span.category-toggle:hover {
+    color: #4285f4;
+    transition: 0.15s;
+}
+
+div#widget-menu ul[data-level="1"] > li > a + span.category-toggle {
+    font-size: 16px;
+    color: #505050;
+    line-height: 40px;
+}
+div#widget-menu ul[data-level="1"] > li > a + span.category-toggle:hover {
+    font-size: 19px;
+    margin-top: -1px;
+    transition: .15s;
+}
+
+div#widget-menu ul li span.category-toggle.fa-toggle-down, div#widget-menu ul li span.category-toggle.fa-toggle-up {
+    cursor: pointer;
+}

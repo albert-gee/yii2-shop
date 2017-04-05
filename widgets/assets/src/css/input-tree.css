@@ -1,0 +1,36 @@
+#input-tree div.form-group {
+    margin: 0;
+    border-bottom: 1px solid #dedede;
+}
+#input-tree ul {
+    padding: 0;
+    margin-left: 20px;
+}
+#input-tree li {
+    list-style: none;
+    padding: 3px 0;
+
+}
+
+#input-tree li input {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+#input-tree li label {
+    line-height: 24px;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+#input-tree li ul {
+    display: none;
+}
+
+#input-tree li p.category-toggle.fa.fa-plus,
+#input-tree li p.category-toggle.fa.fa-minus{
+    position: absolute;
+    line-height: 24px;
+    font-size: 20px;
+    right: 20px;
+    cursor: pointer;
+}
