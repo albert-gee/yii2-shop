@@ -147,13 +147,13 @@ For cart module:
 ### Add module to your backend config
 ```php
     'bootstrap' => [
-        //'bl\cms\shop\backend\components\events\PartnersBootstrap',
-        'bl\cms\shop\backend\components\events\ShopLogBootstrap',
-        'bl\cms\cart\backend\components\events\CartBootstrap',
+        //'xalberteinsteinx\shop\backend\components\events\PartnersBootstrap',
+        'xalberteinsteinx\shop\backend\components\events\ShopLogBootstrap',
+        'xalberteinsteinx\shop\backend\components\events\CartBootstrap',
     ],
     'modules' => [
         'shop' => [
-            'class' => 'bl\cms\shop\backend\Module',
+            'class' => 'xalberteinsteinx\shop\backend\Module',
             'enableCurrencyConversion' => true
         ]
     ],
@@ -169,7 +169,7 @@ For cart module:
                     'class' => bl\articles\UrlRule::className()
                 ],
                 [
-                    'class' => bl\cms\shop\UrlRule::className(),
+                    'class' => xalberteinsteinx\shop\UrlRule::className(),
                     'prefix' => 'shop'
                 ],
             ]
@@ -182,7 +182,7 @@ For cart module:
     'modules' => [
     	...
         'shop' => [
-                    'class' => bl\cms\shop\frontend\Module::className(),
+                    'class' => xalberteinsteinx\shop\frontend\Module::className(),
                     'enableCurrencyConversion' => true,
                     'partnerManagerEmail' => $params['partnerManagerEmail'],
                     'senderEmail' => $params['senderEmail'],
@@ -198,7 +198,7 @@ For cart module:
             'rules' => [
                 ...
                 [
-                    'class' => bl\cms\shop\UrlRule::className(),
+                    'class' => xalberteinsteinx\shop\UrlRule::className(),
                     'prefix' => 'shop'
                 ]
             ],
@@ -224,8 +224,8 @@ For cart module:
     ]
 
     'bootstrap' => [
-        'bl\cms\shop\frontend\components\events\PartnersBootstrap',
-        'bl\cms\cart\frontend\components\events\UserRegistrationBootstrap'
+        'xalberteinsteinx\shop\frontend\components\events\PartnersBootstrap',
+        'xalberteinsteinx\shop\frontend\components\events\UserRegistrationBootstrap'
     ],
 ```
 
@@ -321,7 +321,7 @@ extends permissions from all managers.
 
 _Example:_
 ```
-<?= \bl\cms\shop\widgets\RecommendedProducts::widget([
+<?= \xalberteinsteinx\shop\widgets\RecommendedProducts::widget([
     'id' => $product->id,
 ]); ?>
 ```
