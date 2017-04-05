@@ -1,0 +1,28 @@
+/*EDIT CATEGORY */
+/*Input tree*/
+ul.ul-dropfree li {
+    position: relative;
+}
+/* ul-dropfree */
+ul.ul-dropfree div.drop {
+    width:11px;
+    height:11px;
+    position:absolute;
+    z-index:10;
+    top: 15px;
+    left:-22px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAALCAIAAAD0nuopAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE1JREFUeNpinDlzJgNlgAWI09LScEnPmjWLoAImrHpIAkwMFAMqGMGC6X44GzkIsHoQooAFTTVQKdbAwxOigyMsmIh3MC7ASHnqBAgwAD4CGeOiDhXRAAAAAElFTkSuQmCC');
+    background-position:-11px 0;
+    background-repeat:no-repeat;
+    cursor:pointer;
+}
+
+div.modal {
+    cursor: pointer;
+}
+img.modal-dialog {
+    cursor: auto;
+}
+img.thumb {
+    cursor: pointer;
+}

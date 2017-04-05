@@ -1,0 +1,8 @@
+div.seo-url {
+    position: relative;
+}
+button.btn-generate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
