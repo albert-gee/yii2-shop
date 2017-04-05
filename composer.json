@@ -1,0 +1,34 @@
+{
+  "name": "xalberteinsteinx/yii2-shop",
+  "description": "E-commerce module for Yii2 framework",
+  "keywords": ["yii2", "shop", "e-commerce", "module"],
+  "type": "yii2-extension",
+  "authors": [
+    {
+      "name": "Albert Gainutdinov",
+      "email": "xalbert.einsteinx@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "yiisoft/yii2": ">=2.0.4",
+    "yiisoft/yii2-bootstrap": "*",
+    "yii2tech/ar-position": "*",
+
+    "black-lamp/blcms-staticpage": "0.*",
+    "black-lamp/yii2-multi-lang": "^1.0.0",
+    "black-lamp/yii2-seo": "0.1.*",
+    "black-lamp/yii2-imagable": "1.*",
+    "black-lamp/yii2-email-templates": "^3.0.0",
+
+    "2amigos/yii2-tinymce-widget": "*",
+    "kartik-v/yii2-widgets": "*",
+    "marqu3s/yii2-summernote": "1.0.0",
+    "evgeniyrru/yii2-slick" : "1.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "xalberteinsteinx\\shop\\": ""
+    }
+  }
+}
