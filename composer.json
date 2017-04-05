@@ -15,6 +15,7 @@
     "yiisoft/yii2-bootstrap": "*",
     "yii2tech/ar-position": "*",
 
+    "black-lamp/blcms-payment": "0.0.3",
     "black-lamp/blcms-staticpage": "0.*",
     "black-lamp/yii2-multi-lang": "^1.0.0",
     "black-lamp/yii2-seo": "0.1.*",
