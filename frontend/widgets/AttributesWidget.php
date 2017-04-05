@@ -1,8 +1,8 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\widgets;
 
-use bl\cms\cart\CartComponent;
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\common\components\CartComponent;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use xalberteinsteinx\shop\common\entities\Combination;
 use xalberteinsteinx\shop\common\entities\CombinationAttribute;
 use xalberteinsteinx\shop\common\entities\Product;

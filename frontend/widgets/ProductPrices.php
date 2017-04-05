@@ -4,7 +4,7 @@ namespace xalberteinsteinx\shop\frontend\widgets;
 use xalberteinsteinx\shop\frontend\widgets\assets\ProductCombinationAsset;
 use yii\base\Widget;
 use yii\widgets\ActiveForm;
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use xalberteinsteinx\shop\common\entities\{
     Product, Combination
 };

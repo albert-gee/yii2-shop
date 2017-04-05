@@ -5,7 +5,7 @@
  *
  * @var $product \xalberteinsteinx\shop\common\entities\Product
  * @var $form \yii\widgets\ActiveForm
- * @var $cart \bl\cms\cart\models\CartForm
+ * @var $cart \xalberteinsteinx\shop\frontend\components\forms\CartForm
  * @var $defaultCombination \xalberteinsteinx\shop\common\entities\Combination
  * @var $notAvailableText string
  *

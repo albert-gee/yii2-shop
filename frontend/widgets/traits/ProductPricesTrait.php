@@ -1,7 +1,7 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\widgets\traits;
 
-use bl\cms\cart\CartComponent;
+use xalberteinsteinx\shop\common\components\CartComponent;
 use Yii;
 use yii\helpers\Json;
 
