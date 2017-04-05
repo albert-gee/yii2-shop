@@ -5,11 +5,6 @@
 - php yii migrate --migrationPath=@vendor/xalberteinsteinx/yii2-shop/migrations
 ```
 
-For cart module:
-```php
-- php yii migrate --migrationPath=@vendor/xalberteinsteinx/yii2-cart/migrations
-```
-
 **Configuration for Imagable module:**
 ```php
         'shop_imagable' => [
