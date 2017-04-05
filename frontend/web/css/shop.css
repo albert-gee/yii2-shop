@@ -1,0 +1,12 @@
+/*PRODUCT*/
+div.product-page {
+
+}
+div.product-page p.article-label {
+    font-size: 21px;
+    font-weight: bold;
+}
+/*div.product-page button[type="submit"] {*/
+    /*position: absolute;*/
+    /*bottom: 12px;*/
+/*}*/

@@ -1,0 +1,18 @@
+div.combinations-values p.attribute-title {
+    font-weight: bold;
+}
+div.combinations-values img.texture {
+    width: 30px;
+    height: 30px;
+}
+div.combinations-values div.attribute-color {
+    width: 30px;
+    height: 30px;
+}
+div.combinations-values span.price-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+div.combinations-values input:checked + label * {
+    border: 1px solid rgb(11, 117, 220);
+}

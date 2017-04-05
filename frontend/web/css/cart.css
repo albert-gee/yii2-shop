@@ -1,0 +1,38 @@
+div.cart table.products-list {
+    margin: 20px 0;
+}
+
+div.cart table.products-list tr:first-child {
+    background-color: #f9f9f9;
+    height: 24px;
+}
+div.cart table.products-list tr:first-child th {
+    font-size: 18px;
+    line-height: 24px;
+}
+div.cart table.products-list tr:not(:first-child) {
+    background-color: #f7f7f7;
+    height: 100px;
+}
+div.cart table.products-list tr:not(:first-child) td {
+    font-size: 16px;
+    line-height: 100px;
+}
+div.cart table.products-list tr:not(:first-child):hover {
+    background-color: #f4f4f4;
+}
+div.cart table.products-list tr td img {
+    height: 100px;
+}
+
+/*EMPTY CART*/
+div.empty-cart a.btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+div.empty-cart img {
+    display: block;
+    -webkit-filter: opacity(50%);
+    margin: 0 auto;
+}
