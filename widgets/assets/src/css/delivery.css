@@ -1,0 +1,17 @@
+#delivery-methods {
+    min-height: 250px;
+}
+
+#delivery-methods div.radio {
+    float: left;
+    padding: 0 15px 15px 15px;
+    margin: 0;
+}
+
+#delivery-methods img#delivery-logo {
+    height: 100px;
+}
+#delivery-methods p#delivery-title {
+    font-size: 21px;
+    font-weight: bold;
+}
