@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class InputTreeAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/black-lamp/blcms-shop/backend/web';
+    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/backend/web';
 
     public $css = [
         'css/input-tree.css'

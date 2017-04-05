@@ -53,7 +53,7 @@ class Module extends \yii\base\Module
             [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en-US',
-                'basePath'       => '@vendor/black-lamp/blcms-shop/backend/messages',
+                'basePath'       => '@vendor/xalberteinsteinx/yii2-shop/backend/messages',
         ];
     }
 }
