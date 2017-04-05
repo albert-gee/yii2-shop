@@ -1,10 +1,10 @@
 <?php
-namespace bl\cms\shop\widgets\traits;
+namespace xalberteinsteinx\shop\widgets\traits;
 
 use bl\multilang\entities\Language;
 use yii\base\Exception;
 use yii\web\BadRequestHttpException;
-use bl\cms\shop\common\entities\Category;
+use xalberteinsteinx\shop\common\entities\Category;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

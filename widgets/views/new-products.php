@@ -1,5 +1,5 @@
 <?php
-use bl\cms\shop\common\entities\Product;
+use xalberteinsteinx\shop\common\entities\Product;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 use yii\helpers\Url;

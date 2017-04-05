@@ -1,8 +1,8 @@
 <?php
-namespace bl\cms\shop\widgets;
+namespace xalberteinsteinx\shop\widgets;
 
-use bl\cms\cart\CartComponent;
-use bl\cms\shop\common\entities\Product;
+use xalberteinsteinx\shop\common\components\CartComponent;
+use xalberteinsteinx\shop\common\entities\Product;
 use yii\base\Widget;
 
 /**

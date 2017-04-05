@@ -1,7 +1,7 @@
 <?php
-namespace bl\cms\shop\widgets;
+namespace xalberteinsteinx\shop\widgets;
 
-use bl\cms\shop\widgets\assets\InputTreeAsset;
+use xalberteinsteinx\shop\widgets\assets\InputTreeAsset;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Widget;

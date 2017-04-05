@@ -1,6 +1,6 @@
 <?php
 
-namespace bl\cms\shop\widgets\assets;
+namespace xalberteinsteinx\shop\widgets\assets;
 
 use yii\web\AssetBundle;
 

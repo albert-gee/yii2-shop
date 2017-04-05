@@ -3,14 +3,14 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  * This view is used for ajax rendering in TreeWidget
  *
- * @var $categories bl\cms\shop\common\entities\Category
+ * @var $categories xalberteinsteinx\shop\common\entities\Category
  * @var $currentCategoryId integer
  * @var $currentCategoryParentId integer
  * @var $level integer
  * @var $upIconClass string
  * @var $downIconClass string
  */
-use bl\cms\shop\widgets\TreeWidget;
+use xalberteinsteinx\shop\widgets\TreeWidget;
 use yii\helpers\Url;
 ?>
 

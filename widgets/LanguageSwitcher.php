@@ -1,5 +1,5 @@
 <?php
-namespace bl\cms\shop\widgets;
+namespace xalberteinsteinx\shop\widgets;
 
 use bl\multilang\entities\Language;
 use yii\base\Widget;

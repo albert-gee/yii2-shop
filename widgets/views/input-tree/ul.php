@@ -15,7 +15,7 @@ use yii\bootstrap\Html;
 <ul class="input-tree-ul">
     <?php foreach ($parents as $object): ?>
         <?php
-        $children = \bl\cms\shop\widgets\InputTree::findChildren($object, $object->id);
+        $children = \xalberteinsteinx\shop\widgets\InputTree::findChildren($object, $object->id);
         $label = (!empty($object->getTranslation($languageId)->title))
             ? $object->getTranslation($languageId)->title
             : (!empty($object->translation->title)) ? $object->translation->title : '';

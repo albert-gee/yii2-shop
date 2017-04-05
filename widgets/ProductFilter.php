@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace bl\cms\shop\widgets;
+namespace xalberteinsteinx\shop\widgets;
 use yii\base\Widget;
 
 

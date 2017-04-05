@@ -5,9 +5,9 @@
  * This widget displays the recommended products
  */
 
-namespace bl\cms\shop\widgets;
+namespace xalberteinsteinx\shop\widgets;
 
-use bl\cms\shop\common\entities\Product;
+use xalberteinsteinx\shop\common\entities\Product;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 
