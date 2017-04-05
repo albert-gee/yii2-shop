@@ -4,7 +4,7 @@ namespace xalberteinsteinx\shop\frontend\controllers;
 use xalberteinsteinx\shop\widgets\traits\TreeWidgetTrait;
 use Yii;
 use yii\web\Controller;
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use bl\cms\seo\StaticPageBehavior;
 use xalberteinsteinx\shop\frontend\components\ProductSearch;
 use xalberteinsteinx\shop\common\entities\{

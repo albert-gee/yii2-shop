@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace xalberteinsteinx\shop\frontend\components\forms;
 use yii\base\Model;
 
 /**

@@ -2,7 +2,7 @@
 namespace xalberteinsteinx\shop\frontend\controllers;
 
 use Yii;
-use bl\cms\cart\models\CartForm;
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use yii\web\NotFoundHttpException;
 use yii\web\{
     Response, Controller

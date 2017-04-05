@@ -1,8 +1,8 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\controllers;
 
-use bl\cms\cart\common\components\user\models\Profile;
-use bl\cms\cart\common\components\user\models\RegistrationForm;
+use xalberteinsteinx\shop\common\components\user\models\Profile;
+use xalberteinsteinx\shop\common\components\user\models\RegistrationForm;
 use xalberteinsteinx\shop\common\components\user\models\User;
 use bl\cms\seo\StaticPageBehavior;
 use xalberteinsteinx\shop\frontend\components\events\PartnersEvents;

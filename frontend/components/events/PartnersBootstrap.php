@@ -6,7 +6,7 @@ use xalberteinsteinx\shop\Mailer;
 use yii\helpers\{Html, Url};
 use yii\base\{BootstrapInterface, Event};
 use xalberteinsteinx\shop\common\entities\PartnerRequest;
-use bl\cms\cart\common\components\user\models\Profile;
+use xalberteinsteinx\shop\common\components\user\models\Profile;
 use xalberteinsteinx\shop\frontend\controllers\PartnerRequestController;
 
 /**
