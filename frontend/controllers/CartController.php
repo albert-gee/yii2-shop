@@ -1,6 +1,7 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\controllers;
 
+use xalberteinsteinx\shop\frontend\components\forms\CartForm;
 use xalberteinsteinx\shop\frontend\Module;
 use xalberteinsteinx\shop\Mailer;
 use bl\cms\seo\StaticPageBehavior;
@@ -21,7 +22,7 @@ use xalberteinsteinx\shop\common\components\user\models\{
     Profile, UserAddress
 };
 use xalberteinsteinx\shop\common\entities\{
-    CartForm, DeliveryMethod, Order, OrderProduct, OrderStatus
+    DeliveryMethod, Order, OrderProduct, OrderStatus
 };
 
 /**
@@ -69,7 +70,7 @@ class CartController extends Controller
                     Model::validateMultiple($additionalProductForm);
                 }
 
-                Module::$cart->add($model->productId, $model->count,
+                \Yii::$app->cart->add($model->productId, $model->count,
                     json_encode($model->attribute_value_id), $additionalProductForm
                 );
 
