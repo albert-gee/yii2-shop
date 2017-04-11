@@ -23,7 +23,8 @@
 
     "kartik-v/yii2-widgets": "*",
     "marqu3s/yii2-summernote": "1.0.0",
-    "evgeniyrru/yii2-slick" : "1.0.1"
+    "evgeniyrru/yii2-slick" : "1.0.1",
+    "yii2mod/yii2-chosen-select": "1.1"
   },
   "autoload": {
     "psr-4": {
