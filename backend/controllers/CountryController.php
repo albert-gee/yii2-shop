@@ -101,7 +101,7 @@ class CountryController extends Controller
                 $countryImageModel->image = UploadedFile::getInstance($countryImageModel, 'image');
 
                 $fileName = $countryImageModel->upload();
-                $country->image = $fileName ?? $country->image;
+                $country->image = (string) $fileName ?? $country->image;
             }
 
             if ($countryTranslation->validate()) {
