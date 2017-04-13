@@ -26,6 +26,9 @@
     "evgeniyrru/yii2-slick" : "1.0.1",
     "yii2mod/yii2-chosen-select": "1.1"
   },
+  "reqire-dev": {
+    "newerton/yii2-fancybox": "dev-master"
+  },
   "autoload": {
     "psr-4": {
       "xalberteinsteinx\\shop\\": ""

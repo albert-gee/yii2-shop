@@ -1,11 +1,11 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\widgets;
 
-
 use xalberteinsteinx\shop\common\entities\Product;
 use xalberteinsteinx\shop\common\entities\ProductImage;
 use yii\helpers\Html;
 use evgeniyrru\yii2slick\Slick;
+use newerton\fancybox\FancyBox;
 
 /**
  * Widget renders product images.
@@ -14,7 +14,7 @@ use evgeniyrru\yii2slick\Slick;
  *
  * Example:
  * ```php
- * <?= \xalberteinsteinx\shop\frontend\widgets\ProductImageSlider::widget([
+ * <?= \bl\cms\shop\frontend\widgets\ProductImageSlider::widget([
  *      'product' => $product,
  *
  *      // @see http://kenwheeler.github.io/slick/#settings
@@ -29,9 +29,25 @@ use evgeniyrru\yii2slick\Slick;
 class ProductImageSlider extends Slick
 {
     /**
+     * @var bool
+     */
+    public $fancyBox = false;
+
+    /**
+     * @var array
+     */
+    public $fancyBoxWidgetConfig = [];
+
+    /**
+     * @var string
+     */
+    public $defaultImage = '';
+
+    /**
      * @var Product
      */
     public $product;
+
     /**
      * @var string
      */
@@ -41,6 +57,7 @@ class ProductImageSlider extends Slick
      * @inheritdoc
      */
     public $containerOptions = ['class' => 'product-image-slider'];
+
     /**
      * @inheritdoc
      */
@@ -64,26 +81,30 @@ class ProductImageSlider extends Slick
     public function run()
     {
         $slider = Html::beginTag($this->containerTag, $this->containerOptions);
-
         if (!empty($this->product)) {
             $this->items = $this->renderItems();
         }
-
         foreach($this->items as $item) {
             $slider .= Html::tag($this->itemContainer, $item, $this->itemOptions);
         }
-
+        if($this->fancyBox) {
+            $this->fancyBoxWidgetConfig['target'] = "a[rel=product-image-fancybox]";
+            echo FancyBox::widget($this->fancyBoxWidgetConfig);
+        }
         $slider .= Html::endTag($this->containerTag);
         echo $slider;
         $this->registerClientScript();
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
     protected function renderItems()
     {
         $items = [];
+        if (empty($this->product->images)) {
+            $items[] = ($this->fancyBox) ? Html::a(Html::img($this->defaultImage)) : Html::img($this->defaultImage);
+        }
         foreach ($this->product->images as $productImage) {
             $items[] = $this->renderItem($productImage);
         }
@@ -91,14 +112,15 @@ class ProductImageSlider extends Slick
     }
 
     /**
-     * @param $item ProductImage
-     * @return string
+     * @inheritdoc
      */
     protected function renderItem($item)
     {
-        $img = (!empty($item->getImage('big'))) ? $item->getImage($this->imagesSize) : '';
+        $img = (!empty($item->getImage($this->imagesSize))) ? $item->getImage($this->imagesSize) : '';
         $alt = (!empty($item->translation->alt)) ? $item->translation->alt : '';
-
+        if($this->fancyBox) {
+            return Html::a(Html::img($img), $img, ['rel' => "product-image-fancybox"]);
+        }
         return Html::img($img, ['alt' => $alt]);
     }
 }
