@@ -27,7 +27,7 @@
     "yii2mod/yii2-chosen-select": "1.1"
   },
   "reqire-dev": {
-    "newerton/yii2-fancybox": "dev-master"
+    "nojes/yii2-fancybox": "1.0.*"
   },
   "autoload": {
     "psr-4": {
