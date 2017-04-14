@@ -109,26 +109,6 @@ class m161025_115253_add_permissions extends Migration
         $auth->addChild($orderManager, $deleteOrderProduct);
 
 
-        /*FilterController*/
-        $viewFilterList = $auth->createPermission('viewFilterList');
-        $viewFilterList->description = 'View list of filters';
-        $auth->add($viewFilterList);
-        $saveFilter = $auth->createPermission('saveFilter');
-        $saveFilter->description = 'Save filter';
-        $auth->add($saveFilter);
-        $deleteFilter = $auth->createPermission('deleteFilter');
-        $deleteFilter->description = 'Delete filter';
-        $auth->add($deleteFilter);
-
-        $filterManager = $auth->createRole('filterManager');
-        $filterManager->description = 'Filter manager';
-        $auth->add($filterManager);
-
-        $auth->addChild($filterManager, $viewFilterList);
-        $auth->addChild($filterManager, $saveFilter);
-        $auth->addChild($filterManager, $deleteFilter);
-
-
         /*DeliveryMethodController*/
         $viewDeliveryMethodList = $auth->createPermission('viewDeliveryMethodList');
         $viewDeliveryMethodList->description = 'View list of delivery methods';
@@ -261,14 +241,14 @@ class m161025_115253_add_permissions extends Migration
             'viewVendorList', 'saveVendor', 'deleteVendor', 'viewProductAvailabilityList', 'saveProductAvailability',
             'deleteProductAvailability', 'viewPartnerRequest', 'deletePartnerRequest', 'viewOrderStatusList',
             'saveOrderStatus', 'deleteOrderStatus', 'viewOrderList', 'viewOrder', 'deleteOrder', 'deleteOrderProduct',
-            'viewFilterList', 'saveFilter', 'deleteFilter', 'viewDeliveryMethodList', 'saveDeliveryMethod',
+            'viewDeliveryMethodList', 'saveDeliveryMethod',
             'deleteDeliveryMethod', 'viewCurrencyList', 'updateCurrency', 'deleteCurrency', 'viewCountryList',
             'saveCountry', 'deleteCountry', 'viewShopCategoryList', 'saveShopCategory', 'deleteShopCategory', 'viewAttributeList',
             'saveAttribute', 'deleteAttribute', 'addAttributeValue'
         ];
         $roles = [
             'vendorManager', 'productAvailabilityManager', 'orderStatusManager', 'orderManager',
-            'filterManager', 'deliveryMethodManager', 'currencyManager', 'countryManager',
+            'deliveryMethodManager', 'currencyManager', 'countryManager',
             'shopCategoryManager', 'attributeManager'
         ];
 

@@ -254,12 +254,6 @@ _deliveryMethodManager_
 - viewDeliveryMethodList
 - deleteDeliveryMethod
 
-_filterManager_
-- deleteFilter
-- saveFilter
-- viewFilterList
-
-
 _orderManager_
 - deleteOrder
 - deleteOrderProduct
