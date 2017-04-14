@@ -14,7 +14,7 @@ use newerton\fancybox\FancyBox;
  *
  * Example:
  * ```php
- * <?= \bl\cms\shop\frontend\widgets\ProductImageSlider::widget([
+ * <?= \xalberteinsteinx\shop\frontend\widgets\ProductImageSlider::widget([
  *      'product' => $product,
  *
  *      // @see http://kenwheeler.github.io/slick/#settings
