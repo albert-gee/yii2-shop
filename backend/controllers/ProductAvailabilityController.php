@@ -1,13 +1,11 @@
 <?php
 namespace xalberteinsteinx\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\ProductAvailabilityEvent;
 use xalberteinsteinx\shop\common\entities\ProductAvailability;
 use xalberteinsteinx\shop\common\entities\ProductAvailabilityTranslation;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -102,8 +100,6 @@ class ProductAvailabilityController extends Controller
             if ($modelTranslation->validate()) {
 
                 $modelTranslation->save();
-                $this->trigger(self::EVENT_AFTER_CREATE_OR_UPDATE_PRODUCT_AVAILABILITY,
-                    new ProductAvailabilityEvent(['availability' => $model]));
 
                 return $this->redirect(['save', 'id' => $model->id, 'languageId' => $languageId]);
             }
