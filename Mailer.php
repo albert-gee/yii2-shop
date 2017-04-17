@@ -50,9 +50,13 @@ class Mailer extends Component
     {
         if (!empty($sendTo)) {
             try {
-                \Yii::$app->get('shopMailer')->compose('mail-body', $bodyParams)
-                    ->setFrom([$sendFrom ?? \Yii::$app->cart->sender ?? \Yii::$app->shopMailer->transport->getUsername() => \Yii::$app->name ?? Url::to(['/'], true)])
-                    ->setFrom($sendFrom)
+                $sendFromAddress = [
+                    $sendFrom ?? \Yii::$app->cart->sender ??
+                    \Yii::$app->shopMailer->transport->getUsername() => \Yii::$app->name ?? Url::to(['/'], true)
+                ];
+
+                \Yii::$app->get('shopMailer')->compose('/mail/mail-body', $bodyParams)
+                    ->setFrom($sendFromAddress)
                     ->setTo($sendTo)
                     ->setSubject($bodySubject)
                     ->send();
@@ -231,10 +235,12 @@ class Mailer extends Component
         $mailTemplate = $this->createMailTemplate('new-order', $mailVars);
         $subject = $mailTemplate->getSubject();
         $bodyParams = ['bodyContent' => $mailTemplate->getBody()];
+
         //Send to admins
         if (!empty(\Yii::$app->cart->sendTo)) {
             foreach (\Yii::$app->cart->sendTo as $adminMail) {
                 $this->sendMessage(
+                    null,
                     $adminMail,
                     $subject,
                     $bodyParams);
@@ -245,8 +251,10 @@ class Mailer extends Component
         $subject = $mailTemplate->getSubject();
         $bodyParams = ['bodyContent' => $mailTemplate->getBody()];
         $this->sendMessage(
+            null,
             (!empty($orderResult['user']->identity)) ? $orderResult['user']->identity->email : $orderResult['user']->email,
-            $subject, $bodyParams);
+            $subject,
+            $bodyParams);
     }
 
 }
