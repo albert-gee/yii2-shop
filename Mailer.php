@@ -216,14 +216,14 @@ class Mailer extends Component
             '{email}' => (!empty($orderResult['user']->identity)) ? $orderResult['user']->identity->email : $orderResult['user']->email,
             '{phone}' => $orderResult['profile']->phone,
             '{orderUid}' => $orderResult['order']->uid,
-            '{products}' => \Yii::$app->view->render('@bl/cms/cart/frontend/views/mail/products', [
+            '{products}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/shop/frontend/views/mail/products', [
                 'products' => $orderResult['order']->orderProducts
             ]),
-            '{delivery}' => \Yii::$app->view->render('@bl/cms/cart/frontend/views/mail/delivery', [
+            '{delivery}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/shop/frontend/views/mail/delivery', [
                 'order' => $orderResult['order'],
                 'address' => $orderResult['address'],
             ]),
-            '{payment}' => \Yii::$app->view->render('@bl/cms/cart/frontend/views/mail/payment', [
+            '{payment}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/shop/frontend/views/mail/payment', [
                 'order' => $orderResult['order'],
             ]),
             '{totalCost}' => \Yii::$app->formatter->asCurrency($orderResult['order']->total_cost)
