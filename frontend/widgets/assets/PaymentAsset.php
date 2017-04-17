@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class PaymentAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/shop/frontend/widgets/assets/src';
+    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/frontend/widgets/assets/src';
     public $css = [
         'css/payment-selector.css',
     ];
