@@ -1,0 +1,11 @@
+div#payment-selector {
+    margin-bottom: 20px;
+}
+
+p#payment-title {
+    font-weight: bold;
+}
+
+img#payment-image {
+    width: 100%;
+}

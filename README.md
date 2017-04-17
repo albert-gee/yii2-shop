@@ -300,6 +300,11 @@ _vendorManager_
 - viewVendorList
 - deleteVendor
 
+_paymentManager_
+- viewPaymentMethodList
+- savePaymentMethod
+- deletePaymentMethod
+
 _shopAdministrator_
 extends permissions from all managers. 
 
