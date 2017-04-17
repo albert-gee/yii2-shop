@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace xalberteinsteinx\shop\frontend\events;
+namespace xalberteinsteinx\shop\frontend\components\events;
 
 
 use yii\base\Event;

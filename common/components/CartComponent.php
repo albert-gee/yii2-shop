@@ -11,7 +11,7 @@ use yii\base\{
 use yii\db\{
     ActiveRecord, Expression
 };
-use xalberteinsteinx\shop\frontend\events\OrderInfoEvent;
+use xalberteinsteinx\shop\frontend\components\events\OrderInfoEvent;
 use xalberteinsteinx\shop\common\entities\{
     Order, OrderProductAdditionalProduct, OrderStatus, OrderProduct
 };
