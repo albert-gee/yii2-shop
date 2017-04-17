@@ -1,5 +1,5 @@
 <?php
-namespace bl\cms\payment\frontend\controllers;
+namespace xalberteinsteinx\shop\frontend\controllers;
 
 use xalberteinsteinx\shop\common\entities\PaymentMethod;
 use bl\imagable\helpers\FileHelper;

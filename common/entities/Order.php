@@ -3,7 +3,6 @@ namespace xalberteinsteinx\shop\common\entities;
 
 use xalberteinsteinx\shop\common\components\user\models\Profile;
 use xalberteinsteinx\shop\common\components\user\models\UserAddress;
-use bl\cms\payment\common\entities\PaymentMethod;
 use dektrium\user\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
