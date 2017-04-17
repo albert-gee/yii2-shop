@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
-class DefaultController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Returns payment method model if request is Ajax.
