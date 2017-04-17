@@ -145,7 +145,7 @@ ProductAsset::register($this);
                 <div class="col-md-6">
                     <?php $form = ActiveForm::begin([
                         'method' => 'post',
-                        'action' => ['/cart/cart/add']
+                        'action' => ['/shop/cart/add']
                     ]); ?>
 
                     <!--PRICES-->

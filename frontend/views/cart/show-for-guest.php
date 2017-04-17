@@ -116,7 +116,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
                     <!--NUMBER-->
                     <td class="col-md-1">
                         <?php $form = ActiveForm::begin([
-                            'action' => ['/cart/cart/change-items-number', 'productId' => $product->id, 'combinationId' => $combination->id],
+                            'action' => ['/shop/cart/change-items-number', 'productId' => $product->id, 'combinationId' => $combination->id],
                             'options' => [
                                 'class' => 'order-form'
                             ]
@@ -130,7 +130,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
                     </td>
                     <!--REMOVE BUTTON-->
                     <td>
-                        <?= Html::a(\Yii::t('cart', 'Remove'), Url::to(['/cart/cart/remove',
+                        <?= Html::a(\Yii::t('cart', 'Remove'), Url::to(['/shop/cart/remove',
                             'productId' => $product->id, 'combinationId' => $product['combinationId']]));
                         ?>
                     </td>
@@ -146,7 +146,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
         <!--ORDER FORM-->
         <?php $form = ActiveForm::begin([
             'method' => 'post',
-            'action' => ['/cart/cart/make-order']
+            'action' => ['/shop/cart/make-order']
         ]); ?>
 
         <!-- Personal data -->
@@ -186,7 +186,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
 
             <?= Html::a(
                 Yii::t('cart', 'Clear cart'),
-                Url::toRoute('/cart/cart/clear'),
+                Url::toRoute('/shop/cart/clear'),
                 ['class' => 'button danger']
             ); ?>
 

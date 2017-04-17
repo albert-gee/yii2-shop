@@ -24,7 +24,7 @@ function getElementInfo(elementValue) {
 
     $.ajax({
         type: "GET",
-        url: languagePrefix + '/cart/cart/get-delivery-method',
+        url: languagePrefix + '/shop/cart/get-delivery-method',
         data: 'id=' + elementValue,
 
         success: function (data) {

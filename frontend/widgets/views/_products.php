@@ -41,7 +41,7 @@ use yii\widgets\ActiveForm;
 
                     <!--PRICES-->
                     <?php $form = ActiveForm::begin([
-                        'action' => ['/cart/cart/add'],
+                        'action' => ['/shop/cart/add'],
                         'options' => [
                             'class' => 'order-form'
                         ]]);

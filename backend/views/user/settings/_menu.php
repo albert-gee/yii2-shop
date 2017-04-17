@@ -25,7 +25,7 @@ $networksVisible = count(Yii::$app->authClientCollection->clients) > 0;
             ['label' => Yii::t('menu', 'Order list'), 'url' => ['/cart/order/show-order-list']],
             ['label' => Yii::t('shop', 'Viewed products'), 'url' => ['/shop/viewed-product/list']],
             ['label' => Yii::t('menu', 'Favorite products'), 'url' => ['/shop/favorite-product/list']],
-            ['label' => Yii::t('menu', 'Cart'), 'url' => ['/cart/cart/show']],
+            ['label' => Yii::t('menu', 'Cart'), 'url' => ['/shop/cart/show']],
             ['label' => Yii::t('menu', 'Profile'), 'url' => ['/user/settings/profile']],
             ['label' => Yii::t('menu', 'Addresses'), 'url' => ['/user/settings/addresses']],
             ['label' => Yii::t('menu', 'Account'), 'url' => ['/user/settings/account']],

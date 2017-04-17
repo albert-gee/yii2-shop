@@ -38,7 +38,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
             <?php if (!empty($productsFromDB)) : ?>
                 <?= Html::a(
                     Yii::t('cart', 'Clear cart'),
-                    Url::toRoute('/cart/cart/clear'),
+                    Url::toRoute('/shop/cart/clear'),
                     ['class' => 'button danger text-center']
                 ); ?>
             <?php endif; ?>
@@ -120,7 +120,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
                         </td>
                         <td class="col-md-1">
                             <?php $form = ActiveForm::begin([
-                                'action' => ['/cart/cart/change-items-number', 'productId' => $orderProduct->product->id, 'combinationId' => $orderProduct->combination_id],
+                                'action' => ['/shop/cart/change-items-number', 'productId' => $orderProduct->product->id, 'combinationId' => $orderProduct->combination_id],
                                 'options' => [
                                     'class' => 'order-form'
                                 ]
@@ -134,7 +134,7 @@ bl\cms\cart\frontend\assets\CartAsset::register($this);
                         <td class="col-md1-1 text-center">
                             <?php
                             $icon = Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']);
-                            echo Html::a($icon, Url::to(['/cart/cart/remove', 'id' => $orderProduct->product->id]));
+                            echo Html::a($icon, Url::to(['/shop/cart/remove', 'id' => $orderProduct->product->id]));
                             ?>
                         </td>
                     </tr>

@@ -37,7 +37,7 @@ use yii\helpers\Url;
                 <!--Content block-->
                 <?php $form = ActiveForm::begin([
                     'method' => 'post',
-                    'action' => ['/cart/cart/add'],
+                    'action' => ['/shop/cart/add'],
                     'options' => [
                         '_fields' => [
                             'class' => 'col-md-4'

@@ -52,7 +52,7 @@ class AttributesWidget extends Widget
     /**
      * @var array
      */
-    public $formConfig = ['action' => ['/cart/cart/add']];
+    public $formConfig = ['action' => ['/shop/cart/add']];
     /**
      * @var array the HTML attributes for 'prices' container block.
      */

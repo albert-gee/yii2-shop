@@ -40,7 +40,7 @@ $modelUrl = Url::to(['/shop/product/show',
         <div class="row">
             <div class="col-md-12">
                 <?php $form = ActiveForm::begin([
-                    'action' => ['/cart/cart/add'],
+                    'action' => ['/shop/cart/add'],
                     'options' => [
                         'class' => 'col-md-9 row'
                     ]]);
