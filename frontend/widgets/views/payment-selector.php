@@ -8,7 +8,7 @@
  */
 use bl\multilang\entities\Language;
 use yii\helpers\ArrayHelper;
-\bl\cms\payment\widgets\assets\PaymentAsset::register($this);
+\xalberteinsteinx\shop\frontend\widgets\assets\PaymentAsset::register($this);
 $languagePrefix = (Language::getCurrent()->lang_id != Language::getDefault()->lang_id) ? '/' . Language::getCurrent()->lang_id : '';
 ?>
 
