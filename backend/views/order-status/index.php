@@ -80,7 +80,7 @@ $this->title = Yii::t('cart', 'Order Statuses');
                 /*ACTIONS*/
                 [
                     'headerOptions' => ['class' => 'text-center col-md-2'],
-                    'attribute' => \Yii::t('cart', 'Manage'),
+                    'attribute' => \Yii::t('cart', 'Control'),
 
                     'value' => function ($model) {
                         return ManageButtons::widget(['model' => $model]);

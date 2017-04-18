@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Yii::t('payment', 'Logo'); ?>
                 </th>
                 <th class="col-md-2 text-center">
-                    <?= Yii::t('payment', 'Manage'); ?>
+                    <?= Yii::t('payment', 'Control'); ?>
                 </th>
             </tr>
             <?php foreach ($model as $paymentMethod) : ?>

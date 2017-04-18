@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 /*ACTIONS*/
                 [
                     'headerOptions' => ['class' => 'text-center col-md-2'],
-                    'attribute' => \Yii::t('shop', 'Manage'),
+                    'attribute' => \Yii::t('shop', 'Control'),
 
                     'value' => function ($model) {
 

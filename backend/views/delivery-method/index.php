@@ -38,7 +38,7 @@ $this->title = Yii::t('shop', 'Delivery methods');
                 <th class="col-md-2"><?= Yii::t('shop', 'ID'); ?></th>
                 <th class="col-md-5"><?= Yii::t('shop', 'Title'); ?></th>
                 <th class="col-md-3 text-center"><?= Yii::t('shop', 'Logo'); ?></th>
-                <th class="col-md-2"><?= Yii::t('shop', 'Manage'); ?></th>
+                <th class="col-md-2"><?= Yii::t('shop', 'Control'); ?></th>
             </tr>
             <?php foreach ($deliveryMethods as $deliveryMethod) : ?>
                 <tr>

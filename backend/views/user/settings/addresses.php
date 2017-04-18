@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tr>
                     <th class="col-md-1">#</th>
                     <th class="col-md-9"><?= \Yii::t('shop', 'Addresses'); ?></th>
-                    <th class="col-md-2"><?= \Yii::t('shop', 'Manage');?></th>
+                    <th class="col-md-2"><?= \Yii::t('shop', 'Control');?></th>
                 </tr>
                 <?php foreach ($addresses as $address) : ?>
                     <tr>
