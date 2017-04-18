@@ -76,6 +76,10 @@ $this->params['breadcrumbs'] = [
                     <p><b><?= \Yii::t('cart', 'Phone number'); ?>:</b> <?= $model->user->profile->phone; ?></p>
                 <?php endif; ?>
 
+                <?php if (!empty($model->user->email)) : ?>
+                    <p><b><?= \Yii::t('cart', 'Email'); ?>:</b> <?= $model->user->email; ?></p>
+                <?php endif; ?>
+
                 <!--PAYMENT METHOD-->
                 <?php if (Yii::$app->cart->enablePayment === true && !empty($model->paymentMethod)) : ?>
                     <h2>
@@ -180,17 +184,17 @@ $this->params['breadcrumbs'] = [
                         <!--Additional products-->
                         <?php if (!empty($orderProduct->orderProductAdditionalProducts)): ?>
                             <ul>
-                            <?php foreach ($orderProduct->orderProductAdditionalProducts as $orderProductAdditionalProduct): ?>
-                                <li>
-                                    <?= Html::a(
-                                        $orderProductAdditionalProduct->additionalProduct->translation->title,
-                                        Url::to(['/shop/product/save', 'id' => $orderProductAdditionalProduct->additionalProduct->id,
-                                            'languageId' => \bl\multilang\entities\Language::getCurrent()->id])
-                                    ) .
-                                    ', ' . $orderProductAdditionalProduct->number . ' ' . \Yii::t('cart', 'pieces.') .
-                                    ' - ' . \Yii::$app->formatter->asCurrency($orderProductAdditionalProduct->additionalProduct->discountPrice  * Currency::currentCurrency()); ?>
-                                </li>
-                            <?php endforeach; ?>
+                                <?php foreach ($orderProduct->orderProductAdditionalProducts as $orderProductAdditionalProduct): ?>
+                                    <li>
+                                        <?= Html::a(
+                                            $orderProductAdditionalProduct->additionalProduct->translation->title,
+                                            Url::to(['/shop/product/save', 'id' => $orderProductAdditionalProduct->additionalProduct->id,
+                                                'languageId' => \bl\multilang\entities\Language::getCurrent()->id])
+                                        ) .
+                                        ', ' . $orderProductAdditionalProduct->number . ' ' . \Yii::t('cart', 'pieces.') .
+                                        ' - ' . \Yii::$app->formatter->asCurrency($orderProductAdditionalProduct->additionalProduct->discountPrice  * Currency::currentCurrency()); ?>
+                                    </li>
+                                <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
                     </td>

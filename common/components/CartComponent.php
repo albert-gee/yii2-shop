@@ -518,10 +518,8 @@ class CartComponent extends Component
     {
         $this->trigger(self::EVENT_BEFORE_GET_ORDER);
 
-        if ($this->saveToDataBase === true) {
-            if (!Yii::$app->user->isGuest) {
-                return $this->makeOrderFromDB();
-            } else return false;
+        if ($this->saveToDataBase === true && !Yii::$app->user->isGuest) {
+            return $this->makeOrderFromDB();
         } else {
             return $this->makeOrderFromSession();
         }
@@ -582,12 +580,11 @@ class CartComponent extends Component
 
     private function makeOrderFromSession()
     {
-        $profile = new Profile();
         $userModel = new User();
         $order = new Order();
         $address = new UserAddress();
 
-        if ($profile->load(Yii::$app->request->post()) && $userModel->load(Yii::$app->request->post())) {
+        if ($userModel->load(Yii::$app->request->post())) {
 
             $user = $userModel->finder->findUserByEmail($userModel->email);
             if (empty($user)) {
@@ -600,11 +597,15 @@ class CartComponent extends Component
                     $user->save();
                 }
 
+                $profile = new Profile();
                 $profile->user_id = $user->id;
-
+            }
+            else {
+                $profile = $user->profile;
             }
 
-            if ($profile->validate()) $profile->save();
+            $profile->load(Yii::$app->request->post());
+            if ($profile->validate()) $profile->update();
 
             $address->load(Yii::$app->request->post());
             $address->user_profile_id = $profile->id;
