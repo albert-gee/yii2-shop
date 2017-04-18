@@ -605,7 +605,7 @@ class CartComponent extends Component
             }
 
             $profile->load(Yii::$app->request->post());
-            if ($profile->validate()) $profile->update();
+            if ($profile->validate()) $profile->save();
 
             $address->load(Yii::$app->request->post());
             $address->user_profile_id = $profile->id;
