@@ -78,7 +78,7 @@ $this->params['breadcrumbs'] = [
                                 $model->user->profile->info,
                                 Url::toRoute(['view', 'id' => $model->id]));
 
-                        if (!empty($model->address)) {
+                        if (!empty($model->address->city)) {
                             $customer .= Html::tag('p', $model->address->city . ', ' . $model->address->country);
                         }
                         return $customer;
