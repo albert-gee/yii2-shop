@@ -144,7 +144,7 @@ $this->params['breadcrumbs'] = [
                 /*ACTIONS*/
                 [
                     'headerOptions' => ['class' => 'text-center col-md-2'],
-                    'attribute' => \Yii::t('cart', 'Manage'),
+                    'attribute' => \Yii::t('cart', 'Control'),
 
                     'value' => function ($model) {
                         return Html::a('<span class="fa fa-eye"></span>', Url::toRoute(['view', 'id' => $model->id]),
