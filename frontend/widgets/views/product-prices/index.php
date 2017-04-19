@@ -12,8 +12,10 @@
  * ]);
  */
 use xalberteinsteinx\shop\frontend\widgets\AdditionalProducts;
+use xalberteinsteinx\shop\frontend\widgets\assets\ProductCombinationAsset;
 use yii\helpers\Html;
 
+ProductCombinationAsset::register($this);
 ?>
 
 <div class="product-prices-widget" data-not-available-text="<?= $params['notAvailableText']; ?>">
