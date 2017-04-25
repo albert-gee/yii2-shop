@@ -98,6 +98,7 @@ return [
     'Title' => 'Название',
     'To cart' => 'В корзину',
     'Vendor' => 'Производитель',
+    'Vendors' => 'Производители',
     'Viewed products' => 'Просмотренные товары',
     'Website' => 'Сайт',
     'You have already sent a request.' => 'Вы уже отправили заявку на партнёрство.',
