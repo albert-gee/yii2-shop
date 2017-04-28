@@ -177,6 +177,7 @@ return [
     'Show address or post office fields' => 'Показывать поля для заполнения адреса или номера почтовоего отделения',
     'Show nothing' => 'Ничего не показывать',
     'Show post office field' => 'Показывать поле для указания почтового отделения',
+    'Shows' => 'Просмотры',
     'Sorry, this format is not supported' => 'Извините, данный формат не поддерживается',
     'Status' => 'Статус',
     'Status and details' => 'Статус и детали',
