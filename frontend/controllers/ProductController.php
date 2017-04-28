@@ -55,6 +55,8 @@ class ProductController extends Controller
 
             $this->setSeoData($product);
 
+            $product->updateCounters(['shows' => 1]);
+
             $this->trigger(self::EVENT_AFTER_SHOW);
 
             return $this->render('show', [
