@@ -46,10 +46,14 @@ class SearchProduct extends Product
     public function search($params)
     {
         $query = (\Yii::$app->user->can('viewCompleteProductList')) ?
-            Product::find()->joinWith('translations')->orderBy(['category_id' => SORT_ASC, 'position' => SORT_ASC]) :
-            Product::find()->joinWith('translations')->where(['owner' => \Yii::$app->user->id])->orderBy(['category_id' => SORT_ASC, 'position' => SORT_ASC]);
+            Product::find()->joinWith('translations') :
+            Product::find()->joinWith('translations')->where(['owner' => \Yii::$app->user->id]);
 
         $this->load($params);
+
+        if (empty($params['sort'])) {
+            $query->orderBy(['category_id' => SORT_ASC, 'position' => SORT_ASC]);
+        }
 
         $query->andFilterWhere([
             'shop_product.category_id' => $this->category,
@@ -59,6 +63,8 @@ class SearchProduct extends Product
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['shows']],
+
             'pagination' => [
                 'pagesize' => 10,
             ],
