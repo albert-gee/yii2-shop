@@ -202,6 +202,16 @@ $this->params['breadcrumbs'] = [
                     'contentOptions' => ['class' => 'project-title text-center'],
                 ],
 
+
+                /*SHOWS*/
+                [
+                    'headerOptions' => ['class' => 'text-center col-md-1'],
+                    'attribute' => 'shows',
+                    'value' => 'shows',
+                    'label' => Yii::t('shop', 'Shows'),
+                    'contentOptions' => ['class' => 'text-center'],
+                ],
+
                 /*ACTIONS*/
                 [
                     'headerOptions' => ['class' => 'text-center col-md-2'],

@@ -270,5 +270,12 @@ use yii\widgets\ActiveForm;
             <?= $product->creation_time; ?>
 
         </p>
+        <p>
+            <b>
+                <?= \Yii::t('shop', 'Shows'); ?>:
+            </b>
+            <?= $product->shows; ?>
+
+        </p>
     </div>
 <?php endif; ?>
