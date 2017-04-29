@@ -103,7 +103,7 @@ $this->params['breadcrumbs'] = [
 
                 /*TITLE*/
                 [
-                    'headerOptions' => ['class' => 'text-center col-md-4'],
+                    'headerOptions' => ['class' => 'text-center col-md-3'],
                     'attribute' => 'title',
                     'value' => function ($model) {
                         $content = null;
