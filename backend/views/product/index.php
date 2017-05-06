@@ -52,12 +52,7 @@ $this->params['breadcrumbs'] = [
 
     <!--CONTENT-->
     <div class="box-content">
-        <?php Pjax::begin([
-            'linkSelector' => '.pjax',
-            'enablePushState' => true,
-            'timeout' => 10000,
-        ]);
-        ?>
+
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -224,8 +219,7 @@ $this->params['breadcrumbs'] = [
             ],
         ]);
         ?>
-        <?php Pjax::end();
-        ?>
+
         <?= \Yii::t('shop', 'Count of waiting moderation products is') . ' <b>' . $notModeratedProductsCount . '</b>'; ?>
 
         <!--ADD BUTTON-->
