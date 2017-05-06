@@ -31,8 +31,6 @@ $this->title = Yii::t('cart', 'Order Statuses');
 
     <div class="box-content">
 
-        <?php Pjax::begin(); ?>
-
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -88,7 +86,6 @@ $this->title = Yii::t('cart', 'Order Statuses');
             ],
         ]); ?>
 
-        <?php Pjax::end(); ?>
         <div class="row">
             <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
                 Yii::t('cart', 'Create status'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs m-r-xs pull-right']);
