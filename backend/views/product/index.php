@@ -69,6 +69,8 @@ $this->params['breadcrumbs'] = [
                 'class' => 'table table-hover'
             ],
 
+            'pager' => ['linkOptions' => ['class' => 'pjax']],
+
             'summary' => "",
 
             'columns' => [
