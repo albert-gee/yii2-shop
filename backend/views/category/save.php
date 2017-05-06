@@ -56,7 +56,7 @@ $this->params['breadcrumbs'] = [
     </ul>
 
     <!--CONTENT-->
-    <div class="ibox-content">
+    <div class="box-content">
 
         <!-- LANGUAGES -->
         <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([

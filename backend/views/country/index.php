@@ -12,9 +12,9 @@ use yii\bootstrap\Html;
 $this->title = \Yii::t('shop', 'List of countries');
 ?>
 
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
+    <div class="box-title">
         <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
             Yii::t('shop', 'Add country'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
         ?>
@@ -25,7 +25,7 @@ $this->title = \Yii::t('shop', 'List of countries');
         </h5>
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
         <table class="table table-hover">
             <?php if (!empty($countries)): ?>
                 <thead>

@@ -15,7 +15,7 @@ $this->title = Yii::t('shop', 'Create new filter type');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('shop', 'Filter Types'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ibox-content">
+<div class="box-content">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

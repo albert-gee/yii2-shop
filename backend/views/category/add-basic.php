@@ -91,7 +91,7 @@ use yii\widgets\ActiveForm;
             'min' => 1,
         ]); ?>
 
-        <div class="ibox">
+        <div class="box">
             <!--CANCEL BUTTON-->
             <a href="<?= Url::to(['/shop/category']); ?>">
                 <?= Html::button(\Yii::t('shop', 'Cancel'), [

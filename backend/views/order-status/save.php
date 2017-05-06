@@ -21,10 +21,10 @@ $this->title = ($modelTranslation->isNewRecord) ?
     Yii::t('cart', 'Creating new order status') :
     Yii::t('cart', 'Editing order status');
 ?>
-<div class="ibox">
+<div class="box">
     <?php $form = ActiveForm::begin(); ?>
 
-    <div class="ibox-title">
+    <div class="box-title">
 
         <h5>
             <i class="glyphicon glyphicon-list">
@@ -44,7 +44,7 @@ $this->title = ($modelTranslation->isNewRecord) ?
 
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
 
         <?= $form->field($modelTranslation, 'title')->textInput(['maxlength' => true]); ?>
         <?= $form->field($model, 'color')->input('color'); ?>

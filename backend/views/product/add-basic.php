@@ -242,7 +242,7 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
 
-        <div class="ibox">
+        <div class="box">
             <a href="<?= Url::to(['/shop/product']); ?>">
                 <?= Html::button(\Yii::t('shop', 'Cancel'), [
                     'class' => 'btn btn-xs btn-danger pull-right'

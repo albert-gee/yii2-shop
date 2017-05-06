@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = (!empty($product->translation)) ? $product->tra
         'selectedLanguageId' => $selectedLanguage->id
     ]); ?>
 
-    <div class="ibox-content ">
+    <div class="box-content ">
 
         <!--VIEW ON SITE-->
         <?php if (!empty($product->translation)) : ?>

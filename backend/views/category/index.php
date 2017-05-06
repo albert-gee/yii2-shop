@@ -20,9 +20,9 @@ $this->params['breadcrumbs'] = [
 CategoriesIndexAsset::register($this);
 ?>
 
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
+    <div class="box-title">
         <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
             Yii::t('shop', 'Create category'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
         ?>
@@ -33,7 +33,7 @@ CategoriesIndexAsset::register($this);
         </h5>
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
         <?= \xalberteinsteinx\shop\widgets\TreeWidget::widget([
             'className' => Category::className(),
             'isGrid' => true,

@@ -35,11 +35,11 @@ $this->params['breadcrumbs'] = [
 ];
 ?>
 
-<div class="ibox">
+<div class="box">
 
     <!--TITLE-->
-    <div class="ibox-title">
-        <div class="ibox-tools">
+    <div class="box-title">
+        <div class="box-tools">
             <h5>
                 <i class="glyphicon glyphicon-list"></i>
                 <?= \Yii::t('shop', 'Product list'); ?>
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'] = [
     </div>
 
     <!--CONTENT-->
-    <div class="ibox-content">
+    <div class="box-content">
         <?php Pjax::begin([
             'linkSelector' => '.pjax',
             'enablePushState' => true,

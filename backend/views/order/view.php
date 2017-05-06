@@ -28,14 +28,14 @@ $this->params['breadcrumbs'] = [
     $this->title
 ];
 ?>
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
+    <div class="box-title">
         <h1><?= \Yii::t('cart', 'Order #') . $model->uid; ?></h1>
     </div>
 
     <?php if (Yii::$app->user->can('changeOrderStatus')) : ?>
-        <div class="ibox-content">
+        <div class="box-content">
             <!--CHANGE STATUS-->
             <h2>
                 <?= Yii::t('cart', 'Order status'); ?>
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'] = [
         </div>
     <?php endif; ?>
 
-    <div class="ibox-content">
+    <div class="box-content">
         <div class="row">
             <div class="col-md-6">
                 <!--CUSTOMER DATA-->
@@ -144,7 +144,7 @@ $this->params['breadcrumbs'] = [
     </div>
 
     <!--PRODUCT LIST-->
-    <div class="ibox-content col-md-12">
+    <div class="box-content col-md-12">
         <h2>
             <?= Yii::t('cart', 'Product list'); ?>
         </h2>

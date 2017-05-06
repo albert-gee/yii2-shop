@@ -12,9 +12,9 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('shop', 'Editing currency'); ?>
 
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
+    <div class="box-title">
         <h5>
             <i class="glyphicon glyphicon-list">
             </i>
@@ -22,7 +22,7 @@ $this->title = Yii::t('shop', 'Editing currency'); ?>
         </h5>
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
         <?php $form = ActiveForm::begin(); ?>
             <?= $form->field($model, 'value')->textInput() ?>
 

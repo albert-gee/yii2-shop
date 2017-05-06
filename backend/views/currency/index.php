@@ -14,10 +14,10 @@ use yii\helpers\Url;
 $this->title = Yii::t('shop', 'Currency');
 ?>
 
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
-        <div class="ibox-tools">
+    <div class="box-title">
+        <div class="box-tools">
             <h5>
                 <i class="glyphicon glyphicon-list">
                 </i>
@@ -25,7 +25,7 @@ $this->title = Yii::t('shop', 'Currency');
             </h5>
         </div>
 
-        <div class="ibox-content">
+        <div class="box-content">
             <?php $form = ActiveForm::begin(); ?>
 
             <table class="table table-hover">

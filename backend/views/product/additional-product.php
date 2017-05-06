@@ -22,11 +22,11 @@ $this->params['breadcrumbs'] = [
 ?>
 
 
-<div class="ibox">
+<div class="box">
 
     <!--TITLE-->
-    <div class="ibox-title">
-        <div class="ibox-tools">
+    <div class="box-title">
+        <div class="box-tools">
             <!--ADD BUTTON-->
             <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
                 Yii::t('shop', 'Create category'), ['/shop/product/save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'] = [
     </div>
 
     <!--CONTENT-->
-    <div class="ibox-content">
+    <div class="box-content">
         <table id="my-grid" class="table table-hover">
             <thead>
             <tr>

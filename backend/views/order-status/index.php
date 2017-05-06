@@ -17,9 +17,9 @@ use bl\multilang\entities\Language;
 $this->title = Yii::t('cart', 'Order Statuses');
 ?>
 
-<div class="ibox">
-    <div class="ibox-title">
-        <div class="ibox-tools">
+<div class="box">
+    <div class="box-title">
+        <div class="box-tools">
             <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
                 Yii::t('cart', 'Create status'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
             ?>
@@ -32,7 +32,7 @@ $this->title = Yii::t('cart', 'Order Statuses');
         </div>
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
 
         <?php Pjax::begin(); ?>
 

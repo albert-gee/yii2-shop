@@ -20,10 +20,10 @@ $this->params['breadcrumbs'] = [
 ];
 ?>
 
-<div class="ibox">
+<div class="box">
 
-    <div class="ibox-title">
-        <div class="ibox-tools">
+    <div class="box-title">
+        <div class="box-tools">
             <h5>
                 <i class="glyphicon glyphicon-list">
                 </i>
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'] = [
         </div>
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
 
         <?= GridView::widget([
             'filterRowOptions' => ['class' => ''],

@@ -49,7 +49,7 @@ use yii\widgets\ActiveForm;
 <?= $addForm->field($categoryTranslation, 'seoKeywords')->textarea(['rows' => 3])->label(\Yii::t('shop', 'SEO keywords'))
 ?>
 
-<div class="ibox">
+<div class="box">
     <!--CANCEL BUTTON-->
     <a href="<?= Url::to(['/shop/category']); ?>">
         <?= Html::button(\Yii::t('shop', 'Cancel'), [

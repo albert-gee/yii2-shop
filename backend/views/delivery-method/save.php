@@ -22,10 +22,10 @@ $this->title = ($modelTranslation->isNewRecord) ?
 ?>
 
 
-<div class="ibox">
+<div class="box">
 
     <?php $form = ActiveForm::begin(); ?>
-    <div class="ibox-title">
+    <div class="box-title">
         <h5>
             <i class="glyphicon glyphicon-list">
             </i>
@@ -48,7 +48,7 @@ $this->title = ($modelTranslation->isNewRecord) ?
 
     </div>
 
-    <div class="ibox-content">
+    <div class="box-content">
         <?= $form->field($modelTranslation, 'title')->textInput(['maxlength' => true]); ?>
         <?= $form->field($modelTranslation, 'description')->widget(Summernote::className()); ?>
         <?= $form->field($model, 'show_address_or_post_office')->dropDownList([

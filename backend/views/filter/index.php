@@ -12,7 +12,7 @@ use yii\widgets\Pjax;
 
 $this->title = Yii::t('shop', 'Filters');
 ?>
-<div class="ibox-content">
+<div class="box-content">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

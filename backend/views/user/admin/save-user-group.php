@@ -12,8 +12,8 @@ use yii\helpers\Url;
 $this->title = \Yii::t('shop', 'Change user group');
 ?>
 
-<div class="ibox">
-    <div class="ibox-title">
+<div class="box">
+    <div class="box-title">
         <div class="row">
             <h1 class="col-md-9">
                 <?= $this->title; ?>
@@ -25,7 +25,7 @@ $this->title = \Yii::t('shop', 'Change user group');
             </div>
         </div>
     </div>
-    <div class="ibox-content">
+    <div class="box-content">
 
         <?php $form = ActiveForm::begin([
             'layout' => 'horizontal'

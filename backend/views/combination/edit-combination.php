@@ -199,7 +199,7 @@ $GLOBALS['combinationImages'] = $combinationImagesIds;
     ?>
 </div>
 
-<div class="ibox-content">
+<div class="box-content">
     <?= Html::a(
         \Yii::t('shop', 'Cancel'),
         Url::to(['/shop/product/add-combination', 'productId' => $combination->product_id, 'languageId' => $combinationTranslation->language_id]),

@@ -10,8 +10,8 @@ use yii\helpers\Url;
 $this->title = \Yii::t('shop', 'User groups');
 ?>
 
-<div class="ibox">
-    <div class="ibox-title">
+<div class="box">
+    <div class="box-title">
         <a class="btn btn-primary btn-xs pull-right" href="<?= Url::to(['save-user-group']); ?>">
             <i class="fa fa-user-plus"></i><?= Yii::t('shop', 'Create user group'); ?>
         </a>
@@ -21,7 +21,7 @@ $this->title = \Yii::t('shop', 'User groups');
             <?= $this->title; ?>
         </h5>
     </div>
-    <div class="ibox-content">
+    <div class="box-content">
         <table id="my-grid" class="table-hover table">
             <tr>
                 <th>
