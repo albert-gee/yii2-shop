@@ -40,6 +40,6 @@ use yii\helpers\Url;
 </div>
 
 <!--Remove button-->
-<a href="<?= $deleteUrl ?? Url::toRoute(['delete', 'id' => $GLOBALS['item']->id]); ?>" class="btn btn-danger pjax">
+<a href="<?= $deleteUrl ?? Url::toRoute(['delete', 'id' => $model->id]); ?>" class="btn btn-danger pjax">
     <?= FA::i(FA::_TIMES); ?>
 </a>
