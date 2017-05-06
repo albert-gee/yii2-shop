@@ -2,6 +2,7 @@
 namespace xalberteinsteinx\shop\widgets;
 
 use yii\base\Widget;
+use yii\db\ActiveRecord;
 
 /**
  * This widget adds edit button for multilingual controller
@@ -10,10 +11,20 @@ use yii\base\Widget;
  */
 class ManageButtons extends Widget
 {
+
+    /**
+     * @var ActiveRecord
+     */
     public $model;
 
+    /**
+     * @var string
+     */
     public $action = 'save';
 
+    /**
+     * @var string
+     */
     public $deleteUrl;
 
     /**

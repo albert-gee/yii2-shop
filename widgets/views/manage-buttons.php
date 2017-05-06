@@ -2,50 +2,44 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $deleteUrl string
+ * @var \yii\db\ActiveRecord    $model
+ * @var string                  $action
+ * @var string                  $deleteUrl
  */
 
 use bl\multilang\entities\Language;
+use rmrevin\yii\fontawesome\FA;
 use yii\bootstrap\Html;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
-global $item;
-global $to;
-$item = $model;
-$to = $action;
+?>
 
-echo
-    Html::a('<span class="glyphicon glyphicon-remove"></span>', $deleteUrl ?? Url::toRoute(['delete', 'id' => $GLOBALS['item']->id]),
-        ['title' => Yii::t('yii', 'Delete'), 'class' => 'btn btn-danger pull-right btn-xs pjax']) .
+<div class="btn-group">
 
-    Html::tag('div',
-        Html::a(
-            Html::tag('span', ' ' . \Yii::t('shop', 'Edit'),['class' => 'glyphicon glyphicon-pencil']),
-            Url::toRoute([$GLOBALS['to'], 'id' => $GLOBALS['item']->id, "languageId" => Language::getCurrent()->id]),
-            [
-                'class' => 'btn btn-primary btn-xs',
-            ]) .
-        Html::a(
-            '<span class="caret"></span>',
-            Url::toRoute([$GLOBALS['to'], 'id' => $GLOBALS['item']->id, "languageId" => Language::getCurrent()->id]),
-            [
-                'class' => 'btn btn-primary btn-xs dropdown-toggle',
-                'type' => 'button', 'id' => 'dropdownMenu1',
-                'data-toggle' => 'dropdown', 'aria-haspopup' => 'true',
-                'aria-expanded' => 'true'
-            ]) .
-        Html::ul(
-            ArrayHelper::map(Language::find()->all(), 'id', 'name'),
-            [
-                'item' => function ($item, $index) {
+    <a href="<?= Url::toRoute([$action, 'id' => $model->id, "languageId" => Language::getCurrent()->id]); ?>" class="btn btn-primary">
+        <span><?= Fa::i(FA::_EDIT) . ' ' . \Yii::t('shop', 'Edit'); ?></span>
+    </a>
 
-                    return Html::tag('li',
-                        Html::a(
-                            $item, Url::toRoute([$GLOBALS['to'], 'id' => $GLOBALS['item']->id, "languageId" => $index]))
-                    );
-                },
-                'class' => 'dropdown-menu', 'aria-labelledby' => 'dropdownMenu1']),
+    <section class="dropdown">
+        <a href="<?= Url::to(['/']); ?>">
+            <?= FA::i(FA::_ANGLE_DOWN); ?>
+        </a>
 
-        ['class' => 'btn-group pull-right m-r-xs']
-    );
+        <?php if (!empty($languages = Language::find()->all())): ?>
+            <ul>
+                <?php foreach ($languages as $language): ?>
+                    <li>
+                        <?= Html::a($language->name, Url::toRoute([$action, 'id' => $model->id, "languageId" => $language->id])); ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+
+    </section>
+
+</div>
+
+<!--Remove button-->
+<a href="<?= $deleteUrl ?? Url::toRoute(['delete', 'id' => $GLOBALS['item']->id]); ?>" class="btn btn-danger pjax">
+    <?= FA::i(FA::_TIMES); ?>
+</a>
