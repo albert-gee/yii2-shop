@@ -694,6 +694,7 @@ class ProductController extends Controller
                 $product->movePrev();
                 $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent(['id' => $id]));
             }
+            if (\Yii::$app->request->isPjax) return $this->actionIndex();
             return $this->redirect(\Yii::$app->request->referrer);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }
@@ -720,6 +721,7 @@ class ProductController extends Controller
                 $product->moveNext();
                 $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent(['id' => $id]));
             }
+            if (\Yii::$app->request->isPjax) return $this->actionIndex();
             return $this->redirect(\Yii::$app->request->referrer);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }
@@ -751,6 +753,8 @@ class ProductController extends Controller
             $product->delete();
 
             $this->trigger(self::EVENT_AFTER_DELETE_PRODUCT, new ProductEvent(['id' => $id]));
+
+            if (\Yii::$app->request->isPjax) return $this->actionIndex();
             return $this->redirect('index');
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to delete this product.'));
     }

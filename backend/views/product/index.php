@@ -34,7 +34,11 @@ $this->params['breadcrumbs'] = [
     Yii::t('shop', 'Products')
 ];
 ?>
-
+<?php Pjax::begin([
+    'id' => 'p-products',
+    'linkSelector' => '.pjax',
+    'enablePushState' => false
+]); ?>
 <div class="box">
 
     <!--TITLE-->
@@ -79,14 +83,14 @@ $this->params['breadcrumbs'] = [
                             '',
                             Url::toRoute(['up', 'id' => $model->id]),
                             [
-                                'class' => 'fa fa-chevron-up'
+                                'class' => 'fa fa-chevron-up pjax'
                             ]
                         );
                         $buttonDown = Html::a(
                             '',
                             Url::toRoute(['down', 'id' => $model->id]),
                             [
-                                'class' => 'fa fa-chevron-down'
+                                'class' => 'fa fa-chevron-down pjax'
                             ]
                         );
                         return $buttonUp . '<div>' . $model->position . '</div>' . $buttonDown;
@@ -229,3 +233,4 @@ $this->params['breadcrumbs'] = [
         </a>
     </div>
 </div>
+<?php Pjax::end(); ?>
