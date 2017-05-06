@@ -23,13 +23,11 @@ $this->params['breadcrumbs'] = [
 <div class="box">
 
     <div class="box-title">
-        <div class="box-tools">
-            <h5>
-                <i class="glyphicon glyphicon-list">
-                </i>
-                <?= \Yii::t('cart', 'Order list'); ?>
-            </h5>
-        </div>
+        <h1>
+            <i class="glyphicon glyphicon-list">
+            </i>
+            <?= \Yii::t('cart', 'Order list'); ?>
+        </h1>
     </div>
 
     <div class="box-content">

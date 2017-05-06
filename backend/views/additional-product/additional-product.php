@@ -26,16 +26,14 @@ $this->params['breadcrumbs'] = [
 
     <!--TITLE-->
     <div class="box-title">
-        <div class="box-tools">
-            <!--ADD BUTTON-->
-            <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
-                Yii::t('shop', 'Create category'), ['/shop/product/save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
-            ?>
-            <h5>
-                <i class="glyphicon glyphicon-list"></i>
-                <?= \Yii::t('shop', 'Additional products'); ?>
-            </h5>
-        </div>
+        <h1>
+            <i class="glyphicon glyphicon-list"></i>
+            <?= \Yii::t('shop', 'Additional products'); ?>
+        </h1>
+        <!--ADD BUTTON-->
+        <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
+            Yii::t('shop', 'Create category'), ['/shop/product/save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
+        ?>
     </div>
 
     <!--CONTENT-->

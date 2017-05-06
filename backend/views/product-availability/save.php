@@ -44,11 +44,11 @@ $this->title = Yii::t('shop', 'Product availabilities');
                 <?php endif; ?>
             </div>
         <?php endif; ?>
-        <h5>
+        <h1>
             <i class="glyphicon glyphicon-list">
             </i>
             <?= Html::encode($this->title); ?>
-        </h5>
+        </h1>
 
     </div>
 

@@ -39,17 +39,15 @@ $this->params['breadcrumbs'] = [
 
     <!--TITLE-->
     <div class="box-title">
-        <div class="box-tools">
-            <h5>
-                <i class="glyphicon glyphicon-list"></i>
-                <?= \Yii::t('shop', 'Product list'); ?>
-            </h5>
-            <!--ADD BUTTON-->
-            <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>"
-               class="btn btn-primary btn-xs">
-                <i class="fa fa-user-plus"></i> <?= \Yii::t('shop', 'Add'); ?>
-            </a>
-        </div>
+        <h1>
+            <i class="glyphicon glyphicon-list"></i>
+            <?= \Yii::t('shop', 'Product list'); ?>
+        </h1>
+        <!--ADD BUTTON-->
+        <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>"
+           class="btn btn-primary btn-xs">
+            <i class="fa fa-user-plus"></i> <?= \Yii::t('shop', 'Add'); ?>
+        </a>
     </div>
 
     <!--CONTENT-->

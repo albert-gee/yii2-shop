@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h5><?= Html::encode($this->title) ?></h5>
+        <h1><?= Html::encode($this->title) ?></h1>
         <?= LanguageSwitcher::widget([
             'selectedLanguage' => $selectedLanguage,
         ]);?>

@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="row">
-            <h5 class="col-md-6">
+            <h1 class="col-md-6">
                 <i class="glyphicon glyphicon-list">
                 </i>
                 <?= $this->title; ?>
-            </h5>
+            </h1>
             <p class="col-md-6">
                 <?= Html::a(Yii::t('payment', 'Add payment method'),
                     Url::toRoute(['save', 'languageId' => Language::getCurrent()->id]),

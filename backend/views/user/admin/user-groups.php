@@ -15,11 +15,11 @@ $this->title = \Yii::t('shop', 'User groups');
         <a class="btn btn-primary btn-xs pull-right" href="<?= Url::to(['save-user-group']); ?>">
             <i class="fa fa-user-plus"></i><?= Yii::t('shop', 'Create user group'); ?>
         </a>
-        <h5>
+        <h1>
             <i class="glyphicon glyphicon-list">
             </i>
             <?= $this->title; ?>
-        </h5>
+        </h1>
     </div>
     <div class="box-content">
         <table id="my-grid" class="table-hover table">

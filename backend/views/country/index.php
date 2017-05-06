@@ -18,11 +18,11 @@ $this->title = \Yii::t('shop', 'List of countries');
         <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
             Yii::t('shop', 'Add country'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
         ?>
-        <h5>
+        <h1>
             <i class="glyphicon glyphicon-list">
             </i>
             <?= Html::encode($this->title); ?>
-        </h5>
+        </h1>
     </div>
 
     <div class="box-content">

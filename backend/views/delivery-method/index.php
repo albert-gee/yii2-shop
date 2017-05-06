@@ -18,17 +18,15 @@ $this->title = Yii::t('shop', 'Delivery methods');
 <div class="box">
 
     <div class="box-title">
-        <div class="box-tools">
-            <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
-                Yii::t('shop', 'Create delivery method'),
-                ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
-            ?>
-        </div>
-        <h5>
+        <h1>
             <i class="glyphicon glyphicon-list">
             </i>
             <?= Html::encode($this->title); ?>
-        </h5>
+        </h1>
+        <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
+            Yii::t('shop', 'Create delivery method'),
+            ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
+        ?>
     </div>
 
     <div class="box-content">

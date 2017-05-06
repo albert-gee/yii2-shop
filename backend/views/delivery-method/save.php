@@ -26,11 +26,11 @@ $this->title = ($modelTranslation->isNewRecord) ?
 
     <?php $form = ActiveForm::begin(); ?>
     <div class="box-title">
-        <h5>
+        <h1>
             <i class="glyphicon glyphicon-list">
             </i>
             <?= Html::encode($this->title); ?>
-        </h5>
+        </h1>
 
         <!-- LANGUAGES -->
         <?= LanguageSwitcher::widget([
