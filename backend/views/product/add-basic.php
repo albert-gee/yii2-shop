@@ -2,36 +2,72 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var array $prices
- * @var integer $selectedLanguageId
- * @var \xalberteinsteinx\shop\common\entities\Product $product
- * @var \xalberteinsteinx\shop\common\entities\ProductTranslation $productTranslation
+ * @var $prices                 array
+ * @var $selectedLanguage       \bl\multilang\entities\Language
+ * @var $product                \xalberteinsteinx\shop\common\entities\Product
+ * @var $productTranslation     \xalberteinsteinx\shop\common\entities\ProductTranslation
  */
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\common\components\user\models\UserGroup;
 use xalberteinsteinx\shop\common\entities\{
     PriceDiscountType, Product, ProductAvailability, ProductCountryTranslation, Vendor
 };
-use xalberteinsteinx\shop\subsite\models\ProductModel;
 use marqu3s\summernote\Summernote;
 use yii\helpers\{
     ArrayHelper, Html, Url
 };
 use yii\widgets\ActiveForm;
 
+$selectedLanguageId = $selectedLanguage->id;
 ?>
 
-<?php $form = ActiveForm::begin([
-    'method' => 'post',
-    'enableClientValidation' => true,
-    'action' => [
-        'product/save',
-        'id' => $product->id,
-        'languageId' => $selectedLanguageId
-    ]]);
-?>
+<!--Tabs-->
+<?= $this->render('_product-tabs', [
+    'product' => $product,
+    'selectedLanguage' => $selectedLanguage
+]); ?>
 
-    <!--SAVE BUTTON-->
-<?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
+<div class="box padding20">
+
+    <?php $form = ActiveForm::begin([
+        'method' => 'post',
+        'enableClientValidation' => true,
+        'action' => [
+            'product/save',
+            'id' => $product->id,
+            'languageId' => $selectedLanguageId
+        ]]);
+    ?>
+
+    <header>
+        <section class="title">
+            <h2><?= \Yii::t('shop', 'Basic options'); ?></h2>
+        </section>
+
+        <section class="buttons">
+            <!--SAVE BUTTON-->
+            <?= Html::submitButton(FA::i(FA::_SAVE) . ' ' . \Yii::t('shop', 'Save'), ['class' => 'btn btn-xs']); ?>
+
+            <!--CANCEL BUTTON-->
+            <?= Html::a(FA::i(FA::_STOP_CIRCLE) . ' ' . \Yii::t('shop', 'Cancel'), Url::to(['/shop/product']), [
+                'class' => 'btn btn-danger btn-xs'
+            ]); ?>
+
+            <!--VIEW ON SITE-->
+            <?php if (!empty($product->translation)) : ?>
+                <?= Html::a(FA::i(FA::_EXTERNAL_LINK) . Html::tag('span', Yii::t('shop', 'View on website')),
+                    (Yii::$app->get('urlManagerFrontend'))->createAbsoluteUrl(['/shop/product/show', 'id' => $product->id], true), [
+                        'class' => 'btn btn-info btn-xs',
+                        'target' => '_blank'
+                    ]); ?>
+            <?php endif; ?>
+
+            <!--LANGUAGES-->
+            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+        </section>
+    </header>
 
     <!--BASIC-->
     <div id="basic">
@@ -52,7 +88,6 @@ use yii\widgets\ActiveForm;
             </p>
         <?php endif; ?>
 
-        <h2><?= \Yii::t('shop', 'Basic options'); ?></h2>
 
         <?php if (!\Yii::$app->user->can('createProductWithoutModeration') && $product->status == Product::STATUS_ON_MODERATION): ?>
             <p class="text-danger"><?= \Yii::t('shop', 'The product has not passed moderation yet'); ?></p>
@@ -110,7 +145,7 @@ use yii\widgets\ActiveForm;
 
             <div class="col-md-6">
                 <!--CATEGORY-->
-                <b><?= \Yii::t('shop', 'Category'); ?></b>
+                <label><?= \Yii::t('shop', 'Category'); ?></label>
                 <?= \xalberteinsteinx\shop\widgets\InputTree::widget([
                     'className' => \xalberteinsteinx\shop\common\entities\Category::className(),
                     'form' => $form,
@@ -242,40 +277,42 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
 
-        <div class="box">
-            <a href="<?= Url::to(['/shop/product']); ?>">
-                <?= Html::button(\Yii::t('shop', 'Cancel'), [
-                    'class' => 'btn btn-xs btn-danger pull-right'
-                ]); ?>
-            </a>
-            <input type="submit" class="btn btn-xs btn-primary m-r-xs pull-right"
-                   value="<?= \Yii::t('shop', 'Save'); ?>">
+        <section class="buttons">
+            <!--SAVE BUTTON-->
+            <?= Html::submitButton(FA::i(FA::_SAVE) . ' ' . \Yii::t('shop', 'Save'), ['class' => 'btn btn-xs']); ?>
+
+            <!--CANCEL BUTTON-->
+            <?= Html::a(FA::i(FA::_STOP_CIRCLE) . ' ' . \Yii::t('shop', 'Cancel'), Url::to(['/shop/product']), [
+                'class' => 'btn btn-danger btn-xs'
+            ]); ?>
+        </section>
+    </div>
+
+    <?php $form::end(); ?>
+
+    <?php if (!$product->isNewRecord): ?>
+        <div class="created-by">
+            <p>
+                <b>
+                    <?= \Yii::t('shop', 'Created by'); ?>:
+                </b>
+                <?= $product->ownerProfile->user->email ?? ''; // TODO: update this   ?>
+            </p>
+            <p>
+                <b>
+                    <?= \Yii::t('shop', 'Created at'); ?>:
+                </b>
+                <?= $product->creation_time; ?>
+
+            </p>
+            <p>
+                <b>
+                    <?= \Yii::t('shop', 'Shows'); ?>:
+                </b>
+                <?= $product->shows; ?>
+
+            </p>
         </div>
-    </div>
+    <?php endif; ?>
 
-<?php $form::end(); ?>
-
-<?php if (!$product->isNewRecord): ?>
-    <div class="created-by">
-        <p>
-            <b>
-                <?= \Yii::t('shop', 'Created by'); ?>:
-            </b>
-            <?= $product->ownerProfile->user->email ?? ''; // TODO: update this  ?>
-        </p>
-        <p>
-            <b>
-                <?= \Yii::t('shop', 'Created at'); ?>:
-            </b>
-            <?= $product->creation_time; ?>
-
-        </p>
-        <p>
-            <b>
-                <?= \Yii::t('shop', 'Shows'); ?>:
-            </b>
-            <?= $product->shows; ?>
-
-        </p>
-    </div>
-<?php endif; ?>
+</div>

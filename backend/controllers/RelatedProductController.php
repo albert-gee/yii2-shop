@@ -49,7 +49,6 @@ class RelatedProductController extends Controller
         $newRelatedProduct = new RelatedProduct();
 
         $selectedLanguage = Language::findOne($languageId);
-        $languages = Language::find()->all();
 
         if (\Yii::$app->request->isPost && $newRelatedProduct->load(\Yii::$app->request->post())) {
             if (empty(RelatedProduct::find()
@@ -66,18 +65,24 @@ class RelatedProductController extends Controller
             return $this->redirect(\Yii::$app->request->referrer);
         }
 
+        if (\Yii::$app->request->isPjax) {
+            return $this->renderPartial('../related-product/list', [
+                'product' => $product,
+                'products' => $products,
+                'relatedProducts' => $relatedProducts,
+                'newRelatedProduct' => $newRelatedProduct,
+                'selectedLanguage' => $selectedLanguage,
+            ]);
+        }
         return $this->render('../product/save', [
             'viewName' => '../related-product/list',
-            'selectedLanguage' => $selectedLanguage,
             'product' => $product,
-            'languages' => $languages,
 
             'params' => [
                 'product' => $product,
                 'products' => $products,
                 'relatedProducts' => $relatedProducts,
                 'newRelatedProduct' => $newRelatedProduct,
-                'languages' => $languages,
                 'selectedLanguage' => $selectedLanguage,
             ]
         ]);

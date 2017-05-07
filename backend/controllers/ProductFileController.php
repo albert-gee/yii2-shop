@@ -104,22 +104,18 @@ class ProductFileController extends Controller
                     'fileModel' => $fileForm,
                     'fileTranslationModel' => $fileTranslation,
                     'product' => $product,
-                    'languages' => Language::findAll(['active' => true]),
                     'language' => $selectedLanguage
                 ]);
             }
             return $this->render('../product/save', [
                 'viewName' => '../product-file/add-file',
-                'selectedLanguage' => Language::findOne($languageId),
                 'product' => $product,
-                'languages' => Language::find()->all(),
 
                 'params' => [
                     'fileList' => $product->files,
                     'fileModel' => $fileForm,
                     'fileTranslationModel' => $fileTranslation,
                     'product' => $product,
-                    'languages' => Language::findAll(['active' => true]),
                     'language' => $selectedLanguage
                 ]
             ]);

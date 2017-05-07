@@ -58,10 +58,13 @@ class ProductParamController extends Controller
      * @param integer $languageId
      * @return mixed
      * @throws ForbiddenHttpException
+     * @throws NotFoundHttpException
      */
     public function actionAddParam($id = null, $languageId = null)
     {
-        if (\Yii::$app->user->can('updateProduct', ['productOwner' => Product::findOne($id)->owner])) {
+        $product = Product::findOne($id);
+        if (empty($product)) throw new NotFoundHttpException();
+        if (\Yii::$app->user->can('updateProduct', ['productOwner' => $product->owner])) {
             $param = new Param();
             $param->product_id = $id;
             $param_translation = new ParamTranslation();
@@ -97,17 +100,13 @@ class ProductParamController extends Controller
 
             return $this->render('../product/save', [
                 'viewName' => '../product-param/add-param',
-                'selectedLanguage' => Language::findOne($languageId),
                 'product' => Product::findOne($id),
-                'languages' => Language::find()->all(),
 
                 'params' => [
-                    'params' => Param::find()->where([
-                        'product_id' => $id,
-                    ])->orderBy('position')->all(),
+                    'selectedLanguage' => Language::findOne($languageId),
+                    'params' => Param::find()->where(['product_id' => $id])->orderBy('position')->all(),
                     'param_translation' => new ParamTranslation(),
-                    'productId' => $id,
-                    'languageId' => $languageId,
+                    'product' => $product,
                     'languageIndex' => $languageIndex
                 ]
             ]);

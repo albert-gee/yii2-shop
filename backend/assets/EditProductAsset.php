@@ -21,6 +21,7 @@ class EditProductAsset extends AssetBundle
 
     public $depends = [
         'xalberteinsteinx\shop\backend\assets\ProductAsset',
-        'xalberteinsteinx\shop\backend\assets\InputTreeAsset'
+        'xalberteinsteinx\shop\backend\assets\InputTreeAsset',
+        'yii\bootstrap\BootstrapPluginAsset'
     ];
 }

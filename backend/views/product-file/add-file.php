@@ -19,114 +19,123 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
+
 ?>
 
-<?php Pjax::begin([
-    'enablePushState' => false,
-    'linkSelector' => '.pjax'
+<!--Tabs-->
+<?= $this->render('../product/_product-tabs', [
+    'product' => $product,
+    'selectedLanguage' => $language
 ]); ?>
 
-<?php $form = ActiveForm::begin([
-    'action' => [
-        'add-file',
-        'id' => $product->id,
-        'languageId' => $language->id
-    ],
-    'method' => 'post',
-    'options' => [
-        'enctype' => 'multipart/form-data',
-        'class' => 'price',
-        'data-pjax' => true
-    ]
-]) ?>
+<div class="box padding20">
 
-<h2><?= \Yii::t('shop', 'Files'); ?></h2>
+    <?php Pjax::begin([
+        'enablePushState' => false
+    ]); ?>
 
-<table class="table table-bordered">
-    <thead>
-    <tr>
-        <th class="col-md-3 text-center"><?= \Yii::t('shop', 'File'); ?></th>
-        <th class="col-md-3 text-center"><?= \Yii::t('shop', 'Type'); ?></th>
-        <th class="col-md-2 text-center"><?= \Yii::t('shop', 'Description'); ?></th>
-        <th class="col-md-2 text-center"><?= \Yii::t('shop', 'Control'); ?></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <!--FILE-->
-        <td>
-            <?= $form->field($fileModel, 'file')->widget(FileInput::class)->label(false); ?>
-        </td>
-        <!--TYPE-->
-        <td>
-            <?= $form->field($fileTranslationModel, 'type')->label(false) ?>
-        </td>
-        <!--DESCRIPTION-->
-        <td>
-            <?= $form->field($fileTranslationModel, 'description')->label(false) ?>
-        </td>
-        <td></td>
-    </tr>
-    <?php if (!empty($fileList)): ?>
-        <?php foreach ($fileList as $file): ?>
-            <tr class="text-center">
+    <?php $form = ActiveForm::begin([
+        'action' => [
+            'add-file',
+            'id' => $product->id,
+            'languageId' => $language->id
+        ],
+        'method' => 'post',
+        'options' => [
+            'enctype' => 'multipart/form-data',
+            'class' => 'price',
+            'data-pjax' => true
+        ]
+    ]) ?>
 
-                <!--FILE-->
-                <td>
-                    <div class="image-link">
-                        <p>
-                            <?php $fileLink = str_replace(Yii::$app->homeUrl, '', Url::home(true)) . '/files/' . $file->file; ?>
-                            <a href="<?= Url::to($fileLink); ?>">
-                                <i class="fa fa-external-link" aria-hidden="true"></i>
-                            </a>
-                            <?= $fileLink; ?>
-                        </p>
-                    </div>
-                </td>
+    <h2><?= \Yii::t('shop', 'Files'); ?></h2>
 
-                <!--TYPE-->
-                <td>
-                    <?php if (!empty($file->translation)): ?>
-                        <?= (!empty($file->getTranslation($language->id))) ?
-                            $file->getTranslation($language->id)->type : '' ?>
-                    <?php endif; ?>
-                </td>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th class="col-md-3 text-center"><?= \Yii::t('shop', 'File'); ?></th>
+            <th class="col-md-3 text-center"><?= \Yii::t('shop', 'Type'); ?></th>
+            <th class="col-md-2 text-center"><?= \Yii::t('shop', 'Description'); ?></th>
+            <th class="col-md-2 text-center"><?= \Yii::t('shop', 'Control'); ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <!--FILE-->
+            <td>
+                <?= $form->field($fileModel, 'file')->widget(FileInput::class)->label(false); ?>
+            </td>
+            <!--TYPE-->
+            <td>
+                <?= $form->field($fileTranslationModel, 'type')->label(false) ?>
+            </td>
+            <!--DESCRIPTION-->
+            <td>
+                <?= $form->field($fileTranslationModel, 'description')->label(false) ?>
+            </td>
+            <td></td>
+        </tr>
+        <?php if (!empty($fileList)): ?>
+            <?php foreach ($fileList as $file): ?>
+                <tr class="text-center">
 
-                <!--DESCRIPTION-->
-                <td>
-                    <?php if (!empty($file->translation)): ?>
-                        <?= (!empty($file->getTranslation($language->id))) ?
-                            $file->getTranslation($language->id)->description : '' ?>
-                    <?php endif; ?>
-                </td>
+                    <!--FILE-->
+                    <td>
+                        <div class="image-link">
+                            <p>
+                                <?php $fileLink = str_replace(Yii::$app->homeUrl, '', Url::home(true)) . '/files/' . $file->file; ?>
+                                <a href="<?= Url::to($fileLink); ?>">
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </a>
+                                <?= $fileLink; ?>
+                            </p>
+                        </div>
+                    </td>
 
-                <td class="text-center">
-                    <?= Html::a('', [
-                        'update-file',
-                        'productId' => $product->id,
-                        'fileId' => $file->id,
-                        'languageId' => $language->id
-                    ],
-                        [
-                            'class' => 'pjax glyphicon glyphicon-edit text-warning btn btn-default btn-sm'
-                        ]
-                    ) ?>
-                    <?= Html::a('', [
-                        'remove-file',
-                        'fileId' => $file->id,
-                        'productId' => $product->id,
-                        'languageId' => $language->id
-                    ],
-                        [
-                            'class' => 'pjax glyphicon glyphicon-remove text-danger btn btn-default btn-sm'
-                        ]
-                    ) ?>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    <?php endif; ?>
-    </tbody>
-</table>
-<?php $form->end() ?>
-<?php Pjax::end(); ?>
+                    <!--TYPE-->
+                    <td>
+                        <?php if (!empty($file->translation)): ?>
+                            <?= (!empty($file->getTranslation($language->id))) ?
+                                $file->getTranslation($language->id)->type : '' ?>
+                        <?php endif; ?>
+                    </td>
 
+                    <!--DESCRIPTION-->
+                    <td>
+                        <?php if (!empty($file->translation)): ?>
+                            <?= (!empty($file->getTranslation($language->id))) ?
+                                $file->getTranslation($language->id)->description : '' ?>
+                        <?php endif; ?>
+                    </td>
+
+                    <td class="text-center">
+                        <?= Html::a('', [
+                            'update-file',
+                            'productId' => $product->id,
+                            'fileId' => $file->id,
+                            'languageId' => $language->id
+                        ],
+                            [
+                                'class' => 'pjax glyphicon glyphicon-edit text-warning btn btn-default btn-sm'
+                            ]
+                        ) ?>
+                        <?= Html::a('', [
+                            'remove-file',
+                            'fileId' => $file->id,
+                            'productId' => $product->id,
+                            'languageId' => $language->id
+                        ],
+                            [
+                                'class' => 'pjax glyphicon glyphicon-remove text-danger btn btn-default btn-sm'
+                            ]
+                        ) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </tbody>
+    </table>
+    <?php $form->end() ?>
+    <?php Pjax::end(); ?>
+
+</div>

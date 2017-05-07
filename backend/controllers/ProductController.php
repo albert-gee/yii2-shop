@@ -256,20 +256,19 @@ class ProductController extends Controller
 
         if (Yii::$app->request->isPjax) {
             return $this->renderPartial('add-basic', [
+                'selectedLanguage' => $selectedLanguage,
                 'prices' => $prices,
-                'selectedLanguageId' => $selectedLanguage->id,
                 'product' => $product,
                 'productTranslation' => $productTranslation,
             ]);
         } else {
             return $this->render('save', [
                 'product' => $product,
-                'selectedLanguage' => $selectedLanguage,
                 'viewName' => 'add-basic',
 
                 'params' => [
+                    'selectedLanguage' => $selectedLanguage,
                     'prices' => $prices,
-                    'selectedLanguageId' => $selectedLanguage->id,
                     'product' => $product,
                     'productTranslation' => $productTranslation,
                 ]
@@ -288,7 +287,10 @@ class ProductController extends Controller
      */
     public function actionAddImage($id, $languageId)
     {
-        if (\Yii::$app->user->can('updateProduct', ['productOwner' => Product::findOne($id)->owner])) {
+        $product = Product::findOne($id);
+
+        if (empty($product)) throw new NotFoundHttpException();
+        if (\Yii::$app->user->can('updateProduct', ['productOwner' => $product->owner])) {
             $image_form = new ProductImageForm();
             $image = new ProductImage();
             $imageTranslation = new ProductImageTranslation();
@@ -336,19 +338,18 @@ class ProductController extends Controller
             if (Yii::$app->request->isPjax) {
                 return $this->renderPartial('add-image', [
                     'selectedLanguage' => Language::findOne($languageId),
-                    'productId' => $id,
+                    'product' => $product,
                     'image_form' => new ProductImageForm(),
                     'images' => ProductImage::find()->where(['product_id' => $id])->orderBy('position')->all(),
                 ]);
             }
             return $this->render('save', [
                 'product' => Product::findOne($id),
-                'selectedLanguage' => Language::findOne($languageId),
                 'viewName' => 'add-image',
 
                 'params' => [
                     'selectedLanguage' => Language::findOne($languageId),
-                    'productId' => $id,
+                    'product' => $product,
                     'image_form' => new ProductImageForm(),
                     'images' => ProductImage::find()->where(['product_id' => $id])->orderBy('position')->all(),
                 ]
@@ -399,7 +400,6 @@ class ProductController extends Controller
 
         return $this->render('save', [
             'product' => Product::findOne($image->product_id),
-            'selectedLanguage' => Language::findOne($languageId),
             'viewName' => 'edit-image',
 
             'params' => [

@@ -4,9 +4,10 @@
 }
 #input-tree ul {
     padding: 0;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 #input-tree li {
+    position: relative;
     list-style: none;
     padding: 3px 0;
 
@@ -31,6 +32,6 @@
     position: absolute;
     line-height: 24px;
     font-size: 20px;
-    right: 20px;
+    right: 0;
     cursor: pointer;
 }

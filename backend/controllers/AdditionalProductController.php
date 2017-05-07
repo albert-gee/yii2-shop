@@ -56,24 +56,37 @@ class AdditionalProductController extends Controller
      * @param int $productId
      * @param int $languageId
      *
+     * @throws NotFoundHttpException
      * @return mixed
      */
     public function actionAddAdditional(int $productId, int $languageId)
     {
+        $product = Product::findOne($productId);
+        if (empty($product)) throw new NotFoundHttpException();
+
         $additionalProductsCategories = Category::find()->with('products')
             ->where(['additional_products' => true])->all();
 
         $productAdditionalProducts = ProductAdditionalProduct::find()->where(['product_id' => $productId])->all();
+
+        $selectedLanguage = Language::findOne($languageId);
+        if (Yii::$app->request->isPjax) {
+            return $this->renderPartial('../additional-product/add-additional', [
+                'additionalProductsCategories' => $additionalProductsCategories,
+                'productAdditionalProducts' => $productAdditionalProducts,
+                'product' => $product,
+                'selectedLanguage' => $selectedLanguage
+            ]);
+        }
         return $this->render('../product/save', [
             'viewName' => '../additional-product/add-additional',
-            'selectedLanguage' => Language::findOne($languageId),
             'product' => Product::findOne($productId),
-            'languages' => Language::find()->all(),
 
             'params' => [
                 'additionalProductsCategories' => $additionalProductsCategories,
                 'productAdditionalProducts' => $productAdditionalProducts,
-                'productId' => $productId
+                'product' => $product,
+                'selectedLanguage' => $selectedLanguage
             ]
         ]);
     }

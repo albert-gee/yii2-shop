@@ -144,9 +144,7 @@ class CombinationController extends Controller
 
         return $this->render('../product/save', array(
             'viewName' => '../combination/add-combination',
-            'selectedLanguage' => Language::findOne($languageId),
             'product' => Product::findOne($productId),
-            'languages' => Language::find()->all(),
 
             'params' => array(
                 'combination' => $combination,
@@ -155,7 +153,7 @@ class CombinationController extends Controller
                 'product' => Product::findOne($productId),
                 'productImages' => $productImages,
                 'image_form' => $imageForm,
-                'languageId' => $languageId,
+                'language' => Language::findOne($languageId),
                 'combinationAttribute' => $combinationAttribute,
                 'combinationAttributeForm' => $combinationAttributeForm,
                 'prices' => $prices,
