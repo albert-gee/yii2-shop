@@ -11,7 +11,6 @@
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\Pjax;
 
 $this->title = \Yii::t('shop', 'Related products');
 ?>
@@ -24,13 +23,13 @@ $this->title = \Yii::t('shop', 'Related products');
 
 <div class="box padding20">
 
-    <?php Pjax::begin([
-        'enablePushState' => false
-    ]); ?>
-
-    <h1>
+    <h1 class="text-center">
         <?= $this->title; ?>
     </h1>
+
+    <p class="text-center">
+        <?= Yii::t('shop', 'Related products are shown below description on product page.'); ?>
+    </p>
 
     <div class="row">
         <div class="main col-md-8 block-center">

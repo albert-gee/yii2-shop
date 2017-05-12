@@ -63,6 +63,8 @@ class ProductParamController extends Controller
     public function actionAddParam($id = null, $languageId = null)
     {
         $product = Product::findOne($id);
+        $selectedLanguage = Language::findOne($languageId);
+
         if (empty($product)) throw new NotFoundHttpException();
         if (\Yii::$app->user->can('updateProduct', ['productOwner' => $product->owner])) {
             $param = new Param();
@@ -89,13 +91,16 @@ class ProductParamController extends Controller
                     Yii::$app->getSession()->setFlash('danger', 'Failed to change the record.');
             }
 
-            $languages = Language::find()->all();
-            $languageIndex = 0;
-            foreach ($languages as $key => $language) {
-                if ($language->id == $languageId) {
-                    $languageIndex = $key;
-                    break;
-                }
+            $params = Param::find()->where(['product_id' => $id])->orderBy('position')->all();
+
+            if (\Yii::$app->request->isPjax) {
+                $this->renderPartial('../product-param/_params-table', [
+                    'modifiedElementId' => $param->id,
+                    'params' => $params,
+                    'languageId' => $selectedLanguage->id,
+                    'param_translation' => new ParamTranslation(),
+                    'productId' => $id,
+                ]);
             }
 
             return $this->render('../product/save', [
@@ -103,11 +108,11 @@ class ProductParamController extends Controller
                 'product' => Product::findOne($id),
 
                 'params' => [
-                    'selectedLanguage' => Language::findOne($languageId),
-                    'params' => Param::find()->where(['product_id' => $id])->orderBy('position')->all(),
+                    'selectedLanguage' => $selectedLanguage,
+                    'params' => $params,
                     'param_translation' => new ParamTranslation(),
                     'product' => $product,
-                    'languageIndex' => $languageIndex
+                    'productId' => $id,
                 ]
             ]);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
@@ -120,16 +125,32 @@ class ProductParamController extends Controller
      * Users which have 'updateProduct' permission can delete params for all Product models.
      *
      * @param integer $id
+     * @param integer $languageId
      * @return mixed
      * @throws ForbiddenHttpException
      */
-    public function actionDeleteParam($id)
+    public function actionDeleteParam($id, $languageId)
     {
         $param = Param::findOne($id);
-        $param->delete();
-        $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent([
-            'id' => $param->product_id
-        ]));
+
+        if (!empty($param)) {
+            $param->delete();
+
+            $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent([
+                'id' => $param->product_id
+            ]));
+
+            if (\Yii::$app->request->isPjax) {
+                return $this->renderPartial('../product-param/_params-table', [
+                    'modifiedElementId' => null,
+                    'params' => Param::find()->where(['product_id' => $param->product_id])->orderBy('position')->all(),
+                    'languageId' => $languageId,
+                    'param_translation' => new ParamTranslation(),
+                    'productId' => $param->product_id,
+                ]);
+            }
+        }
+
         return $this->redirect(Yii::$app->request->referrer);
     }
 
@@ -187,10 +208,11 @@ class ProductParamController extends Controller
      * Users which have 'updateProduct' permission can change position for all Product models.
      *
      * @param integer $id
+     * @param integer $languageId
      * @return mixed
      * @throws ForbiddenHttpException
      */
-    public function actionUp($id)
+    public function actionUp($id, $languageId)
     {
 
         $param = Param::findOne($id);
@@ -203,6 +225,17 @@ class ProductParamController extends Controller
                     'id' => $product->id
                 ]));
             }
+
+            if (\Yii::$app->request->isPjax) {
+                return $this->renderPartial('../product-param/_params-table', [
+                    'modifiedElementId' => $id,
+                    'params' => Param::find()->where(['product_id' => $param->product_id])->orderBy('position')->all(),
+                    'languageId' => $languageId,
+                    'param_translation' => new ParamTranslation(),
+                    'productId' => $param->product_id,
+                ]);
+            }
+
             return $this->redirect(\Yii::$app->request->referrer);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }
@@ -214,10 +247,11 @@ class ProductParamController extends Controller
      * Users which have 'updateProduct' permission can change position for all Product models.
      *
      * @param integer $id
+     * @param integer $languageId
      * @return mixed
      * @throws ForbiddenHttpException
      */
-    public function actionDown($id)
+    public function actionDown($id, $languageId)
     {
         $param = Param::findOne($id);
         $product = $param->product;
@@ -230,6 +264,17 @@ class ProductParamController extends Controller
                     'id' => $product->id
                 ]));
             }
+
+            if (\Yii::$app->request->isPjax) {
+                return $this->renderPartial('../product-param/_params-table', [
+                    'modifiedElementId' => $id,
+                    'params' => Param::find()->where(['product_id' => $param->product_id])->orderBy('position')->all(),
+                    'languageId' => $languageId,
+                    'param_translation' => new ParamTranslation(),
+                    'productId' => $param->product_id,
+                ]);
+            }
+
             return $this->redirect(\Yii::$app->request->referrer);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }

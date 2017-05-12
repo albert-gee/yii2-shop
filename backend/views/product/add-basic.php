@@ -46,20 +46,25 @@ $selectedLanguageId = $selectedLanguage->id;
 
         <section class="buttons">
             <!--SAVE BUTTON-->
-            <?= Html::submitButton(FA::i(FA::_SAVE) . ' ' . \Yii::t('shop', 'Save'), ['class' => 'btn btn-xs']); ?>
+            <?= Html::submitButton(
+                Html::tag('span', FA::i(FA::_SAVE) . ' ' . \Yii::t('shop', 'Save')),
+                ['class' => 'btn btn-xs']); ?>
 
             <!--CANCEL BUTTON-->
-            <?= Html::a(FA::i(FA::_STOP_CIRCLE) . ' ' . \Yii::t('shop', 'Cancel'), Url::to(['/shop/product']), [
+            <?= Html::a(
+                Html::tag('span', FA::i(FA::_STOP_CIRCLE) . ' ' . \Yii::t('shop', 'Cancel')),
+                Url::to(['/shop/product']), [
                 'class' => 'btn btn-danger btn-xs'
             ]); ?>
 
             <!--VIEW ON SITE-->
             <?php if (!empty($product->translation)) : ?>
-                <?= Html::a(FA::i(FA::_EXTERNAL_LINK) . Html::tag('span', Yii::t('shop', 'View on website')),
+                <?= Html::a(
+                    Html::tag('span', FA::i(FA::_EXTERNAL_LINK) . Yii::t('shop', 'View on website')),
                     (Yii::$app->get('urlManagerFrontend'))->createAbsoluteUrl(['/shop/product/show', 'id' => $product->id], true), [
-                        'class' => 'btn btn-info btn-xs',
-                        'target' => '_blank'
-                    ]); ?>
+                    'class' => 'btn btn-info btn-xs',
+                    'target' => '_blank'
+                ]); ?>
             <?php endif; ?>
 
             <!--LANGUAGES-->
@@ -246,7 +251,7 @@ $selectedLanguageId = $selectedLanguage->id;
             ?>
             <?= Html::button(\Yii::t('shop', 'Generate'), [
                 'id' => 'generate-seo-url',
-                'class' => 'btn btn-primary btn-generate',
+                'class' => 'btn btn-primary btn-in-input',
                 'url' => Url::to('generate-seo-url')
             ]); ?>
         </div>
@@ -296,7 +301,7 @@ $selectedLanguageId = $selectedLanguage->id;
                 <b>
                     <?= \Yii::t('shop', 'Created by'); ?>:
                 </b>
-                <?= $product->ownerProfile->user->email ?? ''; // TODO: update this   ?>
+                <?= $product->ownerProfile->user->email ?? ''; // TODO: update this    ?>
             </p>
             <p>
                 <b>

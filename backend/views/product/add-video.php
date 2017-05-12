@@ -4,8 +4,6 @@
  *
  * @var $product            Product
  * @var $selectedLanguage   Language
- * @var $video_form         ProductVideo
- * @var $videos             ProductVideo
  * @var $video_form_upload  ProductVideoForm
  */
 
@@ -20,7 +18,6 @@ use yii\widgets\Pjax;
 
 ?>
 
-
 <!--Tabs-->
 <?= $this->render('_product-tabs', [
     'product' => $product,
@@ -29,7 +26,12 @@ use yii\widgets\Pjax;
 
 <div class="box padding20">
 
-    <?php Pjax::begin(); ?>
+    <?php Pjax::begin([
+        'id' => 'p-product-video-' . $product->id,
+        'enablePushState' => false,
+        'enableReplaceState' => false,
+//        'submitEvent' => 'change-video-table',
+    ]); ?>
 
     <?php $addVideoForm = ActiveForm::begin([
         'action' => [
@@ -53,7 +55,7 @@ use yii\widgets\Pjax;
                 </strong>
             </td>
             <td class="col-md-4">
-                <?= $addVideoForm->field($video, 'resource')->dropDownList(
+                <?= $addVideoForm->field(new ProductVideo(), 'resource')->dropDownList(
                     [
                         'youtube' => 'YouTube',
                         'vimeo' => 'Vimeo'
@@ -61,7 +63,7 @@ use yii\widgets\Pjax;
                 )->label(false); ?>
             </td>
             <td class="col-md-4">
-                <?= $addVideoForm->field($video, 'file_name')->textInput(['placeholder' => \Yii::t('shop', 'Link to video')])->label(false); ?>
+                <?= $addVideoForm->field(new ProductVideo(), 'file_name')->textInput(['placeholder' => \Yii::t('shop', 'Link to video')])->label(false); ?>
             </td>
             <td class="col-md-2">
                 <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary']) ?>

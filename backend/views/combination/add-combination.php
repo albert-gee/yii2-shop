@@ -15,6 +15,7 @@
  *
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\backend\assets\EditCombinationAsset;
 use xalberteinsteinx\shop\common\entities\PriceDiscountType;
 use xalberteinsteinx\shop\common\entities\ShopAttribute;
@@ -93,10 +94,10 @@ $languageId = $language->id;
                         <?php endforeach; ?>
                     <td class="text-center">
                         <?php if ($combination->default) : ?>
-                            <i class="fa fa-plus"></i>
+                            <?= FA::i(FA::_CHECK_SQUARE_O); ?>
                         <?php else : ?>
                             <a href="<?= Url::to(['change-default-combination', 'combinationId' => $combination->id]); ?>">
-                                <i class="fa fa-minus"></i>
+                                <?= FA::i(FA::_SQUARE_O); ?>
                             </a>
                         <?php endif; ?>
                     </td>

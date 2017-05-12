@@ -288,6 +288,7 @@ class ProductController extends Controller
     public function actionAddImage($id, $languageId)
     {
         $product = Product::findOne($id);
+        $modifiedElement = null;
 
         if (empty($product)) throw new NotFoundHttpException();
         if (\Yii::$app->user->can('updateProduct', ['productOwner' => $product->owner])) {
@@ -312,6 +313,8 @@ class ProductController extends Controller
                             $imageTranslation->language_id = $languageId;
                             if ($imageTranslation->validate()) {
                                 $imageTranslation->save();
+
+                                $modifiedElement = $image->id;
                             }
                         }
                     }
@@ -335,24 +338,21 @@ class ProductController extends Controller
                 ]));
             }
 
+            $params = [
+                'modifiedElement' => $modifiedElement,
+                'selectedLanguage' => Language::findOne($languageId),
+                'product' => $product,
+                'image_form' => new ProductImageForm(),
+                'images' => ProductImage::find()->where(['product_id' => $id])->orderBy('position')->all(),
+            ];
+
             if (Yii::$app->request->isPjax) {
-                return $this->renderPartial('add-image', [
-                    'selectedLanguage' => Language::findOne($languageId),
-                    'product' => $product,
-                    'image_form' => new ProductImageForm(),
-                    'images' => ProductImage::find()->where(['product_id' => $id])->orderBy('position')->all(),
-                ]);
+                return $this->renderPartial('add-image', $params);
             }
             return $this->render('save', [
                 'product' => Product::findOne($id),
                 'viewName' => 'add-image',
-
-                'params' => [
-                    'selectedLanguage' => Language::findOne($languageId),
-                    'product' => $product,
-                    'image_form' => new ProductImageForm(),
-                    'images' => ProductImage::find()->where(['product_id' => $id])->orderBy('position')->all(),
-                ]
+                'params' => $params
             ]);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }
@@ -364,16 +364,15 @@ class ProductController extends Controller
      */
     public function actionEditImage($id, $languageId)
     {
-        $image = ProductImage::findOne($id);
-        $imageTranslation = ProductImageTranslation::find()->where([
-            'image_id' => $id,
-            'language_id' => $languageId
-        ])->one();
-        if (empty($imageTranslation)) {
-            $imageTranslation = new ProductImageTranslation();
-        }
-
         if (Yii::$app->request->isPost) {
+            $image = ProductImage::findOne($id);
+            $imageTranslation = ProductImageTranslation::find()->where([
+                'image_id' => $id,
+                'language_id' => $languageId
+            ])->one();
+            if (empty($imageTranslation)) {
+                $imageTranslation = new ProductImageTranslation();
+            }
 
             $imageTranslation->load(Yii::$app->request->post());
             $imageTranslation->image_id = $id;
@@ -382,32 +381,21 @@ class ProductController extends Controller
             if ($imageTranslation->validate()) {
                 $imageTranslation->save();
 
+                if (Yii::$app->request->isPjax) {
+                    $product = $image->product;
+                    return $this->renderPartial('add-image', [
+                        'modifiedElement' => $id,
+                        'selectedLanguage' => Language::findOne($languageId),
+                        'product' => $product,
+                        'image_form' => new ProductImageForm(),
+                        'images' => ProductImage::find()->where(['product_id' => $product->id])->orderBy('position')->all(),
+                    ]);
+                }
 
-                return $this->redirect(Url::to(['add-image',
-                    'id' => $image->product_id,
-                    'languageId' => $languageId
-                ]));
-            } else die(var_dump($imageTranslation->errors));
+            } else \Yii::$app->session->setFlash('error', \Yii::t('shop', 'Edit image error'));
+
         }
-
-        if (Yii::$app->request->isPjax) {
-            return $this->renderPartial('edit-image', [
-                'selectedLanguage' => Language::findOne($languageId),
-                'imageTranslation' => $imageTranslation,
-                'image' => $image
-            ]);
-        }
-
-        return $this->render('save', [
-            'product' => Product::findOne($image->product_id),
-            'viewName' => 'edit-image',
-
-            'params' => [
-                'selectedLanguage' => Language::findOne($languageId),
-                'imageTranslation' => $imageTranslation,
-                'image' => $image
-            ]
-        ]);
+        return $this->redirect(\Yii::$app->request->referrer);
     }
 
     /**
@@ -432,6 +420,16 @@ class ProductController extends Controller
                     $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent([
                         'id' => $image->product_id
                     ]));
+
+                    if (Yii::$app->request->isPjax) {
+                        return $this->renderPartial('add-image', [
+                            'modifiedElement' => null,
+                            'selectedLanguage' => Language::findOne($languageId),
+                            'product' => $product,
+                            'image_form' => new ProductImageForm(),
+                            'images' => ProductImage::find()->where(['product_id' => $image->product_id])->orderBy('position')->all(),
+                        ]);
+                    }
 
                     return $this->redirect(['add-image', 'id' => $image->product_id, 'languageId' => $languageId]);
 
@@ -566,31 +564,21 @@ class ProductController extends Controller
                 ]));
             }
 
+            $params = [
+                'product' => $product,
+                'selectedLanguage' => Language::findOne($languageId),
+                'video_form_upload' => new ProductVideoForm(),
+            ];
+
             if (Yii::$app->request->isPjax) {
-                return $this->renderPartial('add-video', [
-                    'product' => $product,
-                    'selectedLanguage' => Language::findOne($languageId),
-                    'video_form' => new ProductVideo(),
-                    'video_form_upload' => new ProductVideoForm(),
-                    'video' => $video,
-                    'videos' => ProductVideo::find()->where(['product_id' => $product->id])->all()
-                ]);
+                return $this->renderPartial('add-video', $params);
             }
 
             return $this->render('save', [
                 'product' => $product,
-                'selectedLanguage' => Language::findOne($languageId),
                 'viewName' => 'add-video',
 
-                'params' => [
-                    'product' => $product,
-                    'selectedLanguage' => Language::findOne($languageId),
-                    'video_form' => new ProductVideo(),
-                    'video_form_upload' => new ProductVideoForm(),
-                    'video' => $video,
-                    'videos' => ProductVideo::find()->where(['product_id' => $product->id])->all()
-                ]
-            ]);
+                'params' => $params]);
         } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
     }
 
@@ -621,13 +609,14 @@ class ProductController extends Controller
                     'id' => $video->product_id
                 ]));
 
-                return $this->renderPartial('add-video', [
+                $params = [
                     'product' => $product,
                     'selectedLanguage' => Language::findOne($languageId),
-                    'video_form' => new ProductVideo(),
                     'video_form_upload' => new ProductVideoForm(),
-                    'videos' => ProductVideo::find()->where(['product_id' => $product->id])->all()
-                ]);
+                ];
+
+                return $this->renderPartial('add-video', $params);
+
             } else throw new ForbiddenHttpException(\Yii::t('shop', 'You have not permission to do this action.'));
 
         }

@@ -30,9 +30,7 @@ use yii\widgets\Pjax;
 
 <div class="box padding20">
 
-    <?php Pjax::begin([
-        'enablePushState' => false
-    ]); ?>
+    <?php Pjax::begin(); ?>
 
     <?php $form = ActiveForm::begin([
         'action' => [
@@ -63,7 +61,7 @@ use yii\widgets\Pjax;
         <tr>
             <!--FILE-->
             <td>
-                <?= $form->field($fileModel, 'file')->widget(FileInput::class)->label(false); ?>
+                <?= $form->field($fileModel, 'file')->fileInput()->label(false); ?>
             </td>
             <!--TYPE-->
             <td>
@@ -73,7 +71,9 @@ use yii\widgets\Pjax;
             <td>
                 <?= $form->field($fileTranslationModel, 'description')->label(false) ?>
             </td>
-            <td></td>
+            <td>
+                <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary']) ?>
+            </td>
         </tr>
         <?php if (!empty($fileList)): ?>
             <?php foreach ($fileList as $file): ?>

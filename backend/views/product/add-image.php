@@ -5,6 +5,8 @@
  * @var $product            Product
  * @var $image_form         ProductImageForm
  * @var $selectedLanguage   \bl\multilang\entities\Language
+ * @var $images             \xalberteinsteinx\shop\common\entities\ProductImage[]
+ * @var $modifiedElement    integer|null
  */
 
 use rmrevin\yii\fontawesome\FA;
@@ -27,7 +29,9 @@ $productId = $product->id;
 <div class="box padding20">
 
     <?php Pjax::begin([
-            'enablePushState' => false
+        'id' => 'p-product-image-' . $productId,
+        'enablePushState' => false,
+        'enableReplaceState' => false,
     ]); ?>
 
     <?php $addImageForm = ActiveForm::begin([
@@ -38,7 +42,7 @@ $productId = $product->id;
         ],
         'method' => 'post',
         'options' => [
-            'class' => 'tab-content',
+            'id' => 'product-image-' . $productId,
             'data-pjax' => true
         ]
     ]);
@@ -46,9 +50,8 @@ $productId = $product->id;
 
     <h2><?= \Yii::t('shop', 'Images'); ?></h2>
 
-    <table class="table table-bordered">
+    <table class="table">
         <tbody>
-
         <tr>
             <td class="col-md-3 text-center" colspan="2">
                 <strong>
@@ -64,7 +67,7 @@ $productId = $product->id;
                 <?= $addImageForm->field($image_form, 'alt1')->textInput(['placeholder' => \Yii::t('shop', 'Alternative text')])->label(false); ?>
             </td>
             <td class="col-md-2 text-center">
-                <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary pjax']) ?>
             </td>
         </tr>
         <tr>
@@ -80,7 +83,7 @@ $productId = $product->id;
                 <?= $addImageForm->field($image_form, 'alt2')->textInput(['placeholder' => \Yii::t('shop', 'Alternative text')])->label(false); ?>
             </td>
             <td class="text-center">
-                <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton(\Yii::t('shop', 'Add'), ['class' => 'btn btn-primary pjax']) ?>
             </td>
         </tr>
         <tr>
@@ -94,6 +97,12 @@ $productId = $product->id;
                 </p>
             </td>
         </tr>
+        </tbody>
+    </table>
+    <?php $addImageForm->end(); ?>
+
+    <table class="table">
+        <tbody>
         <tr>
             <th class="col-md-1"></th>
             <th class="text-center col-md-2">
@@ -119,13 +128,13 @@ $productId = $product->id;
         </tr>
         <?php if (!empty($images)) : ?>
             <?php foreach ($images as $image) : ?>
-                <tr>
+                <tr class="<?= ($modifiedElement == $image->id) ? 'modifiedElement' : ''; ?>">
                     <td>
                         <?= Html::a(
                             '',
                             Url::toRoute(['image-up', 'id' => $image->id, 'languageId' => $selectedLanguage->id]),
                             [
-                                'class' => 'pjax fa fa-chevron-up'
+                                'class' => 'fa fa-chevron-up'
                             ]
                         ) .
                         $image->position .
@@ -133,7 +142,7 @@ $productId = $product->id;
                             '',
                             Url::toRoute(['image-down', 'id' => $image->id, 'languageId' => $selectedLanguage->id]),
                             [
-                                'class' => 'pjax fa fa-chevron-down'
+                                'class' => 'fa fa-chevron-down'
                             ]
                         );
                         ?>
@@ -157,11 +166,35 @@ $productId = $product->id;
                         </div>
                     </td>
                     <td class="text-center">
-                        <?= $image->getTranslation($selectedLanguage->id)->alt ?? ''; ?>
+                        <?php $editImageAltForm = ActiveForm::begin([
+                            'id' => 'edit-image-alt-' . $image->id,
+                            'action' => [
+                                'product/edit-image',
+                                'id' => $image->id,
+                                'languageId' => $selectedLanguage->id
+                            ],
+                            'method' => 'post',
+                            'options' => [
+                                'id' => 'edit-product-image-' . $productId,
+                                'data-pjax' => true
+                            ]
+                        ]);
+                        ?>
+
+                        <?= $editImageAltForm->field($image->getTranslation($selectedLanguage->id), 'alt', [
+                            'inputOptions' => [
+                                'class' => 'form-control'
+                            ],
+                        ])->label(false); ?>
+
+                        <?= Html::submitButton(FA::i(FA::_EDIT), [
+                            'class' => 'btn btn-primary btn-in-input',
+                        ]); ?>
+
+                        <?php $editImageAltForm->end(); ?>
+
                     </td>
                     <td class="text-center">
-                        <a href="<?= Url::toRoute(['edit-image', 'id' => $image->id, 'languageId' => $selectedLanguage->id]); ?>"
-                           class="btn btn-xs pjax"><?= FA::i(FA::_EDIT); ?></a>
 
                         <a href="<?= Url::toRoute(['delete-image', 'id' => $image->id, 'languageId' => $selectedLanguage->id]); ?>"
                            class="btn btn-xs btn-danger"><?= FA::i(FA::_REMOVE); ?></a>
@@ -172,7 +205,6 @@ $productId = $product->id;
         </tbody>
     </table>
 
-    <?php $addImageForm->end(); ?>
     <?php Pjax::end(); ?>
 
 </div>

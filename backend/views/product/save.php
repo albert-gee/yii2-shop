@@ -33,7 +33,8 @@ $this->params['breadcrumbs'][] = (!empty($product->translation)) ? $product->tra
 <!--BODY PANEL-->
 <?php Pjax::begin([
     'id' => 'p-product-save',
-    'linkSelector' => '.pjax'
+    'linkSelector' => '.pjax',
+    'submitEvent' => 'change-product-page',
 ]); ?>
 
 <!--CONTENT-->

@@ -1,4 +1,5 @@
 <?php
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\backend\assets\ProductAsset;
 use xalberteinsteinx\shop\common\entities\Category;
 use xalberteinsteinx\shop\common\entities\CategoryTranslation;
@@ -44,13 +45,13 @@ $this->params['breadcrumbs'] = [
     <!--TITLE-->
     <div class="box-title">
         <h1>
-            <i class="glyphicon glyphicon-list"></i>
-            <?= \Yii::t('shop', 'Product list'); ?>
+            <?= FA::i(FA::_NAVICON) . ' ' . \Yii::t('shop', 'Product list'); ?>
         </h1>
         <!--ADD BUTTON-->
-        <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>"
-           class="btn btn-primary btn-xs">
-            <i class="fa fa-user-plus"></i> <?= \Yii::t('shop', 'Add'); ?>
+        <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>" class="btn btn-primary btn-xs">
+            <span>
+                <?= FA::i(FA::_USER_PLUS) . ' ' . \Yii::t('shop', 'Add'); ?>
+            </span>
         </a>
     </div>
 
@@ -231,7 +232,7 @@ $this->params['breadcrumbs'] = [
         <!--ADD BUTTON-->
         <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>"
            class="btn btn-primary btn-xs pull-right">
-            <i class="fa fa-user-plus"></i> <?= \Yii::t('shop', 'Add'); ?>
+            <?= FA::i(FA::_USER_PLUS) . ' ' . \Yii::t('shop', 'Add'); ?>
         </a>
     </div>
 </div>

@@ -10,13 +10,6 @@
 div#basic div.seo-url {
     position: relative;
 }
-div#basic button.btn-generate {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 34px;
-    border-radius: 0 4px 4px 0;
-}
 
 /*TABS*/
 div#tabs {

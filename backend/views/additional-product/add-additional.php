@@ -26,17 +26,15 @@ $productId = $product->id;
         'enablePushState' => false
     ]); ?>
 
-    <h1>
+    <h1 class="text-center">
         <?= \Yii::t('shop', 'Additional products'); ?>
     </h1>
 
 
-    <h2 class="text-center"><?= \Yii::t('shop', 'Additional products list'); ?></h2>
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 block-center">
 
             <div class="row">
-                <label for="additional-product-selector"><?= \Yii::t('shop', 'Additional products'); ?></label>
                 <select name="" id="additional-product-selector" class="form-control col-md-6"
                         data-product-id="<?= $productId; ?>">
                     <option value=""></option>

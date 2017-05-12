@@ -79,22 +79,22 @@ class ProductFileController extends Controller
 
                 if ($fileForm->load($post) && $fileTranslation->load($post)) {
 
-                    $fileForm->file = UploadedFile::getInstance($fileForm, 'file');
+                    if ($fileForm->file = UploadedFile::getInstance($fileForm, 'file')) {
+                        $fileName = $fileForm->upload();
 
-                    $fileName = $fileForm->upload();
+                        $file->file = $fileName;
+                        $file->product_id = $product->id;
 
-                    $file->file = $fileName;
-                    $file->product_id = $product->id;
+                        if ($file->save()) {
+                            $fileTranslation->product_file_id = $file->id;
+                            $fileTranslation->language_id = $selectedLanguage->id;
 
-                    if ($file->save()) {
-                        $fileTranslation->product_file_id = $file->id;
-                        $fileTranslation->language_id = $selectedLanguage->id;
-
-                        if (!$fileTranslation->save())
-                            throw new Exception(var_dump($fileTranslation->errors));
-                        $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent([
-                            'id' => $file->product_id
-                        ]));
+                            if (!$fileTranslation->save())
+                                throw new Exception(var_dump($fileTranslation->errors));
+                            $this->trigger(self::EVENT_AFTER_EDIT_PRODUCT, new ProductEvent([
+                                'id' => $file->product_id
+                            ]));
+                        }
                     }
                 }
             }

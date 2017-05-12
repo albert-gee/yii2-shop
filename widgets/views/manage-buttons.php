@@ -16,7 +16,7 @@ use yii\helpers\Url;
 
 <div class="btn-group">
 
-    <a href="<?= Url::toRoute([$action, 'id' => $model->id, "languageId" => Language::getCurrent()->id]); ?>" class="btn btn-primary">
+    <a href="<?= Url::toRoute([$action, 'id' => $model->id, "languageId" => Language::getCurrent()->id]); ?>" class="btn btn-primary btn-xs">
         <span><?= Fa::i(FA::_EDIT) . ' ' . \Yii::t('shop', 'Edit'); ?></span>
     </a>
 
@@ -40,6 +40,6 @@ use yii\helpers\Url;
 </div>
 
 <!--Remove button-->
-<a href="<?= $deleteUrl ?? Url::toRoute(['delete', 'id' => $model->id]); ?>" class="btn btn-danger pjax">
+<a href="<?= $deleteUrl ?? Url::toRoute(['delete', 'id' => $model->id]); ?>" class="btn btn-danger btn-xs pjax">
     <?= FA::i(FA::_TIMES); ?>
 </a>
