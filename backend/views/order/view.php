@@ -45,7 +45,7 @@ $this->params['breadcrumbs'] = [
                 return $model->translation->title;
             }), ['options' => [$model->status => ['selected' => true]]]); ?>
             <?= Html::submitButton(Yii::t('cart', 'Change status'), ['class' => 'btn btn-xs btn-primary']); ?>
-            <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/shop/order'), ['class' => 'btn btn-xs btn-danger']) ?>
+            <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/shop/order'), ['class' => 'btn btn-xs btn-danger menu-pjax']) ?>
             <?php $form::end(); ?>
         </div>
     <?php endif; ?>

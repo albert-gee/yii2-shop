@@ -34,6 +34,7 @@ $this->title = Yii::t('cart', 'Order Statuses');
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
+            'summary' => false,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
 

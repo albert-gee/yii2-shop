@@ -9,6 +9,7 @@
  */
 
 use bl\imagable\helpers\FileHelper;
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\widgets\LanguageSwitcher;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
@@ -16,27 +17,29 @@ use yii\helpers\Url;
 
 if ($model->isNewRecord) {
     $this->title = Yii::t('payment', 'Adding new payment method');
-}
-else  {
+} else {
     if ($modelTranslation->isNewRecord) {
         $this->title = Yii::t('payment', 'Adding new payment method translation');
-    }
-    else {
+    } else {
         $this->title = Yii::t('payment', 'Editing payment method translation');
     }
-}$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Payment Methods'), 'url' => ['index']];
+}
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Payment Methods'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h1><?= Html::encode($this->title) ?></h1>
-        <?= LanguageSwitcher::widget([
-            'selectedLanguage' => $selectedLanguage,
-        ]);?>
+<div class="box">
+    <div class="box-title">
+        <h1><?= FA::i(FA::_EDIT) . ' ' . Html::encode($this->title) ?></h1>
+
+        <section class="buttons">
+            <?= LanguageSwitcher::widget([
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+        </section>
     </div>
 
-    <div class="panel-body">
+    <div class="box-content">
         <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($modelTranslation, 'title')->textInput() ?>
@@ -49,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Html::img(
                         '/images/payment/' . FileHelper::getFullName(\Yii::$app->shop_imagable->get('payment', 'small', $model->image)),
                         ['class' => '']); ?>
-                <?php endif ;?>
+                <?php endif; ?>
             </div>
 
             <!--DELETE LOGO BUTTON-->

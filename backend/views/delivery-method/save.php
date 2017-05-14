@@ -32,19 +32,22 @@ $this->title = ($modelTranslation->isNewRecord) ?
             <?= Html::encode($this->title); ?>
         </h1>
 
-        <!-- LANGUAGES -->
-        <?= LanguageSwitcher::widget([
-            'languages' => $languages,
-            'selectedLanguage' => $selectedLanguage,
-        ]); ?>
+        <section class="buttons">
 
-        <!--CANCEL BUTTON-->
-        <?= Html::a(Yii::t('shop', 'Cancel'), Url::toRoute('delivery-method/index'),
-            ['class' => 'pull-right btn btn-xs btn-danger m-r-xs m-t-xs']); ?>
+            <!--SAVE BUTTON-->
+            <?= Html::submitButton(Yii::t('shop', 'Save'),
+                ['class' => 'btn btn-xs btn-primary']); ?>
 
-        <!--SAVE BUTTON-->
-        <?= Html::submitButton(Yii::t('shop', 'Save'),
-            ['class' => 'pull-right btn btn-xs btn-primary m-r-xs m-t-xs']); ?>
+            <!--CANCEL BUTTON-->
+            <?= Html::a(Yii::t('shop', 'Cancel'), Url::toRoute('delivery-method/index'),
+                ['class' => 'btn btn-xs btn-danger']); ?>
+
+            <!-- LANGUAGES -->
+            <?= LanguageSwitcher::widget([
+                'languages' => $languages,
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+        </section>
 
     </div>
 
@@ -70,7 +73,7 @@ $this->title = ($modelTranslation->isNewRecord) ?
 
         <div class="form-group">
             <?= Html::a(Yii::t('shop', 'Cancel'), Url::toRoute('delivery-method/index'), ['class' => 'btn btn-xs btn-danger pull-right']); ?>
-            <?= Html::submitButton(Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary pull-right m-r-xs']); ?>
+            <?= Html::submitButton(Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary']); ?>
         </div>
 
     </div>

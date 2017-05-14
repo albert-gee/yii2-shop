@@ -10,6 +10,7 @@
  */
 
 use bl\emailTemplates\models\entities\EmailTemplate;
+use rmrevin\yii\fontawesome\FA;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -27,21 +28,22 @@ $this->title = ($modelTranslation->isNewRecord) ?
     <div class="box-title">
 
         <h1>
-            <i class="glyphicon glyphicon-list">
-            </i>
-            <?= Html::encode($this->title); ?>
+            <?= FA::i(FA::_FLAG) . ' ' . Html::encode($this->title); ?>
         </h1>
 
-        <!-- LANGUAGES -->
-        <?= LanguageSwitcher::widget([
-            'languages' => $languages,
-            'selectedLanguage' => $selectedLanguage,
-        ]); ?>
-        <!--CANCEL BUTTON-->
-        <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/cart/order-status'), ['class' => 'pull-right btn btn-xs btn-danger m-r-xs m-t-xs']); ?>
-        <!--SAVE BUTTON-->
-        <?= Html::submitButton(Yii::t('cart', 'Save'), ['class' => 'pull-right btn btn-xs btn-primary m-r-xs m-t-xs']); ?>
+        <section class="buttons">
+            <!--SAVE BUTTON-->
+            <?= Html::submitButton(Yii::t('cart', 'Save'), ['class' => 'pull-right btn btn-xs btn-primary m-r-xs m-t-xs']); ?>
 
+            <!--CANCEL BUTTON-->
+            <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/shop/order-status'), ['class' => 'pull-right btn btn-xs btn-danger m-r-xs m-t-xs']); ?>
+
+            <!-- LANGUAGES -->
+            <?= LanguageSwitcher::widget([
+                'languages' => $languages,
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+        </section>
     </div>
 
     <div class="box-content">
@@ -60,11 +62,11 @@ $this->title = ($modelTranslation->isNewRecord) ?
                 '{order_id} - ' . Yii::t('cart', 'Order unique id'),
                 '{created_at} - ' . Yii::t('cart', 'Date and time of creating')
             ])
-        );?>
+        ); ?>
 
         <div class="row">
             <?= Html::submitButton(Yii::t('cart', 'Save'), ['class' => 'btn btn-primary btn-xs m-r-xs pull-right']); ?>
-            <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/cart/order-status'), ['class' => 'm-r-xs btn btn-danger btn-xs pull-right']); ?>
+            <?= Html::a(Yii::t('cart', 'Close'), Url::toRoute('/shop/order-status'), ['class' => 'm-r-xs btn btn-danger btn-xs pull-right']); ?>
         </div>
     </div>
     <?php ActiveForm::end(); ?>

@@ -7,6 +7,7 @@
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\common\entities\OrderStatus;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -24,9 +25,7 @@ $this->params['breadcrumbs'] = [
 
     <div class="box-title">
         <h1>
-            <i class="glyphicon glyphicon-list">
-            </i>
-            <?= \Yii::t('cart', 'Order list'); ?>
+            <?= FA::i(FA::_LIST_UL) . ' ' . \Yii::t('cart', 'Order list'); ?>
         </h1>
     </div>
 
@@ -145,9 +144,9 @@ $this->params['breadcrumbs'] = [
                     'attribute' => \Yii::t('cart', 'Control'),
 
                     'value' => function ($model) {
-                        return Html::a('<span class="fa fa-eye"></span>', Url::toRoute(['view', 'id' => $model->id]),
-                            ['title' => Yii::t('cart', 'Status and details'), 'class' => 'btn btn-primary pjax m-r-md']) .
-                        Html::a('<span class="glyphicon glyphicon-remove"></span>', Url::toRoute(['delete', 'id' => $model->id]),
+                        return Html::a(FA::i(FA::_EYE), Url::toRoute(['view', 'id' => $model->id]),
+                            ['title' => Yii::t('cart', 'Status and details'), 'class' => 'btn menu-pjax']) .
+                        Html::a(FA::i(FA::_REMOVE), Url::toRoute(['delete', 'id' => $model->id]),
                             ['title' => Yii::t('cart', 'Delete'), 'data-method' => 'post', 'class' => 'btn btn-danger pjax']);
                     },
                     'format' => 'raw',

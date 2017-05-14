@@ -1,6 +1,7 @@
 <?php
 use bl\imagable\helpers\FileHelper;
 use bl\multilang\entities\Language;
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\widgets\ManageButtons;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -12,24 +13,20 @@ $this->title = Yii::t('payment', 'Payment Methods');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <h1 class="col-md-6">
-                <i class="glyphicon glyphicon-list">
-                </i>
-                <?= $this->title; ?>
-            </h1>
-            <p class="col-md-6">
-                <?= Html::a(Yii::t('payment', 'Add payment method'),
-                    Url::toRoute(['save', 'languageId' => Language::getCurrent()->id]),
-                    ['class' => 'btn btn-xs btn-primary pull-right']) ?>
-            </p>
-        </div>
+<div class="box">
+    <div class="box-title">
+        <h1>
+            <?= FA::i(FA::_MONEY) . ' ' . $this->title; ?>
+        </h1>
+        <p class="col-md-6">
+            <?= Html::a(Yii::t('payment', 'Add payment method'),
+                Url::toRoute(['save', 'languageId' => Language::getCurrent()->id]),
+                ['class' => 'btn btn-xs btn-primary pull-right']) ?>
+        </p>
     </div>
 
-    <div class="panel-body">
-        <table class="table table-hover table-striped table-bordered">
+    <div class="box-content">
+        <table class="table">
             <tr>
                 <th class="">
                     <?= Yii::t('payment', 'Title'); ?>
