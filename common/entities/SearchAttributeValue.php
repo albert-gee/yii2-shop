@@ -40,7 +40,7 @@ class SearchAttributeValue extends ShopAttributeValue
      */
     public function search($params)
     {
-        $query = ShopAttributeValue::find()->where(['attribute_id' => $params['attrId']]);
+        $query = ShopAttributeValue::find()->where(['attribute_id' => $params['id']]);
 
         // add conditions that should always apply here
 
