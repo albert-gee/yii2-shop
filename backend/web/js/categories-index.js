@@ -2,6 +2,8 @@ $(document).ready(
     function() {
 
         var widget = $('#widget-menu');
+
+        /*Show or hide category*/
         widget.on('click', '.show-category', (function (e) {
             e.preventDefault();
             var switcher = $(this);
@@ -13,19 +15,18 @@ $(document).ready(
                 success: function (data) {
                     var i = $(switcher).children('i');
                     if (data) {
-                        $(i).removeClass('glyphicon-minus text-danger');
-                        $(i).addClass('glyphicon-ok text-primary');
+                        $(i).removeClass('fa-minus text-danger');
+                        $(i).addClass('fa-check text-primary');
                     }
                     else {
-                        $(i).addClass('glyphicon-minus text-danger');
-                        $(i).removeClass('glyphicon-ok text-primary');
+                        $(i).addClass('fa-minus text-danger');
+                        $(i).removeClass('fa-check text-primary');
                     }
-
-
                 }
             });
         }));
 
+        /*Change category position*/
         widget.on('click', '.change-category-position', (function (e) {
             e.preventDefault();
             var switcher = $(this);
@@ -38,8 +39,9 @@ $(document).ready(
                     switch (data) {
                         case 'up':
                             var prevElement = $(switcher).closest('li').prev();
-                            prevElement.find('.position-index').text(
-                                Number(prevElement.find('.position-index').text()) + 1
+
+                            prevElement.children('table').find('.position-index').text(
+                                Number(prevElement.children('table').find('.position-index').text()) + 1
                             );
                             $(switcher).next().text(
                                 Number($(switcher).next().text()) - 1
@@ -48,8 +50,8 @@ $(document).ready(
                             break;
                         case 'down':
                             var nextElement = $(switcher).closest('li').next();
-                            nextElement.find('.position-index').text(
-                                Number(nextElement.find('.position-index').text()) - 1
+                            nextElement.children('table').find('.position-index').text(
+                                Number(nextElement.children('table').find('.position-index').text()) - 1
                             );
                             $(switcher).prev().text(
                                 Number($(switcher).prev().text()) + 1
@@ -57,12 +59,11 @@ $(document).ready(
                             $(switcher).closest('li').insertAfter(nextElement);
                             break;
                     }
-
                 }
             });
         }));
 
-        widget.on('click', '.glyphicon-remove', (function (e) {
+        widget.on('click', '.btn-danger', (function (e) {
             e.preventDefault();
 
             var isDelete = confirm('Are you sure you want to delete this category');
