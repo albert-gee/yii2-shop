@@ -4,25 +4,26 @@
  *
  * @var $countries ProductCountry[]
  */
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\common\entities\ProductCountry;
 use xalberteinsteinx\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 
-$this->title = \Yii::t('shop', 'List of countries');
+$this->title = \Yii::t('shop', 'Countries');
 ?>
 
 <div class="box">
 
     <div class="box-title">
+
+        <h1>
+            <?= FA::i(FA::_FLAG). ' ' . Html::encode($this->title); ?>
+        </h1>
+
         <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
             Yii::t('shop', 'Add country'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
         ?>
-        <h1>
-            <i class="glyphicon glyphicon-list">
-            </i>
-            <?= Html::encode($this->title); ?>
-        </h1>
     </div>
 
     <div class="box-content">

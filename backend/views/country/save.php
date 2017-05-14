@@ -1,5 +1,6 @@
 <?php
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\common\entities\ProductCountry;
 use bl\multilang\entities\Language;
 use kartik\widgets\FileInput;
@@ -18,7 +19,7 @@ use yii\widgets\ActiveForm;
  *
  */
 
-$this->title = 'Edit country';
+$this->title = Yii::t('shop', ($country->isNewRecord) ? 'Add country' : 'Edit country');
 ?>
 
 <?php $form = ActiveForm::begin([
@@ -30,83 +31,55 @@ $this->title = 'Edit country';
 ]);
 ?>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
+<div class="box">
+    <div class="box-title">
+        <h1>
+            <?= FA::i(FA::_FLAG) . ' ' . \Yii::t('shop', 'Country') ?>
+        </h1>
 
-            <div class="panel-heading">
-                <i class="glyphicon glyphicon-list"></i>
-                <?= \Yii::t('shop', 'Country') ?>
+        <!--LANGUAGES-->
+        <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            'selectedLanguage' => $selectedLanguage,
+        ]); ?>
+    </div>
+
+    <div class="box-content">
+
+        <!--TITLE-->
+        <?= $form->field($countryTranslation, 'title', [
+            'inputOptions' => [
+                'class' => 'form-control'
+            ]
+        ])->label('Title')
+        ?>
+
+        <!--IMAGE-->
+        <div class="row">
+            <div class="col-md-6">
+                <?= $form->field($countryImageModel, 'image', [
+                    'inputOptions' => [
+                        'class' => 'form-control'
+                    ]
+                ])->fileInput(); ?>
             </div>
 
-            <div class="panel-body">
-                <?php if (count($languages) > 1): ?>
-                    <div class="dropdown">
-                        <button class="btn btn-warning btn-xs dropdown-toggle" type="button" id="dropdownMenu1"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <?= $selectedLanguage->name ?>
-                            <span class="caret"></span>
-                        </button>
-                        <?php if (count($languages) > 1): ?>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <?php foreach ($languages as $language): ?>
-                                    <li>
-                                        <a href="
-                                            <?= Url::to([
-                                            'save',
-                                            'countryId' => $country->id,
-                                            'languageId' => $language->id]) ?>
-                                            ">
-                                            <?= $language->name ?>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
+            <div class="col-md-6">
+                <?php if (!empty($country->image)): ?>
+                    <div class="country-image">
+                        <?= Html::img(Url::to('/images/shop-product-country/' . $country->image), ['style' => 'width: 100%;']); ?>
                     </div>
+
+                    <?= Html::a(
+                        \Yii::t('shop', 'Remove image'),
+                        Url::to(['/shop/country/remove-image', 'countryId' => $country->id]),
+                        ['class' => 'btn btn-danger', 'style' => 'width: 100%']
+                    ); ?>
                 <?php endif; ?>
-
-
-                <div class="row">
-                    <div class="col-md-5">
-                        <?= $form->field($countryTranslation, 'title', [
-                            'inputOptions' => [
-                                'class' => 'form-control'
-                            ]
-                        ])->label('Title')
-                        ?>
-                    </div>
-                    <div class="col-md-5">
-                        <?= $form->field($countryImageModel, 'image', [
-                            'inputOptions' => [
-                                'class' => 'form-control'
-                            ]
-                        ])->widget(FileInput::classname(), [
-                            'options' => ['accept' => 'image/*'],
-                        ])
-                        ?>
-                        <?php if (!empty($country->image)): ?>
-                        <div class="country-image">
-                            <?= Html::img(Url::to('/images/shop-product-country/' . $country->image), ['style' => 'width: 100%;']); ?>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <?= Html::submitButton(\Yii::t('shop', 'Save'), ['class' => 'btn btn-primary', 'style' => 'width: 100%']); ?>
-
-                            <?php if (!empty($country->image)): ?>
-                            <?= Html::a(
-                                \Yii::t('shop', 'Remove image'),
-                                Url::to(['/shop/country/remove-image', 'countryId' => $country->id]),
-                                ['class' => 'btn btn-danger', 'style' => 'width: 100%']
-                            ); ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
+
+        <?= Html::submitButton(\Yii::t('shop', 'Save'), ['class' => 'btn']); ?>
+
     </div>
 </div>
 
