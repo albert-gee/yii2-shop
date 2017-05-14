@@ -1,5 +1,6 @@
 <?php
 use marqu3s\summernote\Summernote;
+use rmrevin\yii\fontawesome\FA;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -15,40 +16,31 @@ use yii\helpers\Url;
  * @var $selectedLanguage \bl\multilang\entities\Language
  */
 
-$this->title = Yii::t('shop', 'Product availabilities');
+$this->title = ($model->isNewRecord) ? Yii::t('shop', 'Create availability status') :
+    Yii::t('shop', 'Change availability status');
+
+$this->params['breadcrumbs'] = [
+    Yii::t('shop', 'Shop'),
+    [
+        'url' => Url::to(['/shop/product-availability/index']),
+        'label' => Yii::t('shop', 'Availability statuses')
+    ],
+    $this->title
+];
 ?>
 
 
-<div class="panel panel-default">
+<div class="box">
 
-    <div class="panel-heading">
-        <!-- LANGUAGES -->
-        <?php if (count($languages) > 1): ?>
-            <div class="dropdown pull-right">
-                <button class="btn btn-warning btn-xs m-t-xs m-l-xs dropdown-toggle m-r-xs" type="button"
-                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                    <?= $selectedLanguage->name ?>
-                    <span class="caret"></span>
-                </button>
-                <?php if (count($languages) > 1): ?>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <?php foreach ($languages as $language): ?>
-                            <li>
-                                <a href="<?= Url::to(['save', 'id' => $model->id, 'languageId' => $language->id]) ?>">
-                                    <?= $language->name ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+    <div class="box-title">
         <h1>
-            <i class="glyphicon glyphicon-list">
-            </i>
-            <?= Html::encode($this->title); ?>
+            <?= FA::i(FA::_TASKS) . ' ' . Html::encode($this->title); ?>
         </h1>
+
+        <!--LANGUAGES-->
+        <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            'selectedLanguage' => $selectedLanguage,
+        ]); ?>
 
     </div>
 

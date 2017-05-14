@@ -6,53 +6,58 @@
  * @var $availabilities xalberteinsteinx\shop\common\entities\ProductAvailability
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
-$this->title = Yii::t('shop', 'Product availabilities');
+$this->title = Yii::t('shop', 'Availability statuses');
+
+$this->params['breadcrumbs'] = [
+    Yii::t('shop', 'Shop'),
+    $this->title
+];
 
 $currentLanguage = Language::getCurrent();
 ?>
 
-<div class="panel panel-default">
+<div class="box">
 
-    <div class="panel-heading">
-        <i class="glyphicon glyphicon-list"></i>
-        <?= Html::encode($this->title) ?>
+    <div class="box-title">
+        <h1>
+            <?= FA::i(FA::_TASKS) . ' ' . Html::encode($this->title) ?>
+        </h1>
+
+        <p>
+            <?= Html::a(
+                Html::tag('span', FA::i(FA::_USER_PLUS) . ' ' . Yii::t('shop', 'Add')),
+                ['save', 'languageId' => $currentLanguage->id], ['class' => 'btn btn-primary btn-xs pull-right']) ?>
+        </p>
     </div>
 
-    <div class="panel-body">
-
-        <p>
-            <?= Html::a(Yii::t('shop', 'Add'), ['save', 'languageId' => $currentLanguage->id], ['class' => 'btn btn-primary btn-xs pull-right']) ?>
-        </p>
+    <div class="box-content">
 
         <?php if (!empty($availabilities)) : ?>
-            <table class="table table-hover">
-                <tr>
-                    <th class="col-lg-10"><?= \Yii::t('shop', 'Title'); ?></th>
-                    <th class="col-lg-2"><?= \Yii::t('shop', 'Control'); ?></th>
-                </tr>
-                <?php foreach ($availabilities as $availability ) : ?>
+            <div class="col-md-8 block-center">
+                <table class="table">
                     <tr>
-                        <td class="project-title">
-                            <a href="<?= Url::toRoute(['save', 'id' => $availability->id, 'languageId' => $currentLanguage->id]); ?>">
-                                <?= $availability->translation->title; ?>
-                            </a>
-                        </td>
-                        <td><?= ManageButtons::widget(['model' => $availability]); ?></td>
+                        <th class="col-md-8"><?= \Yii::t('shop', 'Title'); ?></th>
+                        <th class="col-md-4"><?= \Yii::t('shop', 'Control'); ?></th>
                     </tr>
-                <?php endforeach; ?>
-            </table>
+                    <?php foreach ($availabilities as $availability) : ?>
+                        <tr>
+                            <td class="project-title">
+                                <a href="<?= Url::toRoute(['save', 'id' => $availability->id, 'languageId' => $currentLanguage->id]); ?>">
+                                    <?= $availability->translation->title; ?>
+                                </a>
+                            </td>
+                            <td><?= ManageButtons::widget(['model' => $availability]); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
         <?php endif; ?>
-
-        <p>
-            <?= Html::a(Yii::t('shop', 'Add'), ['save', 'languageId' => $currentLanguage->id], ['class' => 'btn btn-primary btn-xs pull-right']) ?>
-        </p>
-
     </div>
 </div>
 
