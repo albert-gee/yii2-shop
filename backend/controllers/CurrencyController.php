@@ -3,12 +3,10 @@ namespace xalberteinsteinx\shop\backend\controllers;
 
 use Yii;
 use xalberteinsteinx\shop\common\entities\Currency;
-use xalberteinsteinx\shop\common\entities\SearchCurrency;
 use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * CurrencyController implements the CRUD actions for Currency model.
@@ -67,7 +65,16 @@ class CurrencyController extends Controller
                 if ($model->validate()) {
                     $model->save();
                     $this->trigger(self::EVENT_AFTER_CHANGE);
+
+                    if (\Yii::$app->request->isPjax) {
+                        return $this->renderPartial('index', [
+                            'modifiedElement' => $model->id,
+                            'rates' => Currency::find()->orderBy('id DESC')->all(),
+                            'model' => $model
+                        ]);
+                    }
                 }
+
                 return $this->redirect(\Yii::$app->request->referrer);
             }
             else {
@@ -75,6 +82,7 @@ class CurrencyController extends Controller
             }
         }
         return $this->render('index', [
+            'modifiedElement' => null,
             'rates' => $rates,
             'model' => $model
         ]);
@@ -89,6 +97,14 @@ class CurrencyController extends Controller
     public function actionRemove($id)
     {
         $this->findModel($id)->delete();
+
+        if (\Yii::$app->request->isPjax) {
+            return $this->renderPartial('index', [
+                'modifiedElement' => null,
+                'rates' => Currency::find()->orderBy('id DESC')->all(),
+                'model' => new Currency()
+            ]);
+        }
 
         return $this->redirect(['index']);
     }
@@ -114,16 +130,22 @@ class CurrencyController extends Controller
 
                 if ($model->validate()) {
                     $model->save();
+
+                    if (\Yii::$app->request->isPjax) {
+                        return $this->renderPartial('index', [
+                            'modifiedElement' => $id,
+                            'rates' => Currency::find()->orderBy('id DESC')->all(),
+                            'model' => new Currency()
+                        ]);
+                    }
                 }
-                return $this->redirect(\Yii::$app->request->referrer);
             }
             else {
                 throw new Exception();
             }
         }
-        return $this->render('update', [
-            'model' => $model
-        ]);
+        return $this->redirect(\Yii::$app->request->referrer);
+
     }
 
     /**
