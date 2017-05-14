@@ -9,6 +9,11 @@ div#widget-menu ul li {
     position: relative;
     list-style: none;
 }
+div#widget-menu ul li {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+}
 div#widget-menu ul li:hover {
 }
 

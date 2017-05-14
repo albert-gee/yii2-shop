@@ -11,6 +11,7 @@
  * @var $languageId string
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\widgets\ManageButtons;
 use xalberteinsteinx\shop\widgets\TreeWidget;
 use yii\bootstrap\Html;
@@ -21,14 +22,13 @@ use yii\helpers\Url;
     <ul data-level="<?= $level + 1; ?>">
         <?php foreach ($categories as $category) : ?>
             <li class="<?= ($category->id == $currentCategoryId) ? 'current' : ''; ?>">
-                <table>
+                <table class="table">
                     <tr>
                         <td class="col-md-1">
                             <?php if (!empty($category->allChildren)) : ?>
-                                <span class="<?= $downIconClass; ?> pull-right category-toggle"
-                                      id="<?= $category->id; ?>" data-opened="<?= (!empty($category->id)) ?
-                                    TreeWidget::isOpened($category->id, $currentCategoryId) :
-                                    ''; ?>">
+                                <span class="<?= $downIconClass; ?> category-toggle" id="<?= $category->id; ?>"
+                                    data-opened="<?= (!empty($category->id)) ?
+                                    TreeWidget::isOpened($category->id, $currentCategoryId) : ''; ?>">
                                 </span>
                             <?php endif; ?>
                         </td>
@@ -71,14 +71,14 @@ use yii\helpers\Url;
                         <!--SHOW-->
                         <td class="col-md-1 text-center">
                             <?= Html::a(
-                                Html::tag('i', '', ['class' => $category->show ? 'glyphicon glyphicon-ok text-primary' : 'glyphicon glyphicon-minus text-danger']),
-                                Url::to([
-                                    'switch-show',
-                                    'id' => $category->id
-                                ]),
-                                [
-                                    'class' => 'category-nav show-category'
-                                ]);
+                                FA::i(($category->show) ? FA::_CHECK : FA::_MINUS),
+                                    Url::to([
+                                        'switch-show',
+                                        'id' => $category->id
+                                    ]),
+                                    [
+                                        'class' => ($category->show) ? 'text-primary category-nav show-category' : 'text-danger category-nav show-category'
+                                    ]);
                             ?>
                         </td>
                         <!--POSITION-->
