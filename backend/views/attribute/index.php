@@ -8,35 +8,38 @@
  */
 
 use bl\multilang\entities\Language;
-use yii\helpers\ArrayHelper;
+use rmrevin\yii\fontawesome\FA;
+use xalberteinsteinx\shop\widgets\ManageButtons;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
-use yii\widgets\Pjax;
 
 $this->title = Yii::t('shop', 'Attributes');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="panel panel-default">
+<div class="box">
 
-    <div class="panel-heading">
-        <h1><?= Html::encode($this->title) ?></h1>
+    <div class="box-title">
+        <h1><?= FA::i(FA::_TH_LIST) . ' ' . Html::encode($this->title) ?></h1>
 
         <p>
-            <?= Html::a(Yii::t('shop', 'Create attribute'), Url::toRoute(['save', 'languageId' => Language::getCurrent()->id]), ['class' => 'btn btn-success']) ?>
+            <?= Html::a(
+                FA::i(FA::_USER_PLUS) . ' ' . \Yii::t('shop', 'Add'),
+                    Url::toRoute(['save', 'languageId' => Language::getCurrent()->id]),
+                    ['class' => 'btn btn-xs']) ?>
         </p>
     </div>
-    <div class="panel-body">
+
+    <div class="box-content">
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
-//            'filterModel' => $searchModel,
             'filterRowOptions' => ['class' => 'm-b-sm m-t-sm'],
             'options' => [
                 'class' => 'project-list'
             ],
             'tableOptions' => [
                 'id' => 'my-grid',
-                'class' => 'table table-hover'
+                'class' => 'table'
             ],
             'summary' => "",
 
@@ -77,45 +80,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     'value' => function ($model) {
 
-                        global $product;
-                        $product = $model;
-
-                        $languages = Language::findAll(['active' => true]);
-                        $list =
-                            Html::a('<span class="glyphicon glyphicon-remove"></span>', Url::toRoute(['remove', 'id' => $model->id]),
-                                ['title' => Yii::t('yii', 'Delete'), 'class' => 'btn btn-danger pull-right pjax']) .
-
-                            Html::tag('div',
-                                Html::a(
-                                    'Edit',
-                                    Url::toRoute(['save', 'attrId' => $model->id, "languageId" => Language::getCurrent()->id]),
-                                    [
-                                        'class' => 'col-md-8 btn btn-default ',
-                                    ]) .
-                                Html::a(
-                                    '<span class="caret"></span>',
-                                    Url::toRoute(['save', 'attrId' => $model->id, "languageId" => Language::getCurrent()->id]),
-                                    [
-                                        'class' => 'block col-md-4 btn btn-default dropdown-toggle',
-                                        'type' => 'button', 'id' => 'dropdownMenu1',
-                                        'data-toggle' => 'dropdown', 'aria-haspopup' => 'true',
-                                        'aria-expanded' => 'true'
-                                    ]) .
-                                Html::ul(
-                                    ArrayHelper::map($languages, 'id', 'name'),
-                                    [
-                                        'item' => function ($item, $index) {
-                                            return Html::tag('li',
-                                                Html::a($item, Url::toRoute(['save', 'attrId' => $GLOBALS['product']->id, "languageId" => $index]), []),
-                                                []
-                                            );
-                                        },
-                                        'class' => 'dropdown-menu', 'aria-labelledby' => 'dropdownMenu1']),
-
-                                ['class' => 'btn-group pull-left']
-                            );
-
-                        return $list;
+                        return ManageButtons::widget([
+                            'model' => $model,
+                            'deleteUrl' => Url::toRoute(['remove', 'id' => $model->id])
+                        ]);
                     },
                     'format' => 'raw',
                     'contentOptions' => ['class' => 'col-md-2 text-center'],
