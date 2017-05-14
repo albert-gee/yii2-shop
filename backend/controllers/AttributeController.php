@@ -85,17 +85,16 @@ class AttributeController extends Controller
      * If user has not permissions to do this action, a 403 HTTP exception will be thrown.
      *
      * @param integer $languageId
-     * @param integer $attrId
+     * @param integer $id
      * @return mixed
      * @throws ForbiddenHttpException if user has not permissions
      */
-    public function actionSave($languageId = null, $attrId = null)
+    public function actionSave($languageId = null, $id = null)
     {
         if (empty($languageId)) {
             $languageId = Language::getCurrent()->id;
         }
         $selectedLanguage = Language::findOne($languageId);
-        $languages = Language::find()->all();
         $attributeType = ArrayHelper::toArray(ShopAttributeType::find()->all(), [
             'xalberteinsteinx\shop\common\entities\ShopAttributeType' =>
                 [
@@ -106,7 +105,7 @@ class AttributeController extends Controller
                 ]
         ]);
 
-        if (empty($attrId)) {
+        if (empty($id)) {
             $model = new ShopAttribute();
             $modelTranslation = new ShopAttributeTranslation();
 
@@ -118,10 +117,10 @@ class AttributeController extends Controller
             $searchAttributeValueModel = new SearchAttributeValue();
             $dataProviderAttributeValue = $searchAttributeValueModel->search(Yii::$app->request->queryParams);
 
-            $model = ShopAttribute::findOne($attrId);
+            $model = ShopAttribute::findOne($id);
             $modelTranslation = ShopAttributeTranslation::find()
                 ->where([
-                    'attr_id' => $attrId,
+                    'attr_id' => $id,
                     'language_id' => $languageId
                 ])->one();
             if (empty($modelTranslation)) {
@@ -143,7 +142,7 @@ class AttributeController extends Controller
 
                     $this->trigger(self::EVENT_AFTER_CREATE_OR_UPDATE_ATTRIBUTE, new AttributeEvent(['attribute' => $model]));
                     Yii::$app->getSession()->setFlash('success', 'Data were successfully modified.');
-                    return $this->redirect(['save', 'attrId' => $model->id, 'languageId' => $languageId]);
+                    return $this->redirect(['save', 'id' => $model->id, 'languageId' => $languageId]);
                 }
             }
 
@@ -153,9 +152,7 @@ class AttributeController extends Controller
             'attribute' => $model,
             'attributeTranslation' => $modelTranslation,
             'attributeType' => $attributeType,
-            'languages' => $languages,
             'selectedLanguage' => $selectedLanguage,
-            'searchModel' => $searchAttributeValueModel,
             'dataProvider' => $dataProviderAttributeValue,
             'valueModel' => new ShopAttributeValue(),
             'valueModelTranslation' => new ShopAttributeValueTranslation(),
@@ -194,14 +191,14 @@ class AttributeController extends Controller
 
 
     /**
-     * @param integer $attrId
+     * @param integer $id
      * @param integer $languageId
      * @return mixed
      * @throws Exception
      */
-    public function actionAddValue($attrId, $languageId)
+    public function actionAddValue($id, $languageId)
     {
-        if (!empty($attrId)) {
+        if (!empty($id)) {
             $languageId = empty($languageId) ? Language::getCurrent()->id : $languageId;
 
             $attributeValue = new ShopAttributeValue();
@@ -215,8 +212,8 @@ class AttributeController extends Controller
                 $post = Yii::$app->request->post();
                 if ($attributeValueTranslation->load($post) || $attributeTextureModel->load($post)) {
 
-                    $attributeValue->attribute_id = $attrId;
-                    $shopAttribute = ShopAttribute::findOne($attrId);
+                    $attributeValue->attribute_id = $id;
+                    $shopAttribute = ShopAttribute::findOne($id);
 
                     if ($shopAttribute->type_id == ShopAttribute::TYPE_COLOR || $shopAttribute->type_id == ShopAttribute::TYPE_TEXTURE) {
                         $colorTexture = new ShopAttributeValueColorTexture();
@@ -246,14 +243,14 @@ class AttributeController extends Controller
                             if (\Yii::$app->request->isPjax) {
                                 return $this->renderPartial('add-value', [
                                     'dataProvider' => $dataProviderAttributeValue,
-                                    'attribute' => ShopAttribute::findOne($attrId),
+                                    'attribute' => ShopAttribute::findOne($id),
                                     'selectedLanguage' => Language::findOne($languageId),
                                     'valueModel' => new ShopAttributeValue(),
                                     'valueModelTranslation' => new ShopAttributeValueTranslation(),
                                     'attributeTextureModel' => $attributeTextureModel
                                 ]);
                             } else {
-                                return $this->redirect(Url::toRoute(['save', 'attrId' => $attrId, 'languageId' => $languageId]));
+                                return $this->redirect(Url::toRoute(['save', 'id' => $id, 'languageId' => $languageId]));
                             }
                         }
                     }
@@ -319,7 +316,7 @@ class AttributeController extends Controller
 
                 if ($attributeValueTranslation->validate()) {
                     $attributeValueTranslation->save();
-                    return $this->redirect(Url::toRoute(['save', 'attrId' => $attributeValue->shopAttribute->id,
+                    return $this->redirect(Url::toRoute(['save', 'id' => $attributeValue->shopAttribute->id,
                         'languageId' => $languageId]));
                 }
             }
