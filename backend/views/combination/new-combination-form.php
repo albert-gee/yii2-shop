@@ -10,6 +10,7 @@
  * @var \xalberteinsteinx\shop\common\entities\ProductImage[] $productImages
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\common\components\user\models\UserGroup;
 use xalberteinsteinx\shop\common\entities\PriceDiscountType;
 use xalberteinsteinx\shop\common\entities\ProductAvailability;
@@ -81,7 +82,7 @@ use yii\helpers\ArrayHelper;
             ?>
 
             <!--DEFAULT-->
-            <?= $form->field($combination, 'default')->checkbox(); ?>
+            <?= $form->field($combination, 'default')->checkbox(['class' => '']); ?>
 
             <!--PRICES-->
             <table id="attributes-list" class="table table-bordered">
@@ -157,9 +158,9 @@ use yii\helpers\ArrayHelper;
                     <td></td>
                     <td></td>
                     <td>
-                        <?= Html::button('',
+                        <?= Html::button(FA::i(FA::_REMOVE),
                             [
-                                'class' => 'glyphicon glyphicon-remove text-danger btn btn-default btn-sm remove-attribute',
+                                'class' => 'btn btn-danger remove-attribute',
                             ]
                         ) ?>
                     </td>
