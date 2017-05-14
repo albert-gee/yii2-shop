@@ -7,6 +7,7 @@
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
+use rmrevin\yii\fontawesome\FA;
 use xalberteinsteinx\shop\backend\assets\CategoriesIndexAsset;
 use xalberteinsteinx\shop\common\entities\Category;
 use bl\multilang\entities\Language;
@@ -23,29 +24,31 @@ CategoriesIndexAsset::register($this);
 <div class="box">
 
     <div class="box-title">
-        <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
+        <h1>
+            <?= FA::i(FA::_TAGS) . ' ' . Html::encode($this->title); ?>
+        </h1>
+
+        <?= Html::a(FA::i(FA::_USER_PLUS) .
             Yii::t('shop', 'Create category'), ['save', 'languageId' => Language::getCurrent()->id], ['class' => 'btn btn-primary btn-xs pull-right']);
         ?>
-        <h1>
-            <i class="glyphicon glyphicon-list">
-            </i>
-            <?= Html::encode($this->title); ?>
-        </h1>
     </div>
 
     <div class="box-content">
         <?= \xalberteinsteinx\shop\widgets\TreeWidget::widget([
             'className' => Category::className(),
             'isGrid' => true,
-            'appName' => '/admin'
+            'appName' => '/admin',
+            'downIconClass' => 'fa fa-plus',
+            'upIconClass' => 'fa fa-minus',
         ]); ?>
 
-        <div class="row">
-            <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
-                Yii::t('shop', 'Create category'), ['save', 'languageId' => Language::getCurrent()->id],
-                ['class' => 'btn btn-primary btn-xs pull-right']);
-            ?>
-        </div>
+    </div>
 
+    <div class="box-footer">
+        <div></div>
+        <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-user-plus']) .
+            Yii::t('shop', 'Create category'), ['save', 'languageId' => Language::getCurrent()->id],
+            ['class' => 'btn btn-primary btn-xs pull-right']);
+        ?>
     </div>
 </div>

@@ -2,37 +2,62 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $this yii\web\View
- * @var $languages[] bl\multilang\entities\Language
- * @var $selectedLanguage bl\multilang\entities\Language
- * @var $maxPosition integer
- * @var $category \xalberteinsteinx\shop\common\entities\Category
- * @var $categories \xalberteinsteinx\shop\common\entities\Category[]
- * @var $categoryTranslation \xalberteinsteinx\shop\common\entities\CategoryTranslation
+ * @var $this                   yii\web\View
+ * @var $languages[]            bl\multilang\entities\Language
+ * @var $selectedLanguage       bl\multilang\entities\Language
+ * @var $maxPosition            integer
+ * @var $category               \xalberteinsteinx\shop\common\entities\Category
+ * @var $categories             \xalberteinsteinx\shop\common\entities\Category[]
+ * @var $categoryTranslation    \xalberteinsteinx\shop\common\entities\CategoryTranslation
  */
 
 use marqu3s\summernote\Summernote;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+
 ?>
 
-<?php $addForm = ActiveForm::begin([
-    'method' => 'post',
-    'action' => [
-        'category/add-basic',
-        'id' => $category->id,
-        'languageId' => $selectedLanguage->id
-    ],
-    'options' => [
-        'enctype' => 'multipart/form-data'
-    ]]) ?>
+<!--TABS-->
+<?= $this->render('_tabs', ['selectedLanguage' => $selectedLanguage, 'category' => $category]); ?>
 
-<?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
+<!--CONTENT-->
+<div class="box padding20">
 
-    <div id="basic">
-        <h2><?= \Yii::t('shop', 'Basic options'); ?></h2>
+    <?php $addForm = ActiveForm::begin([
+        'method' => 'post',
+        'action' => [
+            'category/add-basic',
+            'id' => $category->id,
+            'languageId' => $selectedLanguage->id
+        ],
+        'options' => [
+            'enctype' => 'multipart/form-data'
+        ]]) ?>
 
+    <header>
+        <section class="title">
+            <h1><?= \Yii::t('shop', 'Basic options'); ?></h1>
+        </section>
+
+        <section class="buttons">
+            <?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
+
+            <!--CANCEL BUTTON-->
+            <a href="<?= Url::to(['/shop/category']); ?>">
+                <?= Html::button(\Yii::t('shop', 'Cancel'), [
+                    'class' => 'btn m-t-xs m-r-xs btn-danger btn-xs pull-right'
+                ]); ?>
+            </a>
+
+            <!-- LANGUAGES -->
+            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+        </section>
+    </header>
+
+    <div>
         <!-- NAME -->
         <?= $addForm->field($categoryTranslation, 'title', [
             'inputOptions' => [
@@ -91,15 +116,8 @@ use yii\widgets\ActiveForm;
             'min' => 1,
         ]); ?>
 
-        <div class="box">
-            <!--CANCEL BUTTON-->
-            <a href="<?= Url::to(['/shop/category']); ?>">
-                <?= Html::button(\Yii::t('shop', 'Cancel'), [
-                    'class' => 'btn btn-danger btn-xs pull-right'
-                ]); ?>
-            </a>
-            <!--SAVE BUTTON-->
-            <?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
-        </div>
     </div>
-<?php $addForm::end(); ?>
+
+    <?php $addForm::end(); ?>
+
+</div>

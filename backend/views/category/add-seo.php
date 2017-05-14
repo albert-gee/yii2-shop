@@ -17,47 +17,67 @@ use yii\widgets\ActiveForm;
 
 ?>
 
+<!--TABS-->
+<?= $this->render('_tabs', ['selectedLanguage' => $selectedLanguage, 'category' => $category]); ?>
+
+<!--CONTENT-->
+<div class="box padding20">
+
+
 <?php $addForm = ActiveForm::begin(['method' => 'post', 'options' => []]) ?>
-<?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
 
-<h2><?= \Yii::t('shop', 'SEO options'); ?></h2>
+    <header>
+        <section class="title">
+            <h1><?= \Yii::t('shop', 'SEO options'); ?></h1>
+        </section>
 
-<?= $addForm->field($categoryTranslation, 'seoUrl', [
-    'template' => "{label}\n
-                        <div class='input-group'>
-                            {input}\n
-                            <span class='input-group-btn'>
-                                <button id='getSeoUrl' class='btn btn-primary' type='button'>
-                                    <span class='glyphicon glyphicon-refresh' aria-hidden='true'></span>
-                                </button>
-                            </span>
-                        </div>\n{hint}\n{error}",
-    'inputOptions' => [
-        'class' => 'form-control'
-    ]
-])->label('SEO URL')
-?>
+        <section class="buttons">
+            <?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
 
-<?= $addForm->field($categoryTranslation, 'seoTitle', [
-    'inputOptions' => [
-        'class' => 'form-control'
-    ]
-])->label(\Yii::t('shop', 'SEO title'))
-?>
-<?= $addForm->field($categoryTranslation, 'seoDescription')->textarea(['rows' => 3])->label(\Yii::t('shop', 'SEO description'));
-?>
-<?= $addForm->field($categoryTranslation, 'seoKeywords')->textarea(['rows' => 3])->label(\Yii::t('shop', 'SEO keywords'))
-?>
+            <!--CANCEL BUTTON-->
+            <a href="<?= Url::to(['/shop/category']); ?>">
+                <?= Html::button(\Yii::t('shop', 'Cancel'), [
+                    'class' => 'btn m-t-xs m-r-xs btn-danger btn-xs pull-right'
+                ]); ?>
+            </a>
 
-<div class="box">
-    <!--CANCEL BUTTON-->
-    <a href="<?= Url::to(['/shop/category']); ?>">
-        <?= Html::button(\Yii::t('shop', 'Cancel'), [
-            'class' => 'btn btn-danger btn-xs pull-right'
-        ]); ?>
-    </a>
-    <?= Html::submitInput(\Yii::t('shop', 'Save'), ['class' => 'btn btn-xs btn-primary m-r-xs pull-right']); ?>
-</div>
+            <!-- LANGUAGES -->
+            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+                'selectedLanguage' => $selectedLanguage,
+            ]); ?>
+
+        </section>
+
+    </header>
+
+    <div>
+
+        <div class="seo-url">
+            <?= $addForm->field($categoryTranslation, 'seoUrl', [
+                'inputOptions' => [
+                    'class' => 'form-control'
+                ],
+            ])->label('SEO URL')
+            ?>
+            <?= Html::button(\Yii::t('shop', 'Generate'), [
+                'id' => 'generate-seo-url',
+                'class' => 'btn btn-primary btn-in-input',
+                'url' => Url::to('generate-seo-url')
+            ]); ?>
+        </div>
+
+        <?= $addForm->field($categoryTranslation, 'seoTitle', [
+            'inputOptions' => [
+                'class' => 'form-control'
+            ]
+        ])->label(\Yii::t('shop', 'SEO title'))
+        ?>
+        <?= $addForm->field($categoryTranslation, 'seoDescription')->textarea(['rows' => 3])->label(\Yii::t('shop', 'SEO description'));
+        ?>
+        <?= $addForm->field($categoryTranslation, 'seoKeywords')->textarea(['rows' => 3])->label(\Yii::t('shop', 'SEO keywords'))
+        ?>
+
+    </div>
 
 <?php $addForm::end(); ?>
 
@@ -78,5 +98,5 @@ function getSeoUrl() {
             }
         });
     }
-$("button#getSeoUrl").click(getSeoUrl);
+$("button#generate-seo-url").click(getSeoUrl);
 ') ?>
