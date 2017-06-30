@@ -3,7 +3,7 @@ use yii\db\Migration;
 /**
  * Handles adding payment to table `order`.
  */
-class m161103_100753_add_payment_column_to_order_table extends Migration
+class m170227_230753_add_payment_column_to_order_table extends Migration
 {
     /**
      * @inheritdoc
