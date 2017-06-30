@@ -12,7 +12,6 @@ class m161025_153835_create_shop_admin_role extends Migration
         $countryManager = $auth->getRole('countryManager');
         $currencyManager = $auth->getRole('currencyManager');
         $deliveryMethodManager = $auth->getRole('deliveryMethodManager');
-        $filterManager = $auth->getRole('filterManager');
         $orderManager = $auth->getRole('orderManager');
         $orderStatusManager = $auth->getRole('orderStatusManager');
         $productAvailabilityManager = $auth->getRole('productAvailabilityManager');
@@ -27,7 +26,6 @@ class m161025_153835_create_shop_admin_role extends Migration
         $auth->addChild($shopAdministrator, $countryManager);
         $auth->addChild($shopAdministrator, $currencyManager);
         $auth->addChild($shopAdministrator, $deliveryMethodManager);
-        $auth->addChild($shopAdministrator, $filterManager);
         $auth->addChild($shopAdministrator, $orderManager);
         $auth->addChild($shopAdministrator, $orderStatusManager);
         $auth->addChild($shopAdministrator, $productAvailabilityManager);
