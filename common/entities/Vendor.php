@@ -101,7 +101,8 @@ class Vendor extends ActiveRecord
      */
     public function getImage(string $size = 'big') {
         $image = \Yii::$app->shop_imagable->get('shop-vendors', $size, $this->image_name);
-        $image = str_replace(\Yii::getAlias('@frontend') . '/web', '', $image);
+        $image = str_replace('\\', '/', $image);
+        $image = str_replace(\Yii::getAlias('@webroot'), '', $image);
 
         return $image;
     }
