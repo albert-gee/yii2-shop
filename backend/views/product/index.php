@@ -227,7 +227,10 @@ $this->params['breadcrumbs'] = [
         ]);
         ?>
 
-        <?= \Yii::t('shop', 'Count of waiting moderation products is') . ' <b>' . $notModeratedProductsCount . '</b>'; ?>
+        <p>
+            <?= \Yii::t('shop', 'Count of waiting moderation products is') .
+            ' <b>' . $notModeratedProductsCount . '</b>'; ?>
+        </p>
 
         <!--ADD BUTTON-->
         <a href="<?= Url::to(['/shop/product/save', 'languageId' => Language::getCurrent()->id]) ?>"
