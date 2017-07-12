@@ -71,7 +71,7 @@ $(document).ready(
             if (isDelete) {
 
                 var switcher = $(this);
-                var url = $(this).parent().attr("href");
+                var url = $(this).attr("href");
 
                 $.ajax({
                     type: "GET",
