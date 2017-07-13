@@ -2,6 +2,7 @@
 
 namespace xalberteinsteinx\shop\frontend\components;
 
+use xalberteinsteinx\shop\common\entities\Category;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -45,10 +46,13 @@ class ProductSearch extends Product
     /**
      * Creates data provider instance with search query applied
      * @param array $params
+     * @param $descendantCategories Category[]
+     * @param null|integer $vendor_id
+     * @param null|integer $availability_id
      * @return ActiveDataProvider
      * @throws Exception if search is not validated
      */
-    public function search($params, $descendantCategories)
+    public function search($params, $descendantCategories, $vendor_id = null, $availability_id = null)
     {
 
         $this->load($params, '');
@@ -65,6 +69,15 @@ class ProductSearch extends Product
             if (!empty($params['id'])) {
                 $query->where(['category_id' => $params['id']]);
             }
+        }
+
+        /*Find by vendor*/
+        if (!empty($vendor_id)) {
+            $query->joinWith('vendor')->where(['vendor_id' => $vendor_id]);
+        }
+        /*Find by availability*/
+        if (!empty($availability_id)) {
+            $query->joinWith('productAvailability')->where(['availability' => $availability_id]);
         }
 
         $query->andWhere(['status' => Product::STATUS_SUCCESS, 'shop_product.show' => true, 'additional_products' => false]);

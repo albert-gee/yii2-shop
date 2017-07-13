@@ -33,7 +33,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * @param null $id
+     * @param null|integer $id
      * @return string
      * @throws NotFoundHttpException
      * Shows parent categories and products of this category if category has not children categories.
@@ -61,8 +61,19 @@ class CategoryController extends Controller
         if ($this->module->showChildCategoriesProducts || empty($childCategories)) {
 
             $cart = new CartForm();
+
+            /*Filter*/
+            $filter = \Yii::$app->request->post('FilterForm');
+            $vendor_id = $filter['vendor_id'];
+            $availability_id = $filter['availability_id'];
+
             $searchModel = new ProductSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $descendantCategories ?? null);
+            $dataProvider = $searchModel->search(
+                Yii::$app->request->queryParams,
+                    $descendantCategories ?? null,
+                    $vendor_id,
+                    $availability_id
+            );
         }
 
         return $this->render('show', [
@@ -71,6 +82,8 @@ class CategoryController extends Controller
             'filters' => $filters ?? null,
             'cart' => $cart ?? null,
             'dataProvider' => $dataProvider ?? null,
+            'vendor_id' => isSet($vendor_id) ? $vendor_id : null,
+            'availability_id' => isSet($availability_id) ? $availability_id : null,
         ]);
 
     }
