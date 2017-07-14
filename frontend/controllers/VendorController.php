@@ -1,6 +1,7 @@
 <?php
 namespace xalberteinsteinx\shop\frontend\controllers;
 
+use xalberteinsteinx\shop\common\entities\Product;
 use xalberteinsteinx\shop\common\entities\Vendor;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -26,10 +27,33 @@ class VendorController extends Controller
             $vendor = Vendor::findOne($id);
             if (!empty($vendor)) {
 
+                $query = Product::find()->where(['vendor_id' => $id]);
+
+                if (\Yii::$app->request->isPost) {
+                    $filter = \Yii::$app->request->post('FilterForm');
+
+
+                    $category_id = $filter['category_id'];
+                    $availability_id = $filter['availability_id'];
+
+                    /*Find by vendor*/
+                    if (!empty($category_id)) {
+                        $query->joinWith('vendor')->where(['category_id' => $category_id]);
+                    }
+                    /*Find by availability*/
+                    if (!empty($availability_id)) {
+                        $query->joinWith('productAvailability')->where(['availability' => $availability_id]);
+                    }
+
+                }
+
+                $products = $query->all();
+
                 $vendor->registerMetaData();
 
                 return $this->render('show', [
-                    'vendor' => $vendor
+                    'vendor' => $vendor,
+                    'products' => $products
                 ]);
             }
         }
