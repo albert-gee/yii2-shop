@@ -15,6 +15,10 @@ class FilterForm extends Model
     /**
      * @var integer
      */
+    public $category_id;
+    /**
+     * @var integer
+     */
     public $availability_id;
 
     /**
