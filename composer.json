@@ -1,12 +1,12 @@
 {
-  "name": "xalberteinsteinx/yii2-shop",
+  "name": "albert-gainutdinov/yii2-shop",
   "description": "E-commerce module for Yii2 framework",
   "keywords": ["yii2", "shop", "e-commerce", "module"],
   "type": "yii2-extension",
   "authors": [
     {
       "name": "Albert Gainutdinov",
-      "email": "xalbert.einsteinx@gmail.com"
+      "email": "albert.sointula@gmail.com"
     }
   ],
   "require": {
@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "xalberteinsteinx\\shop\\": ""
+      "albertsointula\\shop\\": ""
     }
   }
 }
