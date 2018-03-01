@@ -420,7 +420,11 @@ in common configuration file:
 ### 10. Set "Yii2-email-templates" module in frontend configuration file:
 https://github.com/black-lamp/yii2-email-templates
 
-### 11. Set Static-page module in backend configuration file:
+### 11. Set Static-page module:
+Add StaticPageManager role to your admin user in auth_assignment table.
+Create new static pages with page keys "shop" and "cart".
+In your backend configuration file add this:
+
 ```'modules' => [
         'seo' => [
                     'class' => 'bl\cms\seo\backend\Module'
@@ -574,6 +578,15 @@ The module has translations on several languages. If there is not your language 
         ],
 ```
 
+## Admin pages
+- Shop main static page /admin/seo/static/save-page?page_key=shop&languageId=2
+- Categories /admin/shop/category/index
+- Products /admin/shop/product/index
+- Countries /admin/shop/country/index
+- Vendors /admin/shop/vendor/index
+- Attributes /admin/shop/attribute/index
+- Availability statuses /admin/shop/product-availability/index
+- Currency /admin/shop/currency/index
 
 ## REPORTS
 
