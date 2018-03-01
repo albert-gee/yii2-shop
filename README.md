@@ -1,11 +1,11 @@
-#Yii2-shop module
+# Yii2-shop module
 
 Powerful E-commerce module for Yii2 framework.
 
-##Installation
+## Installation
 ------------
 
-###1. Add extension ti your project:
+### 1. Add extension ti your project:
 
 Run command
 ```
@@ -19,14 +19,14 @@ or add
 
 to the require section of your composer.json.
 
-###2. You should configure "authManager" component in common configuration file:
+### 2. You should configure "authManager" component in common configuration file:
 ```        
     'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
 ```
 
-###3. Set "Yii2-multi-lang" component in backend configuration file:
+### 3. Set "Yii2-multi-lang" component in backend configuration file:
 ```
 'components' => [
 
@@ -57,7 +57,7 @@ to the require section of your composer.json.
 ]
 ```
 
-###4. Set "Yii2-locale" extension in frontend configuration file:
+### 4. Set "Yii2-locale" extension in frontend configuration file:
 ```
 'components' => [
     'urlManager' => [
@@ -98,7 +98,7 @@ to the require section of your composer.json.
 
 ```
 
-###5. Set Dektrium-user module:
+### 5. Set Dektrium-user module:
 in frontend config:
 ```
  'modules' => [
@@ -212,7 +212,7 @@ in common configuration file:
         ],
 ```
 
-###6. Apply migrations:
+### 6. Apply migrations:
 
 ```
 - php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
@@ -225,7 +225,7 @@ in common configuration file:
 
 ```
 
-###7. Add configuration for Imagable module in common configuration file:
+### 7. Add configuration for Imagable module in common configuration file:
 
 ```
         'shop_imagable' => [
@@ -360,7 +360,7 @@ in common configuration file:
         ],
 ```
 
-###8. Add module to your backend config
+### 8. Add module to your backend config
 ```php
     'bootstrap' => [
         //'sointula\shop\backend\components\events\PartnersBootstrap',
@@ -375,7 +375,7 @@ in common configuration file:
     ]
 ```
 
-###9. Add module to your frontend config
+### 9. Add module to your frontend config
 ```php
     'modules' => [
     	...
@@ -417,10 +417,10 @@ in common configuration file:
     ],
 ```
 
-###10. Set "Yii2-email-templates" module in frontend configuration file:
+### 10. Set "Yii2-email-templates" module in frontend configuration file:
 https://github.com/black-lamp/yii2-email-templates
 
-###11. Set Static-page module in backend configuration file:
+### 11. Set Static-page module in backend configuration file:
 ```'modules' => [
         'seo' => [
                     'class' => 'bl\cms\seo\backend\Module'
@@ -429,13 +429,13 @@ https://github.com/black-lamp/yii2-email-templates
 ```
 
 
-##REQUIRES
+## REQUIRES
 
 - PHP-version: 7.0 or later
 - PHP-extensions: file-info, imagick, intl
 
 
-##Roles and its permissions:**
+## Roles and its permissions:**
 
 _attributeManager_
 - addAttributeValue
@@ -513,7 +513,7 @@ _shopAdministrator_
 extends permissions from all managers. 
 
 
-##WIDGETS
+## WIDGETS
 
 *Recommended products*
 
@@ -540,7 +540,7 @@ To use the widget, you must have set up relations in the models. For example in 
 ```
 
 
-##LOGGING
+## LOGGING
 
 Your application can record how many people watched a particular product.
 To enable logging, you must add the following settings in the frontend configuration file:
@@ -559,7 +559,7 @@ Otherwise it will increase by one each time when registered user views product.
 
 
 
-##TRANSLATIONS
+## TRANSLATIONS
 
 The module has translations on several languages. If there is not your language or if you would like change its on your own, you can configure it in backend or frontend configuration file:
 ```
@@ -575,7 +575,7 @@ The module has translations on several languages. If there is not your language 
 ```
 
 
-##REPORTS
+## REPORTS
 
 - "Class 'Imagick' not found"
 
@@ -660,5 +660,5 @@ If product is moderated and status is 'accept' the mail 'accept-product-to-owner
 You may use variables: {title}, {ownerEmail}, {owner}, {link}
 
 
-##Links
+## Links
 Dektrium-User module: https://github.com/dektrium/yii2-user
