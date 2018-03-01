@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\User;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;

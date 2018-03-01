@@ -3,13 +3,13 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel xalberteinsteinx\shop\common\entities\SearchAttribute
+ * @var $searchModel sointula\shop\common\entities\SearchAttribute
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
 use bl\multilang\entities\Language;
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\widgets\ManageButtons;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;

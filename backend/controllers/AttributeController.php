@@ -1,19 +1,19 @@
 <?php
 
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\AttributeEvent;
-use xalberteinsteinx\shop\backend\components\form\AttributeTextureForm;
-use xalberteinsteinx\shop\common\entities\SearchAttributeValue;
-use xalberteinsteinx\shop\common\entities\ShopAttributeTranslation;
-use xalberteinsteinx\shop\common\entities\ShopAttributeType;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValue;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValueColorTexture;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValueTranslation;
+use sointula\shop\backend\components\events\AttributeEvent;
+use sointula\shop\backend\components\form\AttributeTextureForm;
+use sointula\shop\common\entities\SearchAttributeValue;
+use sointula\shop\common\entities\ShopAttributeTranslation;
+use sointula\shop\common\entities\ShopAttributeType;
+use sointula\shop\common\entities\ShopAttributeValue;
+use sointula\shop\common\entities\ShopAttributeValueColorTexture;
+use sointula\shop\common\entities\ShopAttributeValueTranslation;
 use bl\multilang\entities\Language;
 use Yii;
-use xalberteinsteinx\shop\common\entities\ShopAttribute;
-use xalberteinsteinx\shop\common\entities\SearchAttribute;
+use sointula\shop\common\entities\ShopAttribute;
+use sointula\shop\common\entities\SearchAttribute;
 use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
@@ -96,7 +96,7 @@ class AttributeController extends Controller
         }
         $selectedLanguage = Language::findOne($languageId);
         $attributeType = ArrayHelper::toArray(ShopAttributeType::find()->all(), [
-            'xalberteinsteinx\shop\common\entities\ShopAttributeType' =>
+            'sointula\shop\common\entities\ShopAttributeType' =>
                 [
                     'id',
                     'title' => function ($attributeType) {
@@ -364,7 +364,7 @@ class AttributeController extends Controller
                 ->where(['attribute_id' => $attributeId])->all();
 
             $attributeValuesArray = ArrayHelper::toArray($attributeValues, [
-                'xalberteinsteinx\shop\common\entities\ShopAttributeValue' => [
+                'sointula\shop\common\entities\ShopAttributeValue' => [
                     'id',
                     'attribute_id',
                     'translation' => 'translation'

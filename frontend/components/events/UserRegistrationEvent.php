@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\events;
+namespace sointula\shop\frontend\components\events;
 use yii\base\Event;
 
 /**

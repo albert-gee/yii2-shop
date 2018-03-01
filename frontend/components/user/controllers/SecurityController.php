@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\user\controllers;
+namespace sointula\shop\frontend\components\user\controllers;
 use dektrium\user\controllers\SecurityController as MainController;
-use xalberteinsteinx\shop\common\components\user\models\LoginForm;
+use sointula\shop\common\components\user\models\LoginForm;
 use yii\helpers\Url;
 use yii\web\Response;
 

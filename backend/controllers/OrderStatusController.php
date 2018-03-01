@@ -1,12 +1,12 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\common\entities\OrderStatus;
-use xalberteinsteinx\shop\common\entities\OrderStatusTranslation;
+use sointula\shop\common\entities\OrderStatus;
+use sointula\shop\common\entities\OrderStatusTranslation;
 use bl\multilang\entities\Language;
 use Exception;
 use Yii;
-use xalberteinsteinx\shop\common\entities\SearchOrderStatus;
+use sointula\shop\common\entities\SearchOrderStatus;
 use yii\db\ActiveRecord;
 use yii\filters\AccessControl;
 use yii\web\Controller;

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
 use bl\seo\behaviors\SeoDataBehavior;
 use yii\db\ActiveRecord;

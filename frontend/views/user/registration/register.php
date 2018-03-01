@@ -4,8 +4,8 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var \yii\web\View $this
- * @var \xalberteinsteinx\shop\common\components\user\models\User $model
- * @var \xalberteinsteinx\shop\common\components\user\models\Profile $profile
+ * @var \sointula\shop\common\components\user\models\User $model
+ * @var \sointula\shop\common\components\user\models\Profile $profile
  *
  */
 

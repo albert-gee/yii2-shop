@@ -3,25 +3,25 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this                       yii\web\View
- * @var $attribute                  xalberteinsteinx\shop\common\entities\ShopAttribute
- * @var $attributeTranslation       xalberteinsteinx\shop\common\entities\ShopAttributeTranslation
- * @var $attributeType              xalberteinsteinx\shop\common\entities\ShopAttributeType[]
+ * @var $attribute                  sointula\shop\common\entities\ShopAttribute
+ * @var $attributeTranslation       sointula\shop\common\entities\ShopAttributeTranslation
+ * @var $attributeType              sointula\shop\common\entities\ShopAttributeType[]
  * @var $selectedLanguage           Language
  * @var $dataProvider               ActiveDataProvider
  * @var $valueModel                 ShopAttributeValue
  * @var $valueModelTranslation      ShopAttributeValueTranslation
- * @var $attributeTextureModel      \xalberteinsteinx\shop\backend\components\form\AttributeTextureForm
+ * @var $attributeTextureModel      \sointula\shop\backend\components\form\AttributeTextureForm
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\common\entities\ShopAttribute;
-use xalberteinsteinx\shop\common\entities\ShopAttributeType;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValue;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValueColorTexture;
+use sointula\shop\common\entities\ShopAttribute;
+use sointula\shop\common\entities\ShopAttributeType;
+use sointula\shop\common\entities\ShopAttributeValue;
+use sointula\shop\common\entities\ShopAttributeValueColorTexture;
 use bl\multilang\entities\Language;
 use kartik\widgets\ColorInput;
 use kartik\widgets\FileInput;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValueTranslation;
+use sointula\shop\common\entities\ShopAttributeValueTranslation;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= FA::i(FA::_EDIT) . ' ' . Html::encode($this->title) ?></h1>
 
         <!--LANGUAGES-->
-        <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => $selectedLanguage,
         ]); ?>
 
@@ -124,7 +124,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             'value' => function ($model) {
 
-                                return \xalberteinsteinx\shop\widgets\ManageButtons::widget([
+                                return \sointula\shop\widgets\ManageButtons::widget([
                                     'model' => $model,
                                     'action' => 'save-value',
                                     'deleteUrl' => Url::to(['remove-attribute-value', 'attributeValueId' => $model->id])

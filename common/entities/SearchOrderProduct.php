@@ -1,14 +1,14 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\components\CartComponent;
+use sointula\shop\common\components\CartComponent;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use xalberteinsteinx\shop\common\entities\OrderProduct;
+use sointula\shop\common\entities\OrderProduct;
 
 /**
- * SearchOrderProduct represents the model behind the search form about `xalberteinsteinx\shop\common\entities\OrderProduct`.
+ * SearchOrderProduct represents the model behind the search form about `sointula\shop\common\entities\OrderProduct`.
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 class SearchOrderProduct extends OrderProduct

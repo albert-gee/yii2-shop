@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\user;
+namespace sointula\shop\frontend\components\user;
 
-use xalberteinsteinx\shop\common\components\user\models\Token;
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\Token;
+use sointula\shop\common\components\user\models\User;
 use bl\emailTemplates\data\Template;
 use bl\multilang\entities\Language;
 use Yii;

@@ -1,7 +1,7 @@
 <?php
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\backend\components\form\VendorImage;
-use xalberteinsteinx\shop\common\entities\Vendor;
+use sointula\shop\backend\components\form\VendorImage;
+use sointula\shop\common\entities\Vendor;
 use yii\bootstrap\Html;
 use yii\helpers\Url;
 
@@ -55,7 +55,7 @@ $this->title = Yii::t('shop', 'Vendor list');
                         </td>
 
                         <td class="text-center">
-                            <?= \xalberteinsteinx\shop\widgets\ManageButtons::widget([
+                            <?= \sointula\shop\widgets\ManageButtons::widget([
                                 'model' => $vendor,
                                 'deleteUrl' =>  Url::to(['remove', 'id' => $vendor->id])
                             ]); ?>

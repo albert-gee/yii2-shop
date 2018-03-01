@@ -1,11 +1,11 @@
 <?php
 
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\Combination;
-use xalberteinsteinx\shop\common\entities\ProductImage;
-use xalberteinsteinx\shop\common\entities\Price;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\Combination;
+use sointula\shop\common\entities\ProductImage;
+use sointula\shop\common\entities\Price;
 use bl\imagable\helpers\FileHelper;
 use Yii;
 use yii\db\ActiveRecord;

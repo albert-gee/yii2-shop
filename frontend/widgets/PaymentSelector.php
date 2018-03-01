@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\common\entities\Order;
-use xalberteinsteinx\shop\common\entities\PaymentMethod;
+use sointula\shop\common\entities\Order;
+use sointula\shop\common\entities\PaymentMethod;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Widget;
 

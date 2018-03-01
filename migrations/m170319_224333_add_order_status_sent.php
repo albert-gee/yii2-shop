@@ -10,7 +10,7 @@ class m170319_224333_add_order_status_sent extends Migration
             'color' => '#1ab394'
         ]);
 
-        $orderStatus = \xalberteinsteinx\shop\common\entities\OrderStatus::find()->where([
+        $orderStatus = \sointula\shop\common\entities\OrderStatus::find()->where([
             'color' => '#1ab394'
         ])->orderBy('id DESC')->one();
 
@@ -24,16 +24,16 @@ class m170319_224333_add_order_status_sent extends Migration
 
     public function safeDown()
     {
-        $orderStatus = \xalberteinsteinx\shop\common\entities\OrderStatus::find()->where([
+        $orderStatus = \sointula\shop\common\entities\OrderStatus::find()->where([
             'color' => '#1ab394'
         ])->orderBy('id DESC')->one();
 
-        $record = \xalberteinsteinx\shop\common\entities\OrderStatusTranslation::find()->where([
+        $record = \sointula\shop\common\entities\OrderStatusTranslation::find()->where([
             'order_status_id' => $orderStatus->id,
         ])->one();
         $record->delete();
 
-        $record = \xalberteinsteinx\shop\common\entities\OrderStatus::findOne($orderStatus->id);
+        $record = \sointula\shop\common\entities\OrderStatus::findOne($orderStatus->id);
         $record->delete();
     }
 

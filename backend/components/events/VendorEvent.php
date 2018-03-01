@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\events;
+namespace sointula\shop\backend\components\events;
 
-use xalberteinsteinx\shop\common\entities\ProductCountry;
-use xalberteinsteinx\shop\common\entities\Vendor;
+use sointula\shop\common\entities\ProductCountry;
+use sointula\shop\common\entities\Vendor;
 use yii\base\Event;
 
 /**

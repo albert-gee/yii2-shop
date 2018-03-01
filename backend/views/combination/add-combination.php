@@ -2,23 +2,23 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $combination                \xalberteinsteinx\shop\common\entities\Combination
- * @var $combinationTranslation     \xalberteinsteinx\shop\common\entities\CombinationTranslation
- * @var $combinations               \xalberteinsteinx\shop\common\entities\Combination[]
- * @var $product                    \xalberteinsteinx\shop\common\entities\Product
- * @var $productImages              \xalberteinsteinx\shop\common\entities\ProductImage[]
- * @var $image_form                  \xalberteinsteinx\shop\backend\components\form\CombinationImageForm
+ * @var $combination                \sointula\shop\common\entities\Combination
+ * @var $combinationTranslation     \sointula\shop\common\entities\CombinationTranslation
+ * @var $combinations               \sointula\shop\common\entities\Combination[]
+ * @var $product                    \sointula\shop\common\entities\Product
+ * @var $productImages              \sointula\shop\common\entities\ProductImage[]
+ * @var $image_form                  \sointula\shop\backend\components\form\CombinationImageForm
  * @var $language                   \bl\multilang\entities\Language
- * @var $combinationAttribute       \xalberteinsteinx\shop\common\entities\CombinationAttribute
- * @var $combinationAttributeForm   \xalberteinsteinx\shop\backend\components\form\CombinationAttributeForm
- * @var $prices                     \xalberteinsteinx\shop\common\entities\Price[]
+ * @var $combinationAttribute       \sointula\shop\common\entities\CombinationAttribute
+ * @var $combinationAttributeForm   \sointula\shop\backend\components\form\CombinationAttributeForm
+ * @var $prices                     \sointula\shop\common\entities\Price[]
  *
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\backend\assets\EditCombinationAsset;
-use xalberteinsteinx\shop\common\entities\PriceDiscountType;
-use xalberteinsteinx\shop\common\entities\ShopAttribute;
+use sointula\shop\backend\assets\EditCombinationAsset;
+use sointula\shop\common\entities\PriceDiscountType;
+use sointula\shop\common\entities\ShopAttribute;
 use bl\imagable\helpers\FileHelper;
 use marqu3s\summernote\Summernote;
 use yii\helpers\ArrayHelper;

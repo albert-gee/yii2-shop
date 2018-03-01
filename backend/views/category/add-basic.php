@@ -6,9 +6,9 @@
  * @var $languages[]            bl\multilang\entities\Language
  * @var $selectedLanguage       bl\multilang\entities\Language
  * @var $maxPosition            integer
- * @var $category               \xalberteinsteinx\shop\common\entities\Category
- * @var $categories             \xalberteinsteinx\shop\common\entities\Category[]
- * @var $categoryTranslation    \xalberteinsteinx\shop\common\entities\CategoryTranslation
+ * @var $category               \sointula\shop\common\entities\Category
+ * @var $categories             \sointula\shop\common\entities\Category[]
+ * @var $categoryTranslation    \sointula\shop\common\entities\CategoryTranslation
  */
 
 use marqu3s\summernote\Summernote;
@@ -51,7 +51,7 @@ use yii\widgets\ActiveForm;
             </a>
 
             <!-- LANGUAGES -->
-            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
         </section>
@@ -70,8 +70,8 @@ use yii\widgets\ActiveForm;
             <!-- PARENT CATEGORY -->
             <div class="col-md-6">
                 <?=
-                \xalberteinsteinx\shop\widgets\InputTree::widget([
-                    'className' => \xalberteinsteinx\shop\common\entities\Category::className(),
+                \sointula\shop\widgets\InputTree::widget([
+                    'className' => \sointula\shop\common\entities\Category::className(),
                     'form' => $addForm,
                     'model' => $category,
                     'attribute' => 'parent_id',

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\assets;
+namespace sointula\shop\frontend\assets;
 use yii\web\AssetBundle;
 
 /**
@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class CategoryAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/frontend/web';
+    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/web';
 
     public $css = [
         'css/style.css',

@@ -15,7 +15,7 @@ use yii\bootstrap\Html;
 <ul class="input-tree-ul">
     <?php foreach ($parents as $object): ?>
         <?php
-        $children = \xalberteinsteinx\shop\widgets\InputTree::findChildren($object, $object->id);
+        $children = \sointula\shop\widgets\InputTree::findChildren($object, $object->id);
         $label = (!empty($object->getTranslation($languageId)->title))
             ? $object->getTranslation($languageId)->title
             : (!empty($object->translation->title)) ? $object->translation->title : '';
@@ -35,7 +35,7 @@ use yii\bootstrap\Html;
             ])->label($label, ['for' => $model::className() . '-category_id-' . $object->id,]); ?>
 
             <?= $this->render(
-                '@vendor/xalberteinsteinx/yii2-shop/widgets/views/input-tree/ul',
+                '@vendor/sointula/yii2-shop/widgets/views/input-tree/ul',
                 [
                     'parents' => $children,
                     'form' => $form,

@@ -1,13 +1,13 @@
 <?php
 
-use xalberteinsteinx\shop\common\entities\Category;
+use sointula\shop\common\entities\Category;
 use yii\db\Migration;
 
 class m170209_150220_add_additional_product_value_for_shop_category extends Migration
 {
     public function up()
     {
-        $categories = \xalberteinsteinx\shop\common\entities\Category::find()->all();
+        $categories = \sointula\shop\common\entities\Category::find()->all();
 
         /**
          * @var $category Category

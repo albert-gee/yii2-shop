@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\common\components\user\models;
+namespace sointula\shop\common\components\user\models;
 
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\User;
 use dektrium\user\traits\ModuleTrait;
 use Yii;
 use dektrium\user\models\Profile as BaseProfile;

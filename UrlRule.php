@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop;
+namespace sointula\shop;
 
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\CategoryTranslation;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductTranslation;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\CategoryTranslation;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductTranslation;
 use bl\multilang\entities\Language;
 use bl\seo\entities\SeoData;
 use Yii;

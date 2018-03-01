@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
-use xalberteinsteinx\shop\common\entities\Order;
+use sointula\shop\common\entities\Order;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 

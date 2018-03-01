@@ -1,16 +1,16 @@
 <?php
 
-namespace xalberteinsteinx\shop\frontend\components;
+namespace sointula\shop\frontend\components;
 
-use xalberteinsteinx\shop\common\entities\Category;
+use sointula\shop\common\entities\Category;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\common\entities\Product;
 use yii\helpers\ArrayHelper;
 
 /**
- * ProductSearch represents the model behind the search form about `xalberteinsteinx\shop\common\entities\Product`.
+ * ProductSearch represents the model behind the search form about `sointula\shop\common\entities\Product`.
  */
 class ProductSearch extends Product
 {

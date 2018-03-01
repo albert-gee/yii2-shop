@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\common\entities\DeliveryMethodTranslation;
+use sointula\shop\common\entities\DeliveryMethodTranslation;
 use bl\multilang\entities\Language;
 use Yii;
-use xalberteinsteinx\shop\common\entities\DeliveryMethod;
+use sointula\shop\common\entities\DeliveryMethod;
 use yii\filters\AccessControl;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;

@@ -1,9 +1,9 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\widgets\assets\TreeWidgetAsset;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\Product;
+use sointula\shop\widgets\assets\TreeWidgetAsset;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Widget;
@@ -21,7 +21,7 @@ use yii\web\NotFoundHttpException;
  *  'currentCategoryId' => $category->id
  * ]); ?>
  *
- * In your controller use xalberteinsteinx\shop\widgets\traits\TreeWidgetTrait;
+ * In your controller use sointula\shop\widgets\traits\TreeWidgetTrait;
  *
  */
 class TreeWidget extends Widget

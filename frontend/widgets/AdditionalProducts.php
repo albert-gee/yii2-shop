@@ -1,9 +1,9 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\common\entities\ProductAdditionalProduct;
-use xalberteinsteinx\shop\frontend\widgets\assets\AdditionalProductsAsset;
-use xalberteinsteinx\shop\frontend\widgets\models\AdditionalProductForm;
+use sointula\shop\common\entities\ProductAdditionalProduct;
+use sointula\shop\frontend\widgets\assets\AdditionalProductsAsset;
+use sointula\shop\frontend\widgets\models\AdditionalProductForm;
 use yii\base\Model;
 use yii\base\Widget;
 use yii\widgets\ActiveForm;

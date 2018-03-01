@@ -1,13 +1,13 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\common\components\CartComponent;
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
-use xalberteinsteinx\shop\common\entities\Combination;
-use xalberteinsteinx\shop\common\entities\CombinationAttribute;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ShopAttribute;
-use xalberteinsteinx\shop\common\entities\ShopAttributeType;
+use sointula\shop\common\components\CartComponent;
+use sointula\shop\frontend\components\forms\CartForm;
+use sointula\shop\common\entities\Combination;
+use sointula\shop\common\entities\CombinationAttribute;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ShopAttribute;
+use sointula\shop\common\entities\ShopAttributeType;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
  *
  * Example:
  * ```php
- *  <?php $attributes = \xalberteinsteinx\shop\frontend\widgets\AttributesWidget::begin([
+ *  <?php $attributes = \sointula\shop\frontend\widgets\AttributesWidget::begin([
  *      'product' => $model,
  *  ]); ?>
  *  <?= $attributes->renderPrice(); ?>

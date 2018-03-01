@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\frontend;
+namespace sointula\shop\frontend;
 use Yii;
 
 /**
@@ -7,7 +7,7 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'xalberteinsteinx\shop\frontend\controllers';
+    public $controllerNamespace = 'sointula\shop\frontend\controllers';
 
     /**
      * Enables attribute combinations in product card
@@ -68,7 +68,7 @@ class Module extends \yii\base\Module
             [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en-US',
-                'basePath'       => '@vendor/xalberteinsteinx/yii2-shop/frontend/messages',
+                'basePath'       => '@vendor/sointula/yii2-shop/frontend/messages',
         ];
     }
 }

@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $vendor \xalberteinsteinx\shop\common\entities\Vendor
+ * @var $vendor \sointula\shop\common\entities\Vendor
  */
 use yii\helpers\Html;
 use yii\helpers\Url;

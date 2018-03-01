@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets\assets;
+namespace sointula\shop\frontend\widgets\assets;
 
 use yii\web\AssetBundle;
 
@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class PaymentAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/frontend/widgets/assets/src';
+    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/widgets/assets/src';
     public $css = [
         'css/payment-selector.css',
     ];

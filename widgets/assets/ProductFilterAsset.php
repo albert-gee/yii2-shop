@@ -1,6 +1,6 @@
 <?php
 
-namespace xalberteinsteinx\shop\widgets\assets;
+namespace sointula\shop\widgets\assets;
 
 use yii\web\AssetBundle;
 
@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class ProductFilterAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/frontend/web';
+    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/web';
 
     public $css = [
     ];

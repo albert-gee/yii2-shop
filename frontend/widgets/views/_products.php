@@ -4,7 +4,7 @@
  *
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
-use xalberteinsteinx\shop\frontend\widgets\ProductPrices;
+use sointula\shop\frontend\widgets\ProductPrices;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;

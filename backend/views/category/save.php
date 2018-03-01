@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 use yii\helpers\{
     Html, Url
 };
-use xalberteinsteinx\shop\backend\assets\EditProductAsset;
+use sointula\shop\backend\assets\EditProductAsset;
 
 EditProductAsset::register($this);
 

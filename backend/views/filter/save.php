@@ -6,9 +6,9 @@ use yii\widgets\ActiveForm;
 
 
 /* @var $this yii\web\View */
-/* @var $model xalberteinsteinx\shop\common\entities\FilterType */
+/* @var $model sointula\shop\common\entities\FilterType */
 /* @var $this yii\web\View */
-/* @var $model xalberteinsteinx\shop\common\entities\FilterType */
+/* @var $model sointula\shop\common\entities\FilterType */
 /* @var $form yii\widgets\ActiveForm */
 
 $this->title = Yii::t('shop', 'Create new filter type');

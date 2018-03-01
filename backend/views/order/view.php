@@ -1,6 +1,6 @@
 <?php
-use xalberteinsteinx\shop\common\entities\DeliveryMethod;
-use xalberteinsteinx\shop\common\entities\Currency;
+use sointula\shop\common\entities\DeliveryMethod;
+use sointula\shop\common\entities\Currency;
 use bl\imagable\helpers\FileHelper;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
@@ -11,9 +11,9 @@ use yii\helpers\Url;
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $model xalberteinsteinx\shop\common\entities\Order
- * @var $orderProducts xalberteinsteinx\shop\common\entities\OrderProduct
- * @var $statuses [] xalberteinsteinx\shop\common\entities\OrderStatus
+ * @var $model sointula\shop\common\entities\Order
+ * @var $orderProducts sointula\shop\common\entities\OrderProduct
+ * @var $statuses [] sointula\shop\common\entities\OrderStatus
  */
 
 $this->title = Yii::t('cart', 'Order details');

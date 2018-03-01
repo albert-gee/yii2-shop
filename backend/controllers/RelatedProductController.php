@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use bl\multilang\entities\Language;
-use xalberteinsteinx\shop\common\entities\{Product, RelatedProduct};
+use sointula\shop\common\entities\{Product, RelatedProduct};
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

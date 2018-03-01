@@ -3,8 +3,8 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace xalberteinsteinx\shop\backend\components\form;
-use xalberteinsteinx\shop\common\entities\ShopAttributeValueColorTexture;
+namespace sointula\shop\backend\components\form;
+use sointula\shop\common\entities\ShopAttributeValueColorTexture;
 use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;

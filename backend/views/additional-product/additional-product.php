@@ -4,7 +4,7 @@
  *
  * @var $additionalProductsCategories
  */
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 use yii\helpers\Url;

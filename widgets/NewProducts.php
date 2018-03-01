@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\common\components\CartComponent;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\common\components\CartComponent;
+use sointula\shop\common\entities\Product;
 use yii\base\Widget;
 
 /**

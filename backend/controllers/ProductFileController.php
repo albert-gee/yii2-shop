@@ -1,9 +1,9 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\ProductEvent;
-use xalberteinsteinx\shop\backend\components\form\ProductFileForm;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\backend\components\events\ProductEvent;
+use sointula\shop\backend\components\form\ProductFileForm;
+use sointula\shop\common\entities\{
     Product, ProductFile, ProductFileTranslation
 };
 use bl\multilang\entities\Language;
@@ -23,12 +23,12 @@ class ProductFileController extends Controller
 
     /**
      * Event is triggered after editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

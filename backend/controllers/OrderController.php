@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use xalberteinsteinx\shop\backend\components\events\OrderEvent;
-use xalberteinsteinx\shop\common\entities\{OrderProduct, OrderStatus, Order, SearchOrder};
+use sointula\shop\backend\components\events\OrderEvent;
+use sointula\shop\common\entities\{OrderProduct, OrderStatus, Order, SearchOrder};
 use yii\web\{Controller, ForbiddenHttpException, NotFoundHttpException};
 
 /**
@@ -16,12 +16,12 @@ class OrderController extends Controller
 
     /**
      * Event is triggered before changing order status.
-     * Triggered with xalberteinsteinx\shop\backend\components\events\OrderEvent.
+     * Triggered with sointula\shop\backend\components\events\OrderEvent.
      */
     const EVENT_BEFORE_CHANGE_ORDER_STATUS = 'beforeChangeOrderStatus';
     /**
      * Event is triggered after changing order status.
-     * Triggered with xalberteinsteinx\shop\backend\components\events\OrderEvent.
+     * Triggered with sointula\shop\backend\components\events\OrderEvent.
      */
     const EVENT_AFTER_CHANGE_ORDER_STATUS = 'afterChangeOrderStatus';
 

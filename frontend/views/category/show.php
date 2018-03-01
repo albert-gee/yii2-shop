@@ -3,21 +3,21 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel xalberteinsteinx\shop\frontend\components\ProductSearch
- * @var $dataProvider xalberteinsteinx\shop\frontend\components\ProductSearch
+ * @var $searchModel sointula\shop\frontend\components\ProductSearch
+ * @var $dataProvider sointula\shop\frontend\components\ProductSearch
  *
  * @var $category Category
  * @var $menuItems Category
  * @var $filters Filter
  * @var $products Product
- * @var $cart \xalberteinsteinx\shop\frontend\components\forms\CartForm
+ * @var $cart \sointula\shop\frontend\components\forms\CartForm
  *
  */
 
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\Filter;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\frontend\assets\CategoryAsset;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\Filter;
+use sointula\shop\common\entities\Product;
+use sointula\shop\frontend\assets\CategoryAsset;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
 
@@ -53,7 +53,7 @@ CategoryAsset::register($this);
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <?= \xalberteinsteinx\shop\widgets\TreeWidget::widget([
+                    <?= \sointula\shop\widgets\TreeWidget::widget([
                         'className' => Category::className(),
                         'currentCategoryId' => (!empty($category->id)) ? $category->id : null
                     ]); ?>
@@ -80,7 +80,7 @@ CategoryAsset::register($this);
 
             <?php if (!empty($dataProvider->count)): ?>
                 <div class="row">
-                    <?= \xalberteinsteinx\shop\widgets\ProductSort::widget(); ?>
+                    <?= \sointula\shop\widgets\ProductSort::widget(); ?>
                 </div>
             <?php endif ?>
         </div>
@@ -133,7 +133,7 @@ CategoryAsset::register($this);
 <?php if (!empty($category) && !empty($filters)) : ?>
     <div class="col-md-2">
         <p class="h3"><?= \Yii::t('shop', 'Filtering') ?></p>
-        <?= \xalberteinsteinx\shop\widgets\ProductFilter::widget([
+        <?= \sointula\shop\widgets\ProductFilter::widget([
             'category' => $category,
             'filters' => $filters,
 //            'searchModel' => $searchModel

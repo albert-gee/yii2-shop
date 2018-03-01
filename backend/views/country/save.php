@@ -1,7 +1,7 @@
 <?php
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\common\entities\ProductCountry;
+use sointula\shop\common\entities\ProductCountry;
 use bl\multilang\entities\Language;
 use kartik\widgets\FileInput;
 use yii\helpers\Html;
@@ -12,8 +12,8 @@ use yii\widgets\ActiveForm;
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $country ProductCountry
- * @var $countryTranslation \xalberteinsteinx\shop\common\entities\ProductCountryTranslation
- * @var $countryImageModel \xalberteinsteinx\shop\backend\components\form\CountryImageForm
+ * @var $countryTranslation \sointula\shop\common\entities\ProductCountryTranslation
+ * @var $countryImageModel \sointula\shop\backend\components\form\CountryImageForm
  * @var $languages Language[]
  * @var $selectedLanguage Language
  *
@@ -38,7 +38,7 @@ $this->title = Yii::t('shop', ($country->isNewRecord) ? 'Add country' : 'Edit co
         </h1>
 
         <!--LANGUAGES-->
-        <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => $selectedLanguage,
         ]); ?>
     </div>

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 use bl\multilang\behaviors\TranslationBehavior;
 use Yii;
 use yii\db\ActiveRecord;

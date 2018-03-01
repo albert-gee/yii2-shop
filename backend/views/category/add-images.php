@@ -5,8 +5,8 @@
  * @var $this yii\web\View
  * @var $languages [] bl\multilang\entities\Language
  * @var $selectedLanguage bl\multilang\entities\Language
- * @var $category \xalberteinsteinx\shop\common\entities\Category
- * @var $image_form xalberteinsteinx\shop\backend\components\form\CategoryImageForm
+ * @var $category \sointula\shop\common\entities\Category
+ * @var $image_form sointula\shop\backend\components\form\CategoryImageForm
  */
 
 use rmrevin\yii\fontawesome\FA;
@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
             </a>
 
             <!-- LANGUAGES -->
-            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
         </section>

@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\CountryEvent;
-use xalberteinsteinx\shop\backend\components\form\CountryImageForm;
-use xalberteinsteinx\shop\common\entities\ProductCountry;
-use xalberteinsteinx\shop\common\entities\ProductCountryTranslation;
+use sointula\shop\backend\components\events\CountryEvent;
+use sointula\shop\backend\components\form\CountryImageForm;
+use sointula\shop\common\entities\ProductCountry;
+use sointula\shop\common\entities\ProductCountryTranslation;
 use bl\multilang\entities\Language;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;

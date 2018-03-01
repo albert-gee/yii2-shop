@@ -2,9 +2,9 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $products \xalberteinsteinx\shop\common\entities\Product
+ * @var $products \sointula\shop\common\entities\Product
  */
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
+use sointula\shop\frontend\components\forms\CartForm;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;

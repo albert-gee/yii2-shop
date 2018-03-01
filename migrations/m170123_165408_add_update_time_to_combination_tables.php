@@ -48,9 +48,9 @@ class m170123_165408_add_update_time_to_combination_tables extends Migration
         $now = new Expression('NOW()');
 
         $models = [
-            '\xalberteinsteinx\shop\common\entities\Combination', '\xalberteinsteinx\shop\common\entities\CombinationAttribute',
-            '\xalberteinsteinx\shop\common\entities\CombinationImage', '\xalberteinsteinx\shop\common\entities\CombinationPrice',
-            '\xalberteinsteinx\shop\common\entities\CombinationTranslation'
+            '\sointula\shop\common\entities\Combination', '\sointula\shop\common\entities\CombinationAttribute',
+            '\sointula\shop\common\entities\CombinationImage', '\sointula\shop\common\entities\CombinationPrice',
+            '\sointula\shop\common\entities\CombinationTranslation'
         ];
 
         foreach ($models as $model) {
@@ -60,7 +60,7 @@ class m170123_165408_add_update_time_to_combination_tables extends Migration
             $objects = $model::find()->all();
             foreach ($objects as $object) {
                 /**
-                 * @var $combination \xalberteinsteinx\shop\common\entities\Combination
+                 * @var $combination \sointula\shop\common\entities\Combination
                  */
                 $object->creation_time = $now;
                 $object->update_time = $now;

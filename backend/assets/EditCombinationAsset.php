@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\backend\assets;
+namespace sointula\shop\backend\assets;
 use yii\web\AssetBundle;
 
 /**
@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class EditCombinationAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/backend/web';
+    public $sourcePath = '@vendor/sointula/yii2-shop/backend/web';
 
     public $css = [
     ];

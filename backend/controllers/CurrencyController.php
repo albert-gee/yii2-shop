@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
 use Yii;
-use xalberteinsteinx\shop\common\entities\Currency;
+use sointula\shop\common\entities\Currency;
 use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -16,7 +16,7 @@ class CurrencyController extends Controller
 {
     /**
      * Event is triggered before creating new product.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_CHANGE = 'afterChangeCurrency';
 

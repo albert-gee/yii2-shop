@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 use bl\multilang\entities\Language;
 use bl\seo\behaviors\SeoDataBehavior;
 use yii\db\ActiveRecord;

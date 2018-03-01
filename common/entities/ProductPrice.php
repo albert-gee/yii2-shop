@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\components\user\models\UserGroup;
 use Yii;
 use yii\db\ActiveRecord;
 

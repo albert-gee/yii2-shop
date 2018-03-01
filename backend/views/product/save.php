@@ -1,7 +1,7 @@
 <?php
 use bl\multilang\MultiLangUrlManager;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\backend\assets\EditProductAsset;
+use sointula\shop\common\entities\Product;
+use sointula\shop\backend\assets\EditProductAsset;
 use yii\widgets\Pjax;
 
 /**

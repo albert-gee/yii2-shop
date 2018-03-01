@@ -1,5 +1,5 @@
 <?php
-use xalberteinsteinx\shop\common\components\user\models\RecoveryForm;
+use sointula\shop\common\components\user\models\RecoveryForm;
 use yii\bootstrap\Alert;
 use yii\widgets\ActiveForm;
 

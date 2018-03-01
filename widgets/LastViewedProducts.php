@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ViewedProduct;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ViewedProduct;
 use yii\base\Widget;
 
 /**

@@ -5,13 +5,13 @@
  * @var $product            Product
  * @var $image_form         ProductImageForm
  * @var $selectedLanguage   \bl\multilang\entities\Language
- * @var $images             \xalberteinsteinx\shop\common\entities\ProductImage[]
+ * @var $images             \sointula\shop\common\entities\ProductImage[]
  * @var $modifiedElement    integer|null
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\backend\components\form\ProductImageForm;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\backend\components\form\ProductImageForm;
+use sointula\shop\common\entities\Product;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;

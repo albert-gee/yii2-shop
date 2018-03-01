@@ -2,7 +2,7 @@
 **!Important: this migrations must be applied after Dectrium-User module migrations.**
 ```php
 - php yii migrate --migrationPath=@yii/rbac/migrations
-- php yii migrate --migrationPath=@vendor/xalberteinsteinx/yii2-shop/migrations
+- php yii migrate --migrationPath=@vendor/sointula/yii2-shop/migrations
 ```
 
 **Configuration for Imagable module:**
@@ -142,13 +142,13 @@
 ### Add module to your backend config
 ```php
     'bootstrap' => [
-        //'xalberteinsteinx\shop\backend\components\events\PartnersBootstrap',
-        'xalberteinsteinx\shop\backend\components\events\ShopLogBootstrap',
-        'xalberteinsteinx\shop\backend\components\events\CartBootstrap',
+        //'sointula\shop\backend\components\events\PartnersBootstrap',
+        'sointula\shop\backend\components\events\ShopLogBootstrap',
+        'sointula\shop\backend\components\events\CartBootstrap',
     ],
     'modules' => [
         'shop' => [
-            'class' => 'xalberteinsteinx\shop\backend\Module',
+            'class' => 'sointula\shop\backend\Module',
             'enableCurrencyConversion' => true
         ]
     ],
@@ -161,10 +161,7 @@
             'enableDefaultLanguageUrlCode' => false,
             'rules' => [
                 [
-                    'class' => bl\articles\UrlRule::className()
-                ],
-                [
-                    'class' => xalberteinsteinx\shop\UrlRule::className(),
+                    'class' => sointula\shop\UrlRule::className(),
                     'prefix' => 'shop'
                 ],
             ]
@@ -177,7 +174,7 @@
     'modules' => [
     	...
         'shop' => [
-                    'class' => xalberteinsteinx\shop\frontend\Module::className(),
+                    'class' => sointula\shop\frontend\Module::className(),
                     'enableCurrencyConversion' => true,
                     'partnerManagerEmail' => $params['partnerManagerEmail'],
                     'senderEmail' => $params['senderEmail'],
@@ -193,7 +190,7 @@
             'rules' => [
                 ...
                 [
-                    'class' => xalberteinsteinx\shop\UrlRule::className(),
+                    'class' => sointula\shop\UrlRule::className(),
                     'prefix' => 'shop'
                 ]
             ],
@@ -205,8 +202,8 @@
                     'messageConfig' => [
                         'charset' => 'UTF-8',
                     ],
-                    'viewPath' => '@vendor/xalberteinsteinx/yii2-shop/frontend/views/partner-request/mail',
-                    'htmlLayout' => '@vendor/xalberteinsteinx/yii2-shop/frontend/views/partner-request/mail/layout',
+                    'viewPath' => '@vendor/sointula/yii2-shop/frontend/views/partner-request/mail',
+                    'htmlLayout' => '@vendor/sointula/yii2-shop/frontend/views/partner-request/mail/layout',
                     'transport' => [
                         'class' => 'Swift_SmtpTransport',
                         'username' => 'info@mail.com',
@@ -219,8 +216,8 @@
     ]
 
     'bootstrap' => [
-        'xalberteinsteinx\shop\frontend\components\events\PartnersBootstrap',
-        'xalberteinsteinx\shop\frontend\components\events\UserRegistrationBootstrap'
+        'sointula\shop\frontend\components\events\PartnersBootstrap',
+        'sointula\shop\frontend\components\events\UserRegistrationBootstrap'
     ],
 ```
 
@@ -315,11 +312,11 @@ extends permissions from all managers.
 
 _Example:_
 ```
-<?= \xalberteinsteinx\shop\widgets\RecommendedProducts::widget([
+<?= \sointula\shop\widgets\RecommendedProducts::widget([
     'id' => $product->id,
 ]); ?>
 ```
-Also you may use xalberteinsteinx\shop\widgets\assets\RecommendedProductsAsset in your view.
+Also you may use sointula\shop\widgets\assets\RecommendedProductsAsset in your view.
 
 
 *Filtration widget*

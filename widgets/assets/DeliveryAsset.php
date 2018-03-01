@@ -1,6 +1,6 @@
 <?php
 
-namespace xalberteinsteinx\shop\widgets\assets;
+namespace sointula\shop\widgets\assets;
 
 use yii\web\AssetBundle;
 
@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 class DeliveryAsset extends AssetBundle
 {
 
-    public $sourcePath = '@vendor/xalberteinsteinx/yii2-shop/widgets/assets/src';
+    public $sourcePath = '@vendor/sointula/yii2-shop/widgets/assets/src';
 
     public $css = [
         'css/delivery.css'

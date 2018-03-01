@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\ProductEvent;
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductAdditionalProduct;
+use sointula\shop\backend\components\events\ProductEvent;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductAdditionalProduct;
 use bl\multilang\entities\Language;
 use Exception;
 use Yii;
@@ -19,12 +19,12 @@ class AdditionalProductController extends Controller
 
     /**
      * Event is triggered after editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

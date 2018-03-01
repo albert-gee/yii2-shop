@@ -2,8 +2,8 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $image \xalberteinsteinx\shop\common\entities\ProductImage
- * @var $imageTranslation \xalberteinsteinx\shop\common\entities\ProductImageTranslation
+ * @var $image \sointula\shop\common\entities\ProductImage
+ * @var $imageTranslation \sointula\shop\common\entities\ProductImageTranslation
  * @var $selectedLanguage \bl\multilang\entities\Language
  */
 use yii\widgets\ActiveForm;

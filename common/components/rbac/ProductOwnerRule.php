@@ -1,6 +1,6 @@
 <?php
-namespace xalberteinsteinx\shop\common\components\rbac;
-use xalberteinsteinx\shop\common\entities\Product;
+namespace sointula\shop\common\components\rbac;
+use sointula\shop\common\entities\Product;
 use yii\rbac\Rule;
 
 /**

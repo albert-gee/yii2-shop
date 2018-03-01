@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\common\components\user\models\UserAddress;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\common\components\user\models\UserAddress;
 use dektrium\user\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;

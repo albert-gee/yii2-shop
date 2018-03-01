@@ -1,14 +1,14 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\events;
+namespace sointula\shop\backend\components\events;
 
-use xalberteinsteinx\shop\backend\controllers\ProductController;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\Mailer;
+use sointula\shop\backend\controllers\ProductController;
+use sointula\shop\common\entities\Product;
+use sointula\shop\Mailer;
 use yii\base\{
     BootstrapInterface, Event
 };
-use xalberteinsteinx\shop\backend\controllers\PartnersController;
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\backend\controllers\PartnersController;
+use sointula\shop\common\components\user\models\User;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

@@ -1,9 +1,9 @@
 <?php
 
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\common\entities\CombinationPrice;
-use xalberteinsteinx\shop\common\entities\Price;
-use xalberteinsteinx\shop\common\entities\ProductPrice;
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\entities\CombinationPrice;
+use sointula\shop\common\entities\Price;
+use sointula\shop\common\entities\ProductPrice;
 use yii\db\Migration;
 
 class m170119_100436_add_group_id_for_product_base_price extends Migration
@@ -91,7 +91,7 @@ class m170119_100436_add_group_id_for_product_base_price extends Migration
     }
 
     private function migrateProductPrices() {
-        $products = \xalberteinsteinx\shop\common\entities\Product::find()->all();
+        $products = \sointula\shop\common\entities\Product::find()->all();
         foreach ($products as $product) {
             if (!empty($product->price)) {
                 $price = new Price();

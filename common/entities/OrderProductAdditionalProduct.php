@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\common\entities\Product;
 use Yii;
 
 /**

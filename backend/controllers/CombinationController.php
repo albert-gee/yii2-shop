@@ -1,12 +1,12 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\ProductEvent;
-use xalberteinsteinx\shop\backend\components\form\{
+use sointula\shop\backend\components\events\ProductEvent;
+use sointula\shop\backend\components\form\{
     CombinationAttributeForm, CombinationImageForm
 };
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\entities\{
     Combination, CombinationAttribute, CombinationImage, CombinationPrice, CombinationTranslation, Price,
     Product, ProductImage
 };
@@ -29,12 +29,12 @@ class CombinationController extends Controller
 
     /**
      * Event is triggered after editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

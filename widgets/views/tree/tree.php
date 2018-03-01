@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  * This view is used for by TreeWidget
  *
- * @var $categories xalberteinsteinx\shop\common\entities\Category
+ * @var $categories sointula\shop\common\entities\Category
  * @var $currentCategoryId integer
  * @var $currentCategoryParentId integer
  * @var $level integer
@@ -46,14 +46,14 @@ $params = [
             </tbody>
         </table>
         <?= $this->render(
-            '@vendor/xalberteinsteinx/yii2-shop/widgets/views/tree/grid-tr',
+            '@vendor/sointula/yii2-shop/widgets/views/tree/grid-tr',
             $params
         );
         ?>
 
     <?php else : ?>
         <?= $this->render(
-            '@vendor/xalberteinsteinx/yii2-shop/widgets/views/tree/categories-ajax',
+            '@vendor/sointula/yii2-shop/widgets/views/tree/categories-ajax',
             $params
         );
         ?>

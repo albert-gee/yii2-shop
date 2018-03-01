@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\user\controllers;
+namespace sointula\shop\frontend\components\user\controllers;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\common\components\user\models\UserAddress;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\common\components\user\models\UserAddress;
 use dektrium\user\controllers\SettingsController as BaseController;
 use yii\base\Exception;
 use yii\filters\AccessControl;

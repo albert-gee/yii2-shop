@@ -1,5 +1,5 @@
 <?php
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -9,7 +9,7 @@ use yii\helpers\Url;
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $deliveryMethods xalberteinsteinx\shop\common\entities\DeliveryMethod
+ * @var $deliveryMethods sointula\shop\common\entities\DeliveryMethod
  */
 
 $this->title = Yii::t('shop', 'Delivery methods');

@@ -1,9 +1,9 @@
 <?php
-namespace xalberteinsteinx\shop\common\components\user\models;
+namespace sointula\shop\common\components\user\models;
 
-use xalberteinsteinx\shop\common\components\user\models\Token;
-use xalberteinsteinx\shop\frontend\components\user\UserMailer;
-use xalberteinsteinx\shop\common\entities\PartnerRequest;
+use sointula\shop\common\components\user\models\Token;
+use sointula\shop\frontend\components\user\UserMailer;
+use sointula\shop\common\entities\PartnerRequest;
 use dektrium\user\helpers\Password;
 use dektrium\user\models\User as BaseModel;
 

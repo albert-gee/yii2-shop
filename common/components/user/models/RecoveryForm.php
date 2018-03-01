@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace xalberteinsteinx\shop\common\components\user\models;
+namespace sointula\shop\common\components\user\models;
 
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\User;
 use dektrium\user\Finder;
-use xalberteinsteinx\shop\frontend\components\user\UserMailer as Mailer;
+use sointula\shop\frontend\components\user\UserMailer as Mailer;
 use yii\base\Model;
 
 /**

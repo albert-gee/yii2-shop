@@ -1,9 +1,9 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\common\models\PaymentImageModel;
-use xalberteinsteinx\shop\common\entities\PaymentMethod;
-use xalberteinsteinx\shop\common\entities\PaymentMethodTranslation;
+use sointula\shop\common\models\PaymentImageModel;
+use sointula\shop\common\entities\PaymentMethod;
+use sointula\shop\common\entities\PaymentMethodTranslation;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Exception;

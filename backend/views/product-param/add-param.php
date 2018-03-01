@@ -1,6 +1,6 @@
 <?php
-use xalberteinsteinx\shop\common\entities\Param;
-use xalberteinsteinx\shop\common\entities\ParamTranslation;
+use sointula\shop\common\entities\Param;
+use sointula\shop\common\entities\ParamTranslation;
 use bl\multilang\entities\Language;
 use yii\widgets\Pjax;
 

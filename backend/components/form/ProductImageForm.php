@@ -1,7 +1,7 @@
 <?php
 
-namespace xalberteinsteinx\shop\backend\components\form;
-use xalberteinsteinx\shop\common\entities\Product;
+namespace sointula\shop\backend\components\form;
+use sointula\shop\common\entities\Product;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;

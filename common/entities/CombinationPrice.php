@@ -1,6 +1,6 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
+namespace sointula\shop\common\entities;
+use sointula\shop\common\components\user\models\UserGroup;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;

@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\user\controllers;
+namespace sointula\shop\backend\components\user\controllers;
 
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\common\components\user\models\UserGroupTranslation;
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\components\user\models\UserGroupTranslation;
 use bl\multilang\entities\Language;
 use dektrium\user\controllers\AdminController as BaseAdminController;
 use yii\helpers\Url;

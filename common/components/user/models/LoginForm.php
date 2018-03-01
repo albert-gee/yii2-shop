@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\common\components\user\models;
+namespace sointula\shop\common\components\user\models;
 
 use dektrium\user\Finder;
 use dektrium\user\helpers\Password;

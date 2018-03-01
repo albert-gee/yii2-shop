@@ -6,9 +6,9 @@
  * @var $languages [] bl\multilang\entities\Language
  * @var $selectedLanguage bl\multilang\entities\Language
  * @var $maxPosition integer
- * @var $category \xalberteinsteinx\shop\common\entities\Category
- * @var $categories \xalberteinsteinx\shop\common\entities\Category[]
- * @var $categoryTranslation \xalberteinsteinx\shop\common\entities\CategoryTranslation
+ * @var $category \sointula\shop\common\entities\Category
+ * @var $categories \sointula\shop\common\entities\Category[]
+ * @var $categoryTranslation \sointula\shop\common\entities\CategoryTranslation
  */
 
 use yii\helpers\Html;
@@ -42,7 +42,7 @@ use yii\widgets\ActiveForm;
             </a>
 
             <!-- LANGUAGES -->
-            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
 

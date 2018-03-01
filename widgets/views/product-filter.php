@@ -7,10 +7,10 @@
  * @var $searchModel ProductSearch
  */
 
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\Filter;
-use xalberteinsteinx\shop\frontend\components\ProductSearch;
-use xalberteinsteinx\shop\widgets\assets\ProductFilterAsset;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\Filter;
+use sointula\shop\frontend\components\ProductSearch;
+use sointula\shop\widgets\assets\ProductFilterAsset;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\widgets\traits;
+namespace sointula\shop\widgets\traits;
 
 use bl\multilang\entities\Language;
 use yii\base\Exception;
 use yii\web\BadRequestHttpException;
-use xalberteinsteinx\shop\common\entities\Category;
+use sointula\shop\common\entities\Category;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
@@ -49,11 +49,11 @@ trait TreeWidgetTrait
                  */
                 if ($isGrid == 'true') {
                     return $this->renderAjax(
-                        '@vendor/xalberteinsteinx/yii2-shop/widgets/views/tree/grid-tr', $params);
+                        '@vendor/sointula/yii2-shop/widgets/views/tree/grid-tr', $params);
                 }
                 else {
                     return $this->renderAjax(
-                        '@vendor/xalberteinsteinx/yii2-shop/widgets/views/tree/categories-ajax', $params);
+                        '@vendor/sointula/yii2-shop/widgets/views/tree/categories-ajax', $params);
                 }
             } else throw new Exception();
         } else throw new BadRequestHttpException();

@@ -1,13 +1,13 @@
 <?php
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
-use xalberteinsteinx\shop\common\entities\Category;
-use xalberteinsteinx\shop\common\entities\Combination;
-use xalberteinsteinx\shop\common\entities\Param;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductCountry;
-use xalberteinsteinx\shop\frontend\assets\ProductAsset;
-use xalberteinsteinx\shop\widgets\assets\RecommendedProductsAsset;
-use xalberteinsteinx\shop\widgets\RecommendedProducts;
+use sointula\shop\frontend\components\forms\CartForm;
+use sointula\shop\common\entities\Category;
+use sointula\shop\common\entities\Combination;
+use sointula\shop\common\entities\Param;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductCountry;
+use sointula\shop\frontend\assets\ProductAsset;
+use sointula\shop\widgets\assets\RecommendedProductsAsset;
+use sointula\shop\widgets\RecommendedProducts;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -149,7 +149,7 @@ ProductAsset::register($this);
                     ]); ?>
 
                     <!--PRICES-->
-                    <?= \xalberteinsteinx\shop\frontend\widgets\ProductPrices::widget([
+                    <?= \sointula\shop\frontend\widgets\ProductPrices::widget([
                         'product' => $product,
                         'form' => $form,
                         'defaultCombination' => $defaultCombination

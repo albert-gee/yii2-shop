@@ -2,9 +2,9 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $additionalProductsCategories   \xalberteinsteinx\shop\common\entities\Category
- * @var $productAdditionalProducts      \xalberteinsteinx\shop\common\entities\Product
- * @var $product                        \xalberteinsteinx\shop\common\entities\Product
+ * @var $additionalProductsCategories   \sointula\shop\common\entities\Category
+ * @var $productAdditionalProducts      \sointula\shop\common\entities\Product
+ * @var $product                        \sointula\shop\common\entities\Product
  * @var $selectedLanguage               \bl\multilang\entities\Language
  */
 

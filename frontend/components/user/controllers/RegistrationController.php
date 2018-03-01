@@ -1,11 +1,11 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\user\controllers;
+namespace sointula\shop\frontend\components\user\controllers;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\common\components\user\models\RegistrationForm;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\common\components\user\models\RegistrationForm;
 use bl\cms\seo\StaticPageBehavior;
-use xalberteinsteinx\shop\common\components\user\models\User;
-use xalberteinsteinx\shop\frontend\components\events\UserRegistrationEvent;
+use sointula\shop\common\components\user\models\User;
+use sointula\shop\frontend\components\events\UserRegistrationEvent;
 use dektrium\user\Finder;
 use dektrium\user\models\ResendForm;
 use dektrium\user\traits\AjaxValidationTrait;

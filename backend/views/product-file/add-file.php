@@ -10,9 +10,9 @@
  * @var Language $language
  */
 
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductFile;
-use xalberteinsteinx\shop\common\entities\ProductFileTranslation;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductFile;
+use sointula\shop\common\entities\ProductFileTranslation;
 use bl\multilang\entities\Language;
 use kartik\file\FileInput;
 use yii\bootstrap\ActiveForm;

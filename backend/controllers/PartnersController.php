@@ -1,11 +1,11 @@
 <?php
 
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\PartnersEvents;
+use sointula\shop\backend\components\events\PartnersEvents;
 use Yii;
-use xalberteinsteinx\shop\common\entities\PartnerRequest;
-use xalberteinsteinx\shop\common\entities\SearchPartnerRequest;
+use sointula\shop\common\entities\PartnerRequest;
+use sointula\shop\common\entities\SearchPartnerRequest;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;

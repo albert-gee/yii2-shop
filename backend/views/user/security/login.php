@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use xalberteinsteinx\shop\common\components\user\models\LoginForm;
+use sointula\shop\common\components\user\models\LoginForm;
 use dektrium\user\widgets\Connect;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;

@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  * This view is used for rendering in TreeWidget if it is grid.
  *
- * @var $categories xalberteinsteinx\shop\common\entities\Category
+ * @var $categories sointula\shop\common\entities\Category
  * @var $currentCategoryId integer
  * @var $level integer
  * @var $upIconClass string
@@ -12,8 +12,8 @@
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\widgets\ManageButtons;
-use xalberteinsteinx\shop\widgets\TreeWidget;
+use sointula\shop\widgets\ManageButtons;
+use sointula\shop\widgets\TreeWidget;
 use yii\bootstrap\Html;
 use yii\helpers\Url;
 

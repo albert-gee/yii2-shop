@@ -3,13 +3,13 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace xalberteinsteinx\shop\helpers;
+namespace sointula\shop\helpers;
 
 /**
  * Removes duplicated elements from multidimensional array.
  *
  * Class ShopArrayHelper
- * @package xalberteinsteinx\shop\helpers
+ * @package sointula\shop\helpers
  * @returns array
  */
 class ShopArrayHelper

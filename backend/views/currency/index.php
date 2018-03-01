@@ -3,8 +3,8 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this               yii\web\View
- * @var $model              \xalberteinsteinx\shop\common\entities\Currency
- * @var $rates              \xalberteinsteinx\shop\common\entities\Currency[]
+ * @var $model              \sointula\shop\common\entities\Currency
+ * @var $rates              \sointula\shop\common\entities\Currency[]
  * @var $modifiedElement    integer|null
  */
 

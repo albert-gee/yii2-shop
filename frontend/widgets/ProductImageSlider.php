@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductImage;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductImage;
 use yii\helpers\Html;
 use evgeniyrru\yii2slick\Slick;
 use newerton\fancybox\FancyBox;
@@ -14,7 +14,7 @@ use newerton\fancybox\FancyBox;
  *
  * Example:
  * ```php
- * <?= \xalberteinsteinx\shop\frontend\widgets\ProductImageSlider::widget([
+ * <?= \sointula\shop\frontend\widgets\ProductImageSlider::widget([
  *      'product' => $product,
  *
  *      // @see http://kenwheeler.github.io/slick/#settings

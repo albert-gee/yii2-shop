@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\common\components;
+namespace sointula\shop\common\components;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -11,15 +11,15 @@ use yii\base\{
 use yii\db\{
     ActiveRecord, Expression
 };
-use xalberteinsteinx\shop\frontend\components\events\OrderInfoEvent;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\frontend\components\events\OrderInfoEvent;
+use sointula\shop\common\entities\{
     Order, OrderProductAdditionalProduct, OrderStatus, OrderProduct
 };
-use xalberteinsteinx\shop\common\components\user\models\User;
-use xalberteinsteinx\shop\common\components\user\models\{
+use sointula\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\{
     Profile, UserAddress
 };
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\common\entities\{
     Product, Combination
 };
 

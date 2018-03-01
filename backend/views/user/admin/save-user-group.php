@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $userGroupTranslation \xalberteinsteinx\shop\common\components\user\models\UserGroupTranslation
+ * @var $userGroupTranslation \sointula\shop\common\components\user\models\UserGroupTranslation
  * @var $languageId integer
  */
 use yii\bootstrap\ActiveForm;
@@ -19,7 +19,7 @@ $this->title = \Yii::t('shop', 'Change user group');
                 <?= $this->title; ?>
             </h1>
             <div class="col-md-3 pull-right">
-                <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+                <?= \sointula\shop\widgets\LanguageSwitcher::widget([
                     'selectedLanguage' => \bl\multilang\entities\Language::findOne($languageId)
                 ]); ?>
             </div>

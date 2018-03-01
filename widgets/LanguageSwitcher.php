@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
 use bl\multilang\entities\Language;
 use yii\base\Widget;

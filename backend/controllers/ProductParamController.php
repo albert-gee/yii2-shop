@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\backend\components\events\ProductEvent;
-use xalberteinsteinx\shop\common\entities\Param;
-use xalberteinsteinx\shop\common\entities\ParamTranslation;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\backend\components\events\ProductEvent;
+use sointula\shop\common\entities\Param;
+use sointula\shop\common\entities\ParamTranslation;
+use sointula\shop\common\entities\Product;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\filters\AccessControl;
@@ -20,7 +20,7 @@ class ProductParamController extends Controller
 
     /**
      * Event is triggered before editing product translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

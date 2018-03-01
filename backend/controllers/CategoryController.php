@@ -1,19 +1,19 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\widgets\traits\TreeWidgetTrait;
+use sointula\shop\widgets\traits\TreeWidgetTrait;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\Inflector;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use bl\multilang\entities\Language;
-use xalberteinsteinx\shop\backend\components\events\CategoryEvent;
-use xalberteinsteinx\shop\backend\components\form\CategoryImageForm;
+use sointula\shop\backend\components\events\CategoryEvent;
+use sointula\shop\backend\components\form\CategoryImageForm;
 use yii\web\{
     ForbiddenHttpException, NotFoundHttpException, UploadedFile
 };
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\common\entities\{
     Category, CategoryTranslation, Filter, SearchCategory
 };
 
@@ -27,32 +27,32 @@ class CategoryController extends Controller
 
     /**
      * Event is triggered before creating new product.
-     * Triggered with xalberteinsteinx\shop\backend\events\ProductEvent.
+     * Triggered with sointula\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_CREATE_CATEGORY = 'beforeCreateCategory';
     /**
      * Event is triggered after creating new category.
-     * Triggered with xalberteinsteinx\shop\backend\events\CategoryEvent.
+     * Triggered with sointula\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_CREATE_CATEGORY = 'afterCreateCategory';
     /**
      * Event is triggered after editing category translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\CategoryEvent.
+     * Triggered with sointula\shop\backend\events\CategoryEvent.
      */
     const EVENT_BEFORE_EDIT_CATEGORY = 'beforeEditCategory';
     /**
      * Event is triggered before editing category translation.
-     * Triggered with xalberteinsteinx\shop\backend\events\CategoryEvent.
+     * Triggered with sointula\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_EDIT_CATEGORY = 'afterEditCategory';
     /**
      * Event is triggered before deleting category.
-     * Triggered with xalberteinsteinx\shop\backend\events\CategoryEvent.
+     * Triggered with sointula\shop\backend\events\CategoryEvent.
      */
     const EVENT_BEFORE_DELETE_CATEGORY = 'beforeDeleteCategory';
     /**
      * Event is triggered after deleting category.
-     * Triggered with xalberteinsteinx\shop\backend\events\CategoryEvent.
+     * Triggered with sointula\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_DELETE_CATEGORY = 'afterDeleteCategory';
 

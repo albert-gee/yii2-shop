@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\common\entities\Product;
 use yii\base\Widget;
 
 /**

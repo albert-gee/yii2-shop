@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\events;
+namespace sointula\shop\backend\components\events;
 
-use xalberteinsteinx\shop\models\Order;
+use sointula\shop\models\Order;
 use yii\base\Event;
 
 /**

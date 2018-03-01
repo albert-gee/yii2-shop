@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\common\entities\DeliveryMethod;
+use sointula\shop\common\entities\DeliveryMethod;
 use Yii;
 use yii\base\Widget;
 

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components;
+namespace sointula\shop\backend\components;
 use Yii;
 use yii\base\Model;
 /**

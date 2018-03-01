@@ -1,14 +1,14 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets;
+namespace sointula\shop\frontend\widgets;
 
-use xalberteinsteinx\shop\frontend\widgets\assets\ProductCombinationAsset;
+use sointula\shop\frontend\widgets\assets\ProductCombinationAsset;
 use yii\base\Widget;
 use yii\widgets\ActiveForm;
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\frontend\components\forms\CartForm;
+use sointula\shop\common\entities\{
     Product, Combination
 };
-use xalberteinsteinx\shop\frontend\widgets\assets\ProductPricesAsset;
+use sointula\shop\frontend\widgets\assets\ProductPricesAsset;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

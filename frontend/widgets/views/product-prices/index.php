@@ -5,14 +5,14 @@
  * @var $renderView string
  * @var $params array
  *
- * Ex.: echo \xalberteinsteinx\shop\frontend\widgets\ProductPrices::widget([
+ * Ex.: echo \sointula\shop\frontend\widgets\ProductPrices::widget([
  *  'product' => $product,
  *  'form' => $form,
  *  'defaultCombination' => $defaultCombination
  * ]);
  */
-use xalberteinsteinx\shop\frontend\widgets\AdditionalProducts;
-use xalberteinsteinx\shop\frontend\widgets\assets\ProductCombinationAsset;
+use sointula\shop\frontend\widgets\AdditionalProducts;
+use sointula\shop\frontend\widgets\assets\ProductCombinationAsset;
 use yii\helpers\Html;
 
 ProductCombinationAsset::register($this);

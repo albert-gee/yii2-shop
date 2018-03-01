@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel xalberteinsteinx\shop\common\entities\SearchViewedProduct
+ * @var $searchModel sointula\shop\common\entities\SearchViewedProduct
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 

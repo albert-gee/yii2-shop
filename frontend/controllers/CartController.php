@@ -1,12 +1,12 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
-use xalberteinsteinx\shop\frontend\Module;
-use xalberteinsteinx\shop\Mailer;
+use sointula\shop\frontend\components\forms\CartForm;
+use sointula\shop\frontend\Module;
+use sointula\shop\Mailer;
 use bl\cms\seo\StaticPageBehavior;
-use xalberteinsteinx\shop\common\entities\ProductAdditionalProduct;
-use xalberteinsteinx\shop\frontend\widgets\models\AdditionalProductForm;
+use sointula\shop\common\entities\ProductAdditionalProduct;
+use sointula\shop\frontend\widgets\models\AdditionalProductForm;
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -16,12 +16,12 @@ use yii\log\Logger;
 use yii\web\{
     Controller, NotFoundHttpException, Response
 };
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\components\user\models\User;
-use xalberteinsteinx\shop\common\components\user\models\{
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\{
     Profile, UserAddress
 };
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\common\entities\{
     DeliveryMethod, Order, OrderProduct, OrderStatus
 };
 
@@ -267,7 +267,7 @@ class CartController extends Controller
     public function actionAddAdditionalProduct() {
 
         if (\Yii::$app->request->isPost) {
-            $formModel = new \xalberteinsteinx\shop\common\entities\AdditionalProductForm();
+            $formModel = new \sointula\shop\common\entities\AdditionalProductForm();
             if ($formModel->load(\Yii::$app->request->post())) {
                 if ($formModel->validate()) {
 

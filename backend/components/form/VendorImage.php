@@ -3,7 +3,7 @@
  * @author Vyacheslav Nozhenko <vv.nojenko@gmail.com>
  */
 
-namespace xalberteinsteinx\shop\backend\components\form;
+namespace sointula\shop\backend\components\form;
 
 use Yii;
 use yii\base\Model;

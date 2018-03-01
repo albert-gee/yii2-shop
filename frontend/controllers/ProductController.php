@@ -1,16 +1,16 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
 use Yii;
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
+use sointula\shop\frontend\components\forms\CartForm;
 use yii\web\NotFoundHttpException;
 use yii\web\{
     Response, Controller
 };
-use xalberteinsteinx\shop\frontend\traits\EventTrait;
-use xalberteinsteinx\shop\common\entities\Combination;
-use xalberteinsteinx\shop\frontend\widgets\traits\ProductPricesTrait;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\frontend\traits\EventTrait;
+use sointula\shop\common\entities\Combination;
+use sointula\shop\frontend\widgets\traits\ProductPricesTrait;
+use sointula\shop\common\entities\{
     Category, Product, ProductTranslation
 };
 
@@ -25,13 +25,13 @@ class ProductController extends Controller
 
     /**
      * Event is triggered before.
-     * Triggered with \xalberteinsteinx\shop\frontend\traits\EventTrait.
+     * Triggered with \sointula\shop\frontend\traits\EventTrait.
      */
     const EVENT_BEFORE_SHOW = 'beforeShow';
 
     /**
      * Event is triggered after creating RegistrationForm class.
-     * Triggered with \xalberteinsteinx\shop\frontend\traits\EventTrait.
+     * Triggered with \sointula\shop\frontend\traits\EventTrait.
      */
     const EVENT_AFTER_SHOW = 'afterShow';
 

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\backend;
+namespace sointula\shop\backend;
 use Yii;
 
 /**
@@ -7,7 +7,7 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'xalberteinsteinx\shop\backend\controllers';
+    public $controllerNamespace = 'sointula\shop\backend\controllers';
     public $defaultRoute = 'shop';
 
     /**
@@ -53,7 +53,7 @@ class Module extends \yii\base\Module
             [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en-US',
-                'basePath'       => '@vendor/xalberteinsteinx/yii2-shop/backend/messages',
+                'basePath'       => '@vendor/sointula/yii2-shop/backend/messages',
         ];
     }
 }

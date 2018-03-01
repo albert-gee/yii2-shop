@@ -1,13 +1,13 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
-use xalberteinsteinx\shop\widgets\traits\TreeWidgetTrait;
+use sointula\shop\widgets\traits\TreeWidgetTrait;
 use Yii;
 use yii\web\Controller;
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
+use sointula\shop\frontend\components\forms\CartForm;
 use bl\cms\seo\StaticPageBehavior;
-use xalberteinsteinx\shop\frontend\components\ProductSearch;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\frontend\components\ProductSearch;
+use sointula\shop\common\entities\{
     Category, Filter
 };
 use yii\web\NotFoundHttpException;

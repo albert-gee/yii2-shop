@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\events;
+namespace sointula\shop\backend\components\events;
 
-use xalberteinsteinx\shop\backend\controllers\OrderController;
+use sointula\shop\backend\controllers\OrderController;
 use bl\emailTemplates\data\Template;
 use bl\multilang\entities\Language;
 use Yii;
@@ -74,7 +74,7 @@ class CartBootstrap implements BootstrapInterface
                     '{status}' => $event->model->orderStatus->translation->title,
                 ]);
 
-                Yii::$app->shopMailer->compose('@vendor/xalberteinsteinx/yii2-shop/frontend/views/mail/mail-body',
+                Yii::$app->shopMailer->compose('@vendor/sointula/yii2-shop/frontend/views/mail/mail-body',
                     ['bodyContent' => $mailTemplate->getBody()])
                     ->setFrom([\Yii::$app->cart->sender ?? \Yii::$app->shopMailer->transport->getUsername() => \Yii::$app->name ?? Url::to(['/'], true)])
                     ->setTo($event->model->user->email)

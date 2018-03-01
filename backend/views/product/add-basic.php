@@ -4,12 +4,12 @@
  *
  * @var $prices                 array
  * @var $selectedLanguage       \bl\multilang\entities\Language
- * @var $product                \xalberteinsteinx\shop\common\entities\Product
- * @var $productTranslation     \xalberteinsteinx\shop\common\entities\ProductTranslation
+ * @var $product                \sointula\shop\common\entities\Product
+ * @var $productTranslation     \sointula\shop\common\entities\ProductTranslation
  */
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\common\entities\{
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\entities\{
     PriceDiscountType, Product, ProductAvailability, ProductCountryTranslation, Vendor
 };
 use marqu3s\summernote\Summernote;
@@ -68,7 +68,7 @@ $selectedLanguageId = $selectedLanguage->id;
             <?php endif; ?>
 
             <!--LANGUAGES-->
-            <?= \xalberteinsteinx\shop\widgets\LanguageSwitcher::widget([
+            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
         </section>
@@ -151,8 +151,8 @@ $selectedLanguageId = $selectedLanguage->id;
             <div class="col-md-6">
                 <!--CATEGORY-->
                 <label><?= \Yii::t('shop', 'Category'); ?></label>
-                <?= \xalberteinsteinx\shop\widgets\InputTree::widget([
-                    'className' => \xalberteinsteinx\shop\common\entities\Category::className(),
+                <?= \sointula\shop\widgets\InputTree::widget([
+                    'className' => \sointula\shop\common\entities\Category::className(),
                     'form' => $form,
                     'model' => $product,
                     'attribute' => 'category_id',

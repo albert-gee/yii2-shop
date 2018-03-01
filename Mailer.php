@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop;
+namespace sointula\shop;
 
 use Exception;
 use yii\base\Component;
@@ -8,7 +8,7 @@ use yii\helpers\{
 };
 use bl\multilang\entities\Language;
 use bl\emailTemplates\data\Template;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\common\entities\Product;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
@@ -220,14 +220,14 @@ class Mailer extends Component
             '{email}' => (!empty($orderResult['user']->identity)) ? $orderResult['user']->identity->email : $orderResult['user']->email,
             '{phone}' => $orderResult['profile']->phone,
             '{orderUid}' => $orderResult['order']->uid,
-            '{products}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/yii2-shop/frontend/views/mail/products', [
+            '{products}' => \Yii::$app->view->render('@vendor/sointula/yii2-shop/frontend/views/mail/products', [
                 'products' => $orderResult['order']->orderProducts
             ]),
-            '{delivery}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/yii2-shop/frontend/views/mail/delivery', [
+            '{delivery}' => \Yii::$app->view->render('@vendor/sointula/yii2-shop/frontend/views/mail/delivery', [
                 'order' => $orderResult['order'],
                 'address' => $orderResult['address'],
             ]),
-            '{payment}' => \Yii::$app->view->render('@vendor/xalberteinsteinx/yii2-shop/frontend/views/mail/payment', [
+            '{payment}' => \Yii::$app->view->render('@vendor/sointula/yii2-shop/frontend/views/mail/payment', [
                 'order' => $orderResult['order'],
             ]),
             '{totalCost}' => \Yii::$app->formatter->asCurrency($orderResult['order']->total_cost)

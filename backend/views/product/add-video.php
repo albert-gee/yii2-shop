@@ -7,9 +7,9 @@
  * @var $video_form_upload  ProductVideoForm
  */
 
-use xalberteinsteinx\shop\backend\components\form\ProductVideoForm;
-use xalberteinsteinx\shop\common\entities\Product;
-use xalberteinsteinx\shop\common\entities\ProductVideo;
+use sointula\shop\backend\components\form\ProductVideoForm;
+use sointula\shop\common\entities\Product;
+use sointula\shop\common\entities\ProductVideo;
 use bl\multilang\entities\Language;
 use yii\helpers\Html;
 use yii\helpers\Url;

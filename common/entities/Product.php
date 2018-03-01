@@ -1,10 +1,10 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\models\Order;
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\helpers\ShopArrayHelper;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\models\Order;
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\helpers\ShopArrayHelper;
 use bl\multilang\behaviors\TranslationBehavior;
 use bl\multilang\entities\Language;
 use dektrium\user\models\User;

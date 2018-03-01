@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 
 /**
  * @var $this yii\web\View
- * @var $searchModel xalberteinsteinx\shop\common\entities\SearchFilterType
+ * @var $searchModel sointula\shop\common\entities\SearchFilterType
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 

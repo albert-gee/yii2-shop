@@ -29,7 +29,7 @@
         </li>
     </ul>
     <?= $this->render(
-        '@vendor/xalberteinsteinx/yii2-shop/widgets/views/input-tree/ul',
+        '@vendor/sointula/yii2-shop/widgets/views/input-tree/ul',
         [
             'parents' => $parents,
             'form' => $form,

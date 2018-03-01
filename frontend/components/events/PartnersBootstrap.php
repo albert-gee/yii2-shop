@@ -1,13 +1,13 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\components\events;
+namespace sointula\shop\frontend\components\events;
 
 use Yii;
-use xalberteinsteinx\shop\Mailer;
+use sointula\shop\Mailer;
 use yii\helpers\{Html, Url};
 use yii\base\{BootstrapInterface, Event};
-use xalberteinsteinx\shop\common\entities\PartnerRequest;
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\frontend\controllers\PartnerRequestController;
+use sointula\shop\common\entities\PartnerRequest;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\frontend\controllers\PartnerRequestController;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

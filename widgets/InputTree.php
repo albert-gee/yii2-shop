@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\widgets\assets\InputTreeAsset;
+use sointula\shop\widgets\assets\InputTreeAsset;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Widget;

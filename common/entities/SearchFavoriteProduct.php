@@ -1,11 +1,11 @@
 <?php
-namespace xalberteinsteinx\shop\common\entities;
+namespace sointula\shop\common\entities;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SearchFavoriteProduct represents the model behind the search form about `xalberteinsteinx\shop\common\entities\FavoriteProduct`.
+ * SearchFavoriteProduct represents the model behind the search form about `sointula\shop\common\entities\FavoriteProduct`.
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 class SearchFavoriteProduct extends FavoriteProduct

@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\backend\controllers;
+namespace sointula\shop\backend\controllers;
 
-use xalberteinsteinx\shop\common\entities\ProductAvailability;
-use xalberteinsteinx\shop\common\entities\ProductAvailabilityTranslation;
+use sointula\shop\common\entities\ProductAvailability;
+use sointula\shop\common\entities\ProductAvailabilityTranslation;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\filters\AccessControl;

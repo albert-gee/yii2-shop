@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
-use xalberteinsteinx\shop\common\entities\PaymentMethod;
+use sointula\shop\common\entities\PaymentMethod;
 use bl\imagable\helpers\FileHelper;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;

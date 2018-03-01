@@ -1,7 +1,7 @@
 <?php
-namespace xalberteinsteinx\shop\widgets;
+namespace sointula\shop\widgets;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
+use sointula\shop\common\components\user\models\Profile;
 use dektrium\user\models\RegistrationForm;
 use yii\base\Widget;
 

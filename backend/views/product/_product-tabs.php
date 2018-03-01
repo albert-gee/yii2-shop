@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $product            \xalberteinsteinx\shop\common\entities\Product
+ * @var $product            \sointula\shop\common\entities\Product
  * @var $selectedLanguage   \bl\multilang\entities\Language
  */
 use yii\helpers\Html;

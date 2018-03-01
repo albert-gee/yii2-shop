@@ -7,7 +7,7 @@
 
 use yii\web\View;
 
-\xalberteinsteinx\shop\widgets\assets\GraphAsset::register($this);
+\sointula\shop\widgets\assets\GraphAsset::register($this);
 
 $graphPointsAsJson = json_encode($graphPoints);
 

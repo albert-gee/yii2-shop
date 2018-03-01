@@ -3,11 +3,11 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $availabilities xalberteinsteinx\shop\common\entities\ProductAvailability
+ * @var $availabilities sointula\shop\common\entities\ProductAvailability
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 use yii\helpers\Url;

@@ -1,8 +1,8 @@
 <?php
-namespace xalberteinsteinx\shop\backend\components\events;
+namespace sointula\shop\backend\components\events;
 
-use xalberteinsteinx\shop\backend\controllers\CategoryController;
-use xalberteinsteinx\shop\backend\controllers\ProductController;
+use sointula\shop\backend\controllers\CategoryController;
+use sointula\shop\backend\controllers\ProductController;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;

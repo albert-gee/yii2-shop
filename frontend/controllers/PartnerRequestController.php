@@ -1,12 +1,12 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\controllers;
+namespace sointula\shop\frontend\controllers;
 
-use xalberteinsteinx\shop\common\components\user\models\Profile;
-use xalberteinsteinx\shop\common\components\user\models\RegistrationForm;
-use xalberteinsteinx\shop\common\components\user\models\User;
+use sointula\shop\common\components\user\models\Profile;
+use sointula\shop\common\components\user\models\RegistrationForm;
+use sointula\shop\common\components\user\models\User;
 use bl\cms\seo\StaticPageBehavior;
-use xalberteinsteinx\shop\frontend\components\events\PartnersEvents;
-use xalberteinsteinx\shop\common\entities\PartnerRequest;
+use sointula\shop\frontend\components\events\PartnersEvents;
+use sointula\shop\common\entities\PartnerRequest;
 use Yii;
 use yii\base\Exception;
 use yii\web\Controller;

@@ -2,10 +2,10 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $product                \xalberteinsteinx\shop\common\entities\Product
- * @var $products               \xalberteinsteinx\shop\common\entities\Product[]
- * @var $relatedProducts        \xalberteinsteinx\shop\common\entities\RelatedProduct[]
- * @var $newRelatedProduct      \xalberteinsteinx\shop\common\entities\RelatedProduct
+ * @var $product                \sointula\shop\common\entities\Product
+ * @var $products               \sointula\shop\common\entities\Product[]
+ * @var $relatedProducts        \sointula\shop\common\entities\RelatedProduct[]
+ * @var $newRelatedProduct      \sointula\shop\common\entities\RelatedProduct
  * @var $selectedLanguage       \bl\multilang\entities\Language
  */
 use yii\helpers\ArrayHelper;

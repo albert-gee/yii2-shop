@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel xalberteinsteinx\shop\common\entities\SearchOrderStatus
+ * @var $searchModel sointula\shop\common\entities\SearchOrderStatus
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
@@ -11,7 +11,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 
 $this->title = Yii::t('cart', 'Order Statuses');

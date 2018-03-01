@@ -16,7 +16,7 @@ class m170207_143231_add_position_in_shop_table extends Migration
     }
 
     private function addPositionValues() {
-        $products = \xalberteinsteinx\shop\common\entities\Product::find()->with('params')->all();
+        $products = \sointula\shop\common\entities\Product::find()->with('params')->all();
 
         foreach ($products as $product) {
             $params = $product->params;
@@ -26,7 +26,7 @@ class m170207_143231_add_position_in_shop_table extends Migration
                 $position = 1;
 
                 /**
-                 * @var $param \xalberteinsteinx\shop\common\entities\Param
+                 * @var $param \sointula\shop\common\entities\Param
                  */
                 foreach ($params as $param) {
                     $param->position = $position;

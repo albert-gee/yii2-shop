@@ -1,20 +1,20 @@
 <?php
 /**
  * @var integer $languageId
- * @var \xalberteinsteinx\shop\common\entities\Product $product
- * @var \xalberteinsteinx\shop\common\entities\Combination $combination
- * @var \xalberteinsteinx\shop\common\entities\CombinationTranslation $combinationTranslation
- * @var \xalberteinsteinx\shop\backend\components\form\CombinationImageForm $image_form
- * @var \xalberteinsteinx\shop\common\entities\Price[] $prices
- * @var \xalberteinsteinx\shop\backend\components\form\CombinationAttributeForm $combinationAttributeForm
- * @var \xalberteinsteinx\shop\common\entities\ProductImage[] $productImages
+ * @var \sointula\shop\common\entities\Product $product
+ * @var \sointula\shop\common\entities\Combination $combination
+ * @var \sointula\shop\common\entities\CombinationTranslation $combinationTranslation
+ * @var \sointula\shop\backend\components\form\CombinationImageForm $image_form
+ * @var \sointula\shop\common\entities\Price[] $prices
+ * @var \sointula\shop\backend\components\form\CombinationAttributeForm $combinationAttributeForm
+ * @var \sointula\shop\common\entities\ProductImage[] $productImages
  */
 
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\common\components\user\models\UserGroup;
-use xalberteinsteinx\shop\common\entities\PriceDiscountType;
-use xalberteinsteinx\shop\common\entities\ProductAvailability;
-use xalberteinsteinx\shop\common\entities\ShopAttribute;
+use sointula\shop\common\components\user\models\UserGroup;
+use sointula\shop\common\entities\PriceDiscountType;
+use sointula\shop\common\entities\ProductAvailability;
+use sointula\shop\common\entities\ShopAttribute;
 use bl\imagable\helpers\FileHelper;
 use marqu3s\summernote\Summernote;
 use yii\bootstrap\ActiveForm;

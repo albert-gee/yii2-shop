@@ -5,8 +5,8 @@
  * @var $countries ProductCountry[]
  */
 use rmrevin\yii\fontawesome\FA;
-use xalberteinsteinx\shop\common\entities\ProductCountry;
-use xalberteinsteinx\shop\widgets\ManageButtons;
+use sointula\shop\common\entities\ProductCountry;
+use sointula\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 

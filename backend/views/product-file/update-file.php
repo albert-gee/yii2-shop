@@ -2,10 +2,10 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $product \xalberteinsteinx\shop\common\entities\Product
+ * @var $product \sointula\shop\common\entities\Product
  * @var $language \bl\multilang\entities\Language
- * @var $fileModel \xalberteinsteinx\shop\backend\components\form\ProductFileForm
- * @var $fileTranslationModel \xalberteinsteinx\shop\common\entities\ProductFileTranslation
+ * @var $fileModel \sointula\shop\backend\components\form\ProductFileForm
+ * @var $fileTranslationModel \sointula\shop\common\entities\ProductFileTranslation
  */
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;

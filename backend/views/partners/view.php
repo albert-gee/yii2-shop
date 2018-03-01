@@ -1,12 +1,12 @@
 <?php
 
-use xalberteinsteinx\shop\common\entities\PartnerRequest;
+use sointula\shop\common\entities\PartnerRequest;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model xalberteinsteinx\shop\common\entities\PartnerRequest */
+/* @var $model sointula\shop\common\entities\PartnerRequest */
 
 $this->title = $model->company_name;
 ?>

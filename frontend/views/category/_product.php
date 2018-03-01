@@ -2,8 +2,8 @@
 /**
  * @var Product $model
  */
-use xalberteinsteinx\shop\frontend\components\forms\CartForm;
-use xalberteinsteinx\shop\common\entities\Product;
+use sointula\shop\frontend\components\forms\CartForm;
+use sointula\shop\common\entities\Product;
 use yii\helpers\Html;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;

@@ -1,5 +1,5 @@
 <?php
-namespace xalberteinsteinx\shop\frontend\widgets\models;
+namespace sointula\shop\frontend\widgets\models;
 
 use yii\base\Model;
 
