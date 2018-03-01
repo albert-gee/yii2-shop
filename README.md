@@ -1,8 +1,16 @@
+You should configure "authManager" component in common configuration file:
+```        
+    'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+```
+
 **Applying migrations:**
 **!Important: this migrations must be applied after Dectrium-User module migrations (https://github.com/dektrium/yii2-user).**
+
 ```php
 - php yii migrate --migrationPath=@yii/rbac/migrations
-- php yii migrate --migrationPath=@vendor/sointula/yii2-shop/migrations
+- php yii migrate --migrationPath=@vendor/albert-sointula/yii2-shop/migrations
 ```
 
 **Configuration for Imagable module:**
@@ -202,8 +210,8 @@
                     'messageConfig' => [
                         'charset' => 'UTF-8',
                     ],
-                    'viewPath' => '@vendor/sointula/yii2-shop/frontend/views/partner-request/mail',
-                    'htmlLayout' => '@vendor/sointula/yii2-shop/frontend/views/partner-request/mail/layout',
+                    'viewPath' => '@vendor/albert-sointula/yii2-shop/frontend/views/partner-request/mail',
+                    'htmlLayout' => '@vendor/albert-sointula/yii2-shop/frontend/views/partner-request/mail/layout',
                     'transport' => [
                         'class' => 'Swift_SmtpTransport',
                         'username' => 'info@mail.com',

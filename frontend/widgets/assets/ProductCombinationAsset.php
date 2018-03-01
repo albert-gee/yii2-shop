@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class ProductCombinationAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/widgets/assets/src';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/frontend/widgets/assets/src';
 
     public $css = [
         'css/combination.css',

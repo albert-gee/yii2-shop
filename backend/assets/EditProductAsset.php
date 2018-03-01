@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class EditProductAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/backend/web';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/backend/web';
 
     public $css = [
         'css/style.css',

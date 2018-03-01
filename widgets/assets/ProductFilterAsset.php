@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class ProductFilterAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/web';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/frontend/web';
 
     public $css = [
     ];

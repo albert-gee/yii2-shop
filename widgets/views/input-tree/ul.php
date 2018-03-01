@@ -35,7 +35,7 @@ use yii\bootstrap\Html;
             ])->label($label, ['for' => $model::className() . '-category_id-' . $object->id,]); ?>
 
             <?= $this->render(
-                '@vendor/sointula/yii2-shop/widgets/views/input-tree/ul',
+                '@vendor/albert-sointula/yii2-shop/widgets/views/input-tree/ul',
                 [
                     'parents' => $children,
                     'form' => $form,

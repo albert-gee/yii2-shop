@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class OrderCounterAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/widgets/assets/src';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/widgets/assets/src';
 
     public $css = [
         'css/order-counter.css'

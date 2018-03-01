@@ -68,7 +68,7 @@ class Module extends \yii\base\Module
             [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en-US',
-                'basePath'       => '@vendor/sointula/yii2-shop/frontend/messages',
+                'basePath'       => '@vendor/albert-sointula/yii2-shop/frontend/messages',
         ];
     }
 }

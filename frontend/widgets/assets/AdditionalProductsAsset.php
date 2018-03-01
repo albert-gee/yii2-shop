@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class AdditionalProductsAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/widgets/assets/src';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/frontend/widgets/assets/src';
 
     public $css = [
     ];

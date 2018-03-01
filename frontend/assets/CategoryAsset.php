@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class CategoryAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sointula/yii2-shop/frontend/web';
+    public $sourcePath = '@vendor/albert-sointula/yii2-shop/frontend/web';
 
     public $css = [
         'css/style.css',

@@ -49,11 +49,11 @@ trait TreeWidgetTrait
                  */
                 if ($isGrid == 'true') {
                     return $this->renderAjax(
-                        '@vendor/sointula/yii2-shop/widgets/views/tree/grid-tr', $params);
+                        '@vendor/albert-sointula/yii2-shop/widgets/views/tree/grid-tr', $params);
                 }
                 else {
                     return $this->renderAjax(
-                        '@vendor/sointula/yii2-shop/widgets/views/tree/categories-ajax', $params);
+                        '@vendor/albert-sointula/yii2-shop/widgets/views/tree/categories-ajax', $params);
                 }
             } else throw new Exception();
         } else throw new BadRequestHttpException();

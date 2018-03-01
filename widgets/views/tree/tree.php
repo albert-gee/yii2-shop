@@ -46,14 +46,14 @@ $params = [
             </tbody>
         </table>
         <?= $this->render(
-            '@vendor/sointula/yii2-shop/widgets/views/tree/grid-tr',
+            '@vendor/albert-sointula/yii2-shop/widgets/views/tree/grid-tr',
             $params
         );
         ?>
 
     <?php else : ?>
         <?= $this->render(
-            '@vendor/sointula/yii2-shop/widgets/views/tree/categories-ajax',
+            '@vendor/albert-sointula/yii2-shop/widgets/views/tree/categories-ajax',
             $params
         );
         ?>
