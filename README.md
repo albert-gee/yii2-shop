@@ -1,20 +1,217 @@
-You should configure "authManager" component in common configuration file:
+#Yii2-shop module
+Powerful E-commerce module for Yii2 framework.
+
+##Installation
+
+###1. You should configure "authManager" component in common configuration file:
 ```        
     'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
 ```
 
-**Applying migrations:**
-**!Important: this migrations must be applied after Dectrium-User module migrations (https://github.com/dektrium/yii2-user).**
+###2. Set "Yii2-multi-lang" component in backend configuration file:
+```
+'components' => [
 
-```php
-- php yii migrate --migrationPath=@yii/rbac/migrations
-- php yii migrate --migrationPath=@vendor/albert-sointula/yii2-shop/migrations
+    'urlManager' => [
+                'class' => bl\multilang\MultiLangUrlManager::className(),
+                'baseUrl' => '/admin',
+                'enablePrettyUrl' => true,
+                'showScriptName' => false,
+                'rules' => [
+                ],
+            ],
+            'urlManagerFrontend' => [
+                'class' => bl\multilang\MultiLangUrlManager::className(),
+                'baseUrl' => '/',
+                'showScriptName' => false,
+                'enablePrettyUrl' => true,
+                'enableDefaultLanguageUrlCode' => false,
+                'rules' => [
+                    [
+                        'class' => bl\articles\UrlRule::className()
+                    ],
+                    [
+                        'class' => xalberteinsteinx\shop\UrlRule::className(),
+                        'prefix' => 'shop'
+                    ],
+                ]
+            ],
+]
 ```
 
-**Configuration for Imagable module:**
-```php
+###3. Set "Yii2-locale" extension in frontend configuration file:
+```
+'components' => [
+    'urlManager' => [
+                'class' => bl\locale\UrlManager::className(),
+                'baseUrl' => '/',
+                'showScriptName' => false,
+                'detectInSession' => false,
+                'detectInCookie' => false,
+                'enablePrettyUrl' => true,
+                'languageProvider' => [
+                    'class' => bl\locale\provider\DbLanguageProvider::className(),
+                    'db' => 'db',
+                    'table' => 'language',
+                    'localeField' => 'lang_id',
+                    'languageCondition' => ['active' => true],
+                ],
+                'lowerCase' => true,
+                'useShortSyntax' => false,
+                'languageKey' => 'language',
+                'showDefault' => false,
+                'rules' => [
+                    
+                    [
+                        'class' => sointula\shop\UrlRule::className(),
+                        'prefix' => 'shop'
+                    ],
+                    [
+                        'class' => bl\seo\UniqueUrlRule::class,
+                        'destination' => 'cart',
+                        'duplicate' => [
+                            'cart/cart/show',
+                            'cart/cart'
+                        ]
+                    ],
+                ]
+            ],
+]
+
+```
+
+###4. Set Dektrium-user module:
+in frontend config:
+```
+ 'modules' => [
+    ...
+    
+    'user' => [
+                'modelMap' => [
+                    'RegistrationForm' => sointula\shop\common\components\user\models\RegistrationForm::className(),
+                    'RecoveryForm' => sointula\shop\common\components\user\models\RecoveryForm::className(),
+                    'LoginForm' => sointula\shop\common\components\user\models\LoginForm::className(),
+                    'SettingsForm' => sointula\shop\common\components\user\models\SettingsForm::className(),
+                ],
+                'controllerMap' => [
+                    'registration' => sointula\shop\frontend\components\user\controllers\RegistrationController::className(),
+                    'settings' => sointula\shop\frontend\components\user\controllers\SettingsController::className(),
+                    'security' => sointula\shop\frontend\components\user\controllers\SecurityController::className(),
+                    'recovery' => sointula\shop\frontend\components\user\controllers\RecoveryController::className()
+                ],
+                'as frontend' => dektrium\user\filters\FrontendFilter::className(),
+                'enableFlashMessages' => false
+            ],
+    
+    ...
+ 
+ ],
+ 
+ 'components' => [
+ 
+    ...
+    'user' => [
+                'identityClass' => sointula\shop\common\components\user\models\User::className(),
+                'enableAutoLogin' => true,
+                'identityCookie' => [
+                    'name'     => '_frontendIdentity',
+                    'path'     => '/',
+                    'httpOnly' => true,
+                ],
+                'on afterLogin' => function() {
+                    if (Yii::$app->cart->saveToDataBase) Yii::$app->cart->transportSessionDataToDB();
+                },
+                'on afterConfirm' => function() {
+                    if (Yii::$app->cart->saveToDataBase) Yii::$app->cart->transportSessionDataToDB();
+                },
+            ],
+    ...
+    ],
+```
+
+in backend config:
+
+```
+'modules' => [
+
+    ...
+    'user' => [
+                'enableRegistration' => false,
+                'enableConfirmation' => false,
+                'admins' => ['admin'],
+                'adminPermission' => 'rbacManager',
+                'controllerMap' => [
+                    'admin' => sointula\shop\backend\components\user\controllers\AdminController::className(),
+                    'security' => sointula\shop\frontend\components\user\controllers\SecurityController::className()
+                ],
+                'as backend' => [
+                    'class' => 'dektrium\user\filters\BackendFilter',
+                    'only' => ['register'], // Block View Register Backend
+                ],
+            ],
+    ...
+],
+
+'components' => [
+
+    ...
+    'user' => [
+                'identityClass' => dektrium\user\models\User::className(),
+                'enableAutoLogin' => true,
+                'returnUrl' => '/',
+                'identityCookie' => [
+                    'name'     => '_backendIdentity',
+                    'path'     => '/admin',
+                    'httpOnly' => true,
+                ],
+            ],
+    ...
+    
+    'view' => [
+                'theme' => [
+                    'basePath' => '@backend/themes/' . $params['themeName'],
+                    'baseUrl' => '@web/themes/' . $params['themeName'],
+                    'pathMap' => [
+                        '@dektrium/user/views' => '@vendor/sointula/yii2-shop/backend/views/user',
+                    ],
+                ],
+            ],
+],
+
+```
+
+in common configuration file:
+
+```
+'modules' => [
+
+        'user' => [
+            'class' => dektrium\user\Module::className(),
+            'modelMap' => [
+                'Profile' => sointula\shop\common\components\user\models\Profile::className(),
+                'User' => sointula\shop\common\components\user\models\User::className()
+            ],
+        ],
+```
+
+###5. Apply migrations:
+
+```
+- php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
+- php yii migrate --migrationPath=@yii/rbac/migrations
+- php yii migrate --migrationPath=@vendor/black-lamp/yii2-multi-lang/migration
+- php yii migrate --migrationPath=@vendor/black-lamp/yii2-seo/migrations
+- php yii migrate --migrationPath=@vendor/black-lamp/blcms-staticpage/migrations
+- php yii migrate --migrationPath=@vendor/black-lamp/yii2-email-templates/src/migrations
+- php yii migrate --migrationPath=@vendor/albert-sointula/yii2-shop/migrations
+
+```
+
+###6. Add configuration for Imagable module in common configuration file:
+
+```
         'shop_imagable' => [
             'class' => bl\imagable\Imagable::className(),
             'imageClass' => \bl\imagable\instances\CreateImageImagine::className(),
@@ -147,7 +344,7 @@ You should configure "authManager" component in common configuration file:
         ],
 ```
 
-### Add module to your backend config
+###7. Add module to your backend config
 ```php
     'bootstrap' => [
         //'sointula\shop\backend\components\events\PartnersBootstrap',
@@ -159,25 +356,10 @@ You should configure "authManager" component in common configuration file:
             'class' => 'sointula\shop\backend\Module',
             'enableCurrencyConversion' => true
         ]
-    ],
-    'components' => [
-        'urlManagerFrontend' => [
-            'class' => bl\multilang\MultiLangUrlManager::className(),
-            'baseUrl' => '/',
-            'showScriptName' => false,
-            'enablePrettyUrl' => true,
-            'enableDefaultLanguageUrlCode' => false,
-            'rules' => [
-                [
-                    'class' => sointula\shop\UrlRule::className(),
-                    'prefix' => 'shop'
-                ],
-            ]
-        ]
     ]
 ```
 
-### Add module to your frontend config
+###8. Add module to your frontend config
 ```php
     'modules' => [
     	...
@@ -193,17 +375,7 @@ You should configure "authManager" component in common configuration file:
     
     'components' => [
         ...
-        'urlManager' => [
-            ...
-            'rules' => [
-                ...
-                [
-                    'class' => sointula\shop\UrlRule::className(),
-                    'prefix' => 'shop'
-                ]
-            ],
-            ...
-        ],
+        
         'partnerMailer' => [
                     'class' => yii\swiftmailer\Mailer::className(),
                     'useFileTransport' => false,
@@ -229,14 +401,25 @@ You should configure "authManager" component in common configuration file:
     ],
 ```
 
+###9. Set "Yii2-email-templates" module in frontend configuration file:
+https://github.com/black-lamp/yii2-email-templates
 
-**REQUIRES**
+###10. Set Static-page module in backend configuration file:
+```'modules' => [
+        'seo' => [
+                    'class' => 'bl\cms\seo\backend\Module'
+                ],
+],
+```
+
+
+##REQUIRES
 
 - PHP-version: 7.0 or later
 - PHP-extensions: file-info, imagick, intl
 
 
-**Roles and its permissions:**
+##Roles and its permissions:**
 
 _attributeManager_
 - addAttributeValue
@@ -314,7 +497,7 @@ _shopAdministrator_
 extends permissions from all managers. 
 
 
-**WIDGETS**
+##WIDGETS
 
 *Recommended products*
 
@@ -341,7 +524,7 @@ To use the widget, you must have set up relations in the models. For example in 
 ```
 
 
-**LOGGING**
+##LOGGING
 
 Your application can record how many people watched a particular product.
 To enable logging, you must add the following settings in the frontend configuration file:
@@ -360,7 +543,7 @@ Otherwise it will increase by one each time when registered user views product.
 
 
 
-**TRANSLATIONS**
+##TRANSLATIONS
 
 The module has translations on several languages. If there is not your language or if you would like change its on your own, you can configure it in backend or frontend configuration file:
 ```
@@ -376,7 +559,7 @@ The module has translations on several languages. If there is not your language 
 ```
 
 
-**REPORTS**
+##REPORTS
 
 - "Class 'Imagick' not found"
 
@@ -459,3 +642,7 @@ For sending information abount new product to partner which created this product
 
 If product is moderated and status is 'accept' the mail 'accept-product-to-owner' will be sent.
 You may use variables: {title}, {ownerEmail}, {owner}, {link}
+
+
+##Links
+Dektrium-User module: https://github.com/dektrium/yii2-user

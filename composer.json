@@ -17,6 +17,7 @@
 
     "black-lamp/blcms-staticpage": "0.*",
     "black-lamp/yii2-multi-lang": "^1.0.0",
+    "black-lamp/yii2-locale": "0.7.6",
     "black-lamp/yii2-seo": "0.1.*",
     "black-lamp/yii2-imagable": "1.*",
     "black-lamp/yii2-email-templates": "^3.0.0",
