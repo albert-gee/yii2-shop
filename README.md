@@ -2,15 +2,30 @@
 Powerful E-commerce module for Yii2 framework.
 
 ##Installation
+------------
 
-###1. You should configure "authManager" component in common configuration file:
+###1. Add extension ti your project:
+
+Run command
+```
+composer require albert-sointula/yii2-shop
+```
+
+or add
+```json
+"albert-sointula/yii2-shop": "*"
+```
+
+to the require section of your composer.json.
+
+###2. You should configure "authManager" component in common configuration file:
 ```        
     'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
 ```
 
-###2. Set "Yii2-multi-lang" component in backend configuration file:
+###3. Set "Yii2-multi-lang" component in backend configuration file:
 ```
 'components' => [
 
@@ -41,7 +56,7 @@ Powerful E-commerce module for Yii2 framework.
 ]
 ```
 
-###3. Set "Yii2-locale" extension in frontend configuration file:
+###4. Set "Yii2-locale" extension in frontend configuration file:
 ```
 'components' => [
     'urlManager' => [
@@ -82,7 +97,7 @@ Powerful E-commerce module for Yii2 framework.
 
 ```
 
-###4. Set Dektrium-user module:
+###5. Set Dektrium-user module:
 in frontend config:
 ```
  'modules' => [
@@ -196,7 +211,7 @@ in common configuration file:
         ],
 ```
 
-###5. Apply migrations:
+###6. Apply migrations:
 
 ```
 - php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
@@ -209,7 +224,7 @@ in common configuration file:
 
 ```
 
-###6. Add configuration for Imagable module in common configuration file:
+###7. Add configuration for Imagable module in common configuration file:
 
 ```
         'shop_imagable' => [
@@ -344,7 +359,7 @@ in common configuration file:
         ],
 ```
 
-###7. Add module to your backend config
+###8. Add module to your backend config
 ```php
     'bootstrap' => [
         //'sointula\shop\backend\components\events\PartnersBootstrap',
@@ -359,7 +374,7 @@ in common configuration file:
     ]
 ```
 
-###8. Add module to your frontend config
+###9. Add module to your frontend config
 ```php
     'modules' => [
     	...
@@ -401,10 +416,10 @@ in common configuration file:
     ],
 ```
 
-###9. Set "Yii2-email-templates" module in frontend configuration file:
+###10. Set "Yii2-email-templates" module in frontend configuration file:
 https://github.com/black-lamp/yii2-email-templates
 
-###10. Set Static-page module in backend configuration file:
+###11. Set Static-page module in backend configuration file:
 ```'modules' => [
         'seo' => [
                     'class' => 'bl\cms\seo\backend\Module'
