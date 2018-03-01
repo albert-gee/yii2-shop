@@ -1,5 +1,5 @@
 {
-  "name": "albert-gainutdinov/yii2-shop",
+  "name": "albert-sointula/yii2-shop",
   "description": "E-commerce module for Yii2 framework",
   "keywords": ["yii2", "shop", "e-commerce", "module"],
   "type": "yii2-extension",
@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "albertsointula\\shop\\": ""
+      "sointula\\shop\\": ""
     }
   }
 }
