@@ -24,7 +24,9 @@
 
     "kartik-v/yii2-widgets": "*",
     "marqu3s/yii2-summernote": "1.0.0",
-    "evgeniyrru/yii2-slick" : "1.0.1"
+    "evgeniyrru/yii2-slick" : "1.0.1",
+    "rmrevin/yii2-fontawesome": "~2.17"
+
   },
   "reqire-dev": {
     "nojes/yii2-fancybox": "1.0.*"
