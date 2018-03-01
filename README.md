@@ -1,5 +1,5 @@
 **Applying migrations:**
-**!Important: this migrations must be applied after Dectrium-User module migrations.**
+**!Important: this migrations must be applied after Dectrium-User module migrations (https://github.com/dektrium/yii2-user).**
 ```php
 - php yii migrate --migrationPath=@yii/rbac/migrations
 - php yii migrate --migrationPath=@vendor/sointula/yii2-shop/migrations
