@@ -10,7 +10,7 @@ class m170319_224333_add_order_status_sent extends Migration
             'color' => '#1ab394'
         ]);
 
-        $orderStatus = \sointula\shop\common\entities\OrderStatus::find()->where([
+        $orderStatus = \albertgeeca\shop\common\entities\OrderStatus::find()->where([
             'color' => '#1ab394'
         ])->orderBy('id DESC')->one();
 
@@ -24,16 +24,16 @@ class m170319_224333_add_order_status_sent extends Migration
 
     public function safeDown()
     {
-        $orderStatus = \sointula\shop\common\entities\OrderStatus::find()->where([
+        $orderStatus = \albertgeeca\shop\common\entities\OrderStatus::find()->where([
             'color' => '#1ab394'
         ])->orderBy('id DESC')->one();
 
-        $record = \sointula\shop\common\entities\OrderStatusTranslation::find()->where([
+        $record = \albertgeeca\shop\common\entities\OrderStatusTranslation::find()->where([
             'order_status_id' => $orderStatus->id,
         ])->one();
         $record->delete();
 
-        $record = \sointula\shop\common\entities\OrderStatus::findOne($orderStatus->id);
+        $record = \albertgeeca\shop\common\entities\OrderStatus::findOne($orderStatus->id);
         $record->delete();
     }
 

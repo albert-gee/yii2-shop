@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
 use yii\base\Widget;
 use yii\db\ActiveRecord;

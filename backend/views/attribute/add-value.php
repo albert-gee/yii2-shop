@@ -1,6 +1,6 @@
 <?php
-use sointula\shop\common\entities\ShopAttribute;
-use sointula\shop\common\entities\ShopAttributeValueColorTexture;
+use albertgeeca\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\ShopAttributeValueColorTexture;
 use kartik\widgets\ColorInput;
 use kartik\widgets\FileInput;
 use yii\grid\GridView;

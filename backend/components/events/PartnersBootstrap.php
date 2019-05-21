@@ -1,14 +1,14 @@
 <?php
-namespace sointula\shop\backend\components\events;
+namespace albertgeeca\shop\backend\components\events;
 
-use sointula\shop\backend\controllers\ProductController;
-use sointula\shop\common\entities\Product;
-use sointula\shop\Mailer;
+use albertgeeca\shop\backend\controllers\ProductController;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\Mailer;
 use yii\base\{
     BootstrapInterface, Event
 };
-use sointula\shop\backend\controllers\PartnersController;
-use sointula\shop\common\components\user\models\User;
+use albertgeeca\shop\backend\controllers\PartnersController;
+use albertgeeca\shop\common\components\user\models\User;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

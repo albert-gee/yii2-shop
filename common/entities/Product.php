@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
-use sointula\shop\common\components\user\models\Profile;
-use sointula\shop\models\Order;
-use sointula\shop\common\components\user\models\UserGroup;
-use sointula\shop\helpers\ShopArrayHelper;
+use albertgeeca\shop\common\components\user\models\Profile;
+use albertgeeca\shop\models\Order;
+use albertgeeca\shop\common\components\user\models\UserGroup;
+use albertgeeca\shop\helpers\ShopArrayHelper;
 use bl\multilang\behaviors\TranslationBehavior;
 use bl\multilang\entities\Language;
 use dektrium\user\models\User;

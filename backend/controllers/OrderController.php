@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use sointula\shop\backend\components\events\OrderEvent;
-use sointula\shop\common\entities\{OrderProduct, OrderStatus, Order, SearchOrder};
+use albertgeeca\shop\backend\components\events\OrderEvent;
+use albertgeeca\shop\common\entities\{OrderProduct, OrderStatus, Order, SearchOrder};
 use yii\web\{Controller, ForbiddenHttpException, NotFoundHttpException};
 
 /**
@@ -16,12 +16,12 @@ class OrderController extends Controller
 
     /**
      * Event is triggered before changing order status.
-     * Triggered with sointula\shop\backend\components\events\OrderEvent.
+     * Triggered with albertgeeca\shop\backend\components\events\OrderEvent.
      */
     const EVENT_BEFORE_CHANGE_ORDER_STATUS = 'beforeChangeOrderStatus';
     /**
      * Event is triggered after changing order status.
-     * Triggered with sointula\shop\backend\components\events\OrderEvent.
+     * Triggered with albertgeeca\shop\backend\components\events\OrderEvent.
      */
     const EVENT_AFTER_CHANGE_ORDER_STATUS = 'afterChangeOrderStatus';
 

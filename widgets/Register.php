@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\components\user\models\Profile;
+use albertgeeca\shop\common\components\user\models\Profile;
 use dektrium\user\models\RegistrationForm;
 use yii\base\Widget;
 

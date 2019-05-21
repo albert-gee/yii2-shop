@@ -1,12 +1,12 @@
 <?php
-use sointula\shop\widgets\assets\DeliveryAsset;
+use albertgeeca\shop\widgets\assets\DeliveryAsset;
 use bl\multilang\entities\Language;
 use yii\helpers\ArrayHelper;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $deliveryMethods \sointula\shop\common\entities\DeliveryMethod[]
+ * @var $deliveryMethods \albertgeeca\shop\common\entities\DeliveryMethod[]
  * @var $form \yii\bootstrap\ActiveForm
  * @var $model \yii\base\Model
  */

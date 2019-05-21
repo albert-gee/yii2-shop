@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop;
+namespace albertgeeca\shop;
 
 use Exception;
 use yii\base\Component;
@@ -8,7 +8,7 @@ use yii\helpers\{
 };
 use bl\multilang\entities\Language;
 use bl\emailTemplates\data\Template;
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

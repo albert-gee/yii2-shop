@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  * This view is used for by TreeWidget
  *
- * @var $categories sointula\shop\common\entities\Category
+ * @var $categories albertgeeca\shop\common\entities\Category
  * @var $currentCategoryId integer
  * @var $currentCategoryParentId integer
  * @var $level integer

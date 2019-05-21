@@ -1,12 +1,12 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use bl\multilang\behaviors\TranslationBehavior;
 use Yii;
 use yii\base\Exception;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
-use sointula\shop\common\components\user\models\UserGroup;
+use albertgeeca\shop\common\components\user\models\UserGroup;
 use yii\db\Expression;
 
 /**

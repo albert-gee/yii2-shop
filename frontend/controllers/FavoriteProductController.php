@@ -1,9 +1,9 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
 use Yii;
-use sointula\shop\common\entities\FavoriteProduct;
-use sointula\shop\common\entities\SearchFavoriteProduct;
+use albertgeeca\shop\common\entities\FavoriteProduct;
+use albertgeeca\shop\common\entities\SearchFavoriteProduct;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;

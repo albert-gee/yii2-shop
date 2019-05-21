@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\frontend\widgets;
+namespace albertgeeca\shop\frontend\widgets;
 
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 use yii\base\Widget;
 
 /**

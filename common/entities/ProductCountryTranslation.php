@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 use bl\multilang\entities\Language;
 use bl\seo\behaviors\SeoDataBehavior;
 use bl\seo\entities\SeoData;

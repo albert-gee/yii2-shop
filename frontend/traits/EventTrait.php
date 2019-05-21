@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\frontend\traits;
+namespace albertgeeca\shop\frontend\traits;
 
-use sointula\shop\common\entities\{Product, ViewedProduct};
+use albertgeeca\shop\common\entities\{Product, ViewedProduct};
 use yii\base\Event;
 use yii\db\Expression;
 

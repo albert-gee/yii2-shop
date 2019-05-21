@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\frontend\widgets;
+namespace albertgeeca\shop\frontend\widgets;
 
-use sointula\shop\common\entities\Order;
-use sointula\shop\common\entities\PaymentMethod;
+use albertgeeca\shop\common\entities\Order;
+use albertgeeca\shop\common\entities\PaymentMethod;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Widget;
 

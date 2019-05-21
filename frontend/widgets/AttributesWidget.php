@@ -1,13 +1,13 @@
 <?php
-namespace sointula\shop\frontend\widgets;
+namespace albertgeeca\shop\frontend\widgets;
 
-use sointula\shop\common\components\CartComponent;
-use sointula\shop\frontend\components\forms\CartForm;
-use sointula\shop\common\entities\Combination;
-use sointula\shop\common\entities\CombinationAttribute;
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\ShopAttribute;
-use sointula\shop\common\entities\ShopAttributeType;
+use albertgeeca\shop\common\components\CartComponent;
+use albertgeeca\shop\frontend\components\forms\CartForm;
+use albertgeeca\shop\common\entities\Combination;
+use albertgeeca\shop\common\entities\CombinationAttribute;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\ShopAttributeType;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
  *
  * Example:
  * ```php
- *  <?php $attributes = \sointula\shop\frontend\widgets\AttributesWidget::begin([
+ *  <?php $attributes = \albertgeeca\shop\frontend\widgets\AttributesWidget::begin([
  *      'product' => $model,
  *  ]); ?>
  *  <?= $attributes->renderPrice(); ?>

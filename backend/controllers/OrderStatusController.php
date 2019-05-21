@@ -1,12 +1,12 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\common\entities\OrderStatus;
-use sointula\shop\common\entities\OrderStatusTranslation;
+use albertgeeca\shop\common\entities\OrderStatus;
+use albertgeeca\shop\common\entities\OrderStatusTranslation;
 use bl\multilang\entities\Language;
 use Exception;
 use Yii;
-use sointula\shop\common\entities\SearchOrderStatus;
+use albertgeeca\shop\common\entities\SearchOrderStatus;
 use yii\db\ActiveRecord;
 use yii\filters\AccessControl;
 use yii\web\Controller;

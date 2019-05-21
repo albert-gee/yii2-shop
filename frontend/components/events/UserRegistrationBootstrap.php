@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\frontend\components\events;
+namespace albertgeeca\shop\frontend\components\events;
 
-use sointula\shop\frontend\components\user\controllers\RegistrationController;
+use albertgeeca\shop\frontend\components\user\controllers\RegistrationController;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\Event;

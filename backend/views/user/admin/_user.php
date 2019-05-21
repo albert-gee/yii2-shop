@@ -18,7 +18,7 @@
 <?= $form->field($user, 'email')->textInput(['maxlength' => 255]) ?>
 <?= $form->field($user, 'password')->passwordInput() ?>
 <?= $form->field($user, 'user_group_id')->dropDownList(
-    \yii\helpers\ArrayHelper::map(\sointula\shop\common\components\user\models\UserGroup::find()->all(),
+    \yii\helpers\ArrayHelper::map(\albertgeeca\shop\common\components\user\models\UserGroup::find()->all(),
         'id', 'translation.title'),
     ['prompt' => '--' . \Yii::t('shop', 'Empty') . '--']
 ); ?>

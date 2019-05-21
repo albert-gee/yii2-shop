@@ -1,6 +1,6 @@
 <?php
 
-namespace sointula\shop\backend\components;
+namespace albertgeeca\shop\backend\components;
 
 use bl\imagable\helpers\FileHelper;
 use bl\imagable\interfaces\CreateImageInterface;

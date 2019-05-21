@@ -1,16 +1,16 @@
 <?php
 
-namespace sointula\shop\frontend\components;
+namespace albertgeeca\shop\frontend\components;
 
-use sointula\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Category;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 use yii\helpers\ArrayHelper;
 
 /**
- * ProductSearch represents the model behind the search form about `sointula\shop\common\entities\Product`.
+ * ProductSearch represents the model behind the search form about `albertgeeca\shop\common\entities\Product`.
  */
 class ProductSearch extends Product
 {

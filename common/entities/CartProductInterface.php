@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 /**
  * All objects that can be added to the cart must implement this interface

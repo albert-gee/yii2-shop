@@ -1,14 +1,14 @@
 <?php
 
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use sointula\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\ShopAttribute;
 
 /**
- * SearchAttribute represents the model behind the search form about `sointula\shop\common\entities\ShopAttribute`.
+ * SearchAttribute represents the model behind the search form about `albertgeeca\shop\common\entities\ShopAttribute`.
  */
 class SearchAttribute extends ShopAttribute
 {

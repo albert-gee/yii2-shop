@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop;
+namespace albertgeeca\shop;
 
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\CategoryTranslation;
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\ProductTranslation;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\CategoryTranslation;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\ProductTranslation;
 use bl\multilang\entities\Language;
 use bl\seo\entities\SeoData;
 use Yii;

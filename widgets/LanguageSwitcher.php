@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
 use bl\multilang\entities\Language;
 use yii\base\Widget;

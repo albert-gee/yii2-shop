@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\frontend\widgets\traits;
+namespace albertgeeca\shop\frontend\widgets\traits;
 
-use sointula\shop\common\components\CartComponent;
+use albertgeeca\shop\common\components\CartComponent;
 use Yii;
 use yii\helpers\Json;
 

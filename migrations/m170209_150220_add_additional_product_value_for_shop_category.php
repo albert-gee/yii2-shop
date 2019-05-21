@@ -1,13 +1,13 @@
 <?php
 
-use sointula\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Category;
 use yii\db\Migration;
 
 class m170209_150220_add_additional_product_value_for_shop_category extends Migration
 {
     public function up()
     {
-        $categories = \sointula\shop\common\entities\Category::find()->all();
+        $categories = \albertgeeca\shop\common\entities\Category::find()->all();
 
         /**
          * @var $category Category

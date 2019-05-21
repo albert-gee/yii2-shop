@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace sointula\shop\frontend\components\user\controllers;
+namespace albertgeeca\shop\frontend\components\user\controllers;
 
-use sointula\shop\frontend\components\events\ResetPasswordEvent;
+use albertgeeca\shop\frontend\components\events\ResetPasswordEvent;
 use dektrium\user\Finder;
-use sointula\shop\common\components\user\models\RecoveryForm;
-use sointula\shop\common\components\user\models\Token;
+use albertgeeca\shop\common\components\user\models\RecoveryForm;
+use albertgeeca\shop\common\components\user\models\Token;
 use dektrium\user\traits\AjaxValidationTrait;
 use dektrium\user\traits\EventTrait;
 use yii\filters\AccessControl;

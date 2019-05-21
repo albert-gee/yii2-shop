@@ -3,13 +3,13 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel sointula\shop\common\entities\SearchCategory
+ * @var $searchModel albertgeeca\shop\common\entities\SearchCategory
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\backend\assets\CategoriesIndexAsset;
-use sointula\shop\common\entities\Category;
+use albertgeeca\shop\backend\assets\CategoriesIndexAsset;
+use albertgeeca\shop\common\entities\Category;
 use bl\multilang\entities\Language;
 use yii\helpers\Html;
 
@@ -34,7 +34,7 @@ CategoriesIndexAsset::register($this);
     </div>
 
     <div class="box-content">
-        <?= \sointula\shop\widgets\TreeWidget::widget([
+        <?= \albertgeeca\shop\widgets\TreeWidget::widget([
             'className' => Category::className(),
             'isGrid' => true,
             'appName' => '/admin',

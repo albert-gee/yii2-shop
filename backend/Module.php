@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\backend;
+namespace albertgeeca\shop\backend;
 use Yii;
 
 /**
@@ -7,7 +7,7 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'sointula\shop\backend\controllers';
+    public $controllerNamespace = 'albertgeeca\shop\backend\controllers';
     public $defaultRoute = 'shop';
 
     /**

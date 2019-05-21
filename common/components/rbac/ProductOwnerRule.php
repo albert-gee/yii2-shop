@@ -1,6 +1,6 @@
 <?php
-namespace sointula\shop\common\components\rbac;
-use sointula\shop\common\entities\Product;
+namespace albertgeeca\shop\common\components\rbac;
+use albertgeeca\shop\common\entities\Product;
 use yii\rbac\Rule;
 
 /**

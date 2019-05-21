@@ -2,20 +2,20 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $combinations \sointula\shop\common\entities\Combination[]
- * @var $combination \sointula\shop\common\entities\Combination
- * @var $combinationAttributeForm sointula\shop\backend\components\form\CombinationAttributeForm
- * @var $product \sointula\shop\common\entities\Product
+ * @var $combinations \albertgeeca\shop\common\entities\Combination[]
+ * @var $combination \albertgeeca\shop\common\entities\Combination
+ * @var $combinationAttributeForm albertgeeca\shop\backend\components\form\CombinationAttributeForm
+ * @var $product \albertgeeca\shop\common\entities\Product
  * @var $languageId integer
- * @var $image_form \sointula\shop\backend\components\form\CombinationImageForm
+ * @var $image_form \albertgeeca\shop\backend\components\form\CombinationImageForm
  * @var $prices array
  *
  */
 
-use sointula\shop\backend\assets\EditCombinationAsset;
-use sointula\shop\common\entities\PriceDiscountType;
-use sointula\shop\common\entities\ProductAvailability;
-use sointula\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\backend\assets\EditCombinationAsset;
+use albertgeeca\shop\common\entities\PriceDiscountType;
+use albertgeeca\shop\common\entities\ProductAvailability;
+use albertgeeca\shop\common\entities\ShopAttribute;
 use bl\imagable\helpers\FileHelper;
 use marqu3s\summernote\Summernote;
 use yii\helpers\ArrayHelper;

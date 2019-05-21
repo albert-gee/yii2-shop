@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use yii\db\ActiveRecord;
 use bl\multilang\entities\Language;

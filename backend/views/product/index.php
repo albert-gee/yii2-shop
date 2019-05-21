@@ -1,11 +1,11 @@
 <?php
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\backend\assets\ProductAsset;
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\CategoryTranslation;
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\SearchProduct;
-use sointula\shop\widgets\ManageButtons;
+use albertgeeca\shop\backend\assets\ProductAsset;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\CategoryTranslation;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\SearchProduct;
+use albertgeeca\shop\widgets\ManageButtons;
 use bl\multilang\entities\Language;
 use dektrium\user\models\User;
 use yii\data\ActiveDataProvider;

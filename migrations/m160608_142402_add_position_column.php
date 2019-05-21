@@ -1,7 +1,7 @@
 <?php
 
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Product;
 use yii\db\Migration;
 
 class m160608_142402_add_position_column extends Migration

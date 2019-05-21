@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace sointula\shop\common\components\user\models;
+namespace albertgeeca\shop\common\components\user\models;
 
-use sointula\shop\common\components\user\models\User;
+use albertgeeca\shop\common\components\user\models\User;
 use dektrium\user\traits\ModuleTrait;
 use Yii;
 use yii\base\Model;

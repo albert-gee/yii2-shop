@@ -2,10 +2,10 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $orders \sointula\shop\common\entities\Order[]
+ * @var $orders \albertgeeca\shop\common\entities\Order[]
  */
-use sointula\shop\common\entities\Order;
-use sointula\shop\common\entities\OrderStatus;
+use albertgeeca\shop\common\entities\Order;
+use albertgeeca\shop\common\entities\OrderStatus;
 use yii\bootstrap\Html;
 use yii\helpers\Url;
 

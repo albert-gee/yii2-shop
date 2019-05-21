@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\models;
+namespace albertgeeca\shop\common\models;
 
 use bl\imagable\helpers\base\BaseFileHelper;
 use Exception;

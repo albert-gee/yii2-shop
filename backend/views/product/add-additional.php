@@ -2,8 +2,8 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $additionalProductsCategories \sointula\shop\common\entities\Category
- * @var $productAdditionalProducts \sointula\shop\common\entities\Product
+ * @var $additionalProductsCategories \albertgeeca\shop\common\entities\Category
+ * @var $productAdditionalProducts \albertgeeca\shop\common\entities\Product
  * @var $productId integer
  */
 use yii\helpers\Url;

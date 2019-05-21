@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\entities\DeliveryMethod;
+use albertgeeca\shop\common\entities\DeliveryMethod;
 use Yii;
 use yii\base\Widget;
 

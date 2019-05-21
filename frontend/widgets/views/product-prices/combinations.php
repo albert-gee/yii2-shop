@@ -3,17 +3,17 @@
  * If Shop module $enableCombinations property is true
  * and if there are product combinations attributes this view will be displayed.
  *
- * @var $product \sointula\shop\common\entities\Product
+ * @var $product \albertgeeca\shop\common\entities\Product
  * @var $form \yii\widgets\ActiveForm
- * @var $cart \sointula\shop\frontend\components\forms\CartForm
- * @var $defaultCombination \sointula\shop\common\entities\Combination
+ * @var $cart \albertgeeca\shop\frontend\components\forms\CartForm
+ * @var $defaultCombination \albertgeeca\shop\common\entities\Combination
  * @var $notAvailableText string
  *
  * @var $product->productAttributes ShopAttribute[] Attributes that are present in the combinations of this product
  *
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
-use sointula\shop\common\entities\ShopAttributeType;
+use albertgeeca\shop\common\entities\ShopAttributeType;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 

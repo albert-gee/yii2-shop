@@ -1,19 +1,19 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\widgets\traits\TreeWidgetTrait;
+use albertgeeca\shop\widgets\traits\TreeWidgetTrait;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\Inflector;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use bl\multilang\entities\Language;
-use sointula\shop\backend\components\events\CategoryEvent;
-use sointula\shop\backend\components\form\CategoryImageForm;
+use albertgeeca\shop\backend\components\events\CategoryEvent;
+use albertgeeca\shop\backend\components\form\CategoryImageForm;
 use yii\web\{
     ForbiddenHttpException, NotFoundHttpException, UploadedFile
 };
-use sointula\shop\common\entities\{
+use albertgeeca\shop\common\entities\{
     Category, CategoryTranslation, Filter, SearchCategory
 };
 
@@ -27,32 +27,32 @@ class CategoryController extends Controller
 
     /**
      * Event is triggered before creating new product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_CREATE_CATEGORY = 'beforeCreateCategory';
     /**
      * Event is triggered after creating new category.
-     * Triggered with sointula\shop\backend\events\CategoryEvent.
+     * Triggered with albertgeeca\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_CREATE_CATEGORY = 'afterCreateCategory';
     /**
      * Event is triggered after editing category translation.
-     * Triggered with sointula\shop\backend\events\CategoryEvent.
+     * Triggered with albertgeeca\shop\backend\events\CategoryEvent.
      */
     const EVENT_BEFORE_EDIT_CATEGORY = 'beforeEditCategory';
     /**
      * Event is triggered before editing category translation.
-     * Triggered with sointula\shop\backend\events\CategoryEvent.
+     * Triggered with albertgeeca\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_EDIT_CATEGORY = 'afterEditCategory';
     /**
      * Event is triggered before deleting category.
-     * Triggered with sointula\shop\backend\events\CategoryEvent.
+     * Triggered with albertgeeca\shop\backend\events\CategoryEvent.
      */
     const EVENT_BEFORE_DELETE_CATEGORY = 'beforeDeleteCategory';
     /**
      * Event is triggered after deleting category.
-     * Triggered with sointula\shop\backend\events\CategoryEvent.
+     * Triggered with albertgeeca\shop\backend\events\CategoryEvent.
      */
     const EVENT_AFTER_DELETE_CATEGORY = 'afterDeleteCategory';
 

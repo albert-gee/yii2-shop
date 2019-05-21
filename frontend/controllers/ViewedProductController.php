@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\common\entities\SearchViewedProduct;
-use sointula\shop\common\entities\ViewedProduct;
+use albertgeeca\shop\common\entities\SearchViewedProduct;
+use albertgeeca\shop\common\entities\ViewedProduct;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

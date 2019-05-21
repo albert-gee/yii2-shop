@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\backend\components\form;
+namespace albertgeeca\shop\backend\components\form;
 
 use yii\base\Model;
 use yii\web\UploadedFile;

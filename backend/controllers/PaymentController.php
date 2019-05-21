@@ -1,9 +1,9 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\common\models\PaymentImageModel;
-use sointula\shop\common\entities\PaymentMethod;
-use sointula\shop\common\entities\PaymentMethodTranslation;
+use albertgeeca\shop\common\models\PaymentImageModel;
+use albertgeeca\shop\common\entities\PaymentMethod;
+use albertgeeca\shop\common\entities\PaymentMethodTranslation;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Exception;

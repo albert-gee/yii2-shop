@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\widgets\assets;
+namespace albertgeeca\shop\widgets\assets;
 
 use yii\web\AssetBundle;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use Yii;
 

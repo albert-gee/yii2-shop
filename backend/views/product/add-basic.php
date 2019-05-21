@@ -4,12 +4,12 @@
  *
  * @var $prices                 array
  * @var $selectedLanguage       \bl\multilang\entities\Language
- * @var $product                \sointula\shop\common\entities\Product
- * @var $productTranslation     \sointula\shop\common\entities\ProductTranslation
+ * @var $product                \albertgeeca\shop\common\entities\Product
+ * @var $productTranslation     \albertgeeca\shop\common\entities\ProductTranslation
  */
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\components\user\models\UserGroup;
-use sointula\shop\common\entities\{
+use albertgeeca\shop\common\components\user\models\UserGroup;
+use albertgeeca\shop\common\entities\{
     PriceDiscountType, Product, ProductAvailability, ProductCountryTranslation, Vendor
 };
 use marqu3s\summernote\Summernote;
@@ -68,7 +68,7 @@ $selectedLanguageId = $selectedLanguage->id;
             <?php endif; ?>
 
             <!--LANGUAGES-->
-            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+            <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
         </section>
@@ -151,8 +151,8 @@ $selectedLanguageId = $selectedLanguage->id;
             <div class="col-md-6">
                 <!--CATEGORY-->
                 <label><?= \Yii::t('shop', 'Category'); ?></label>
-                <?= \sointula\shop\widgets\InputTree::widget([
-                    'className' => \sointula\shop\common\entities\Category::className(),
+                <?= \albertgeeca\shop\widgets\InputTree::widget([
+                    'className' => \albertgeeca\shop\common\entities\Category::className(),
                     'form' => $form,
                     'model' => $product,
                     'attribute' => 'category_id',

@@ -1,5 +1,5 @@
 <?php
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 use bl\multilang\entities\Language;
 use yii\bootstrap\Html;
 use yii\helpers\Url;

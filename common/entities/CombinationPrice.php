@@ -1,6 +1,6 @@
 <?php
-namespace sointula\shop\common\entities;
-use sointula\shop\common\components\user\models\UserGroup;
+namespace albertgeeca\shop\common\entities;
+use albertgeeca\shop\common\components\user\models\UserGroup;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;

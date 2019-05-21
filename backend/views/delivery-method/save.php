@@ -1,5 +1,5 @@
 <?php
-use sointula\shop\widgets\LanguageSwitcher;
+use albertgeeca\shop\widgets\LanguageSwitcher;
 use marqu3s\summernote\Summernote;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
@@ -10,8 +10,8 @@ use yii\helpers\Url;
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $model sointula\shop\common\entities\DeliveryMethod
- * @var $modelTranslation sointula\shop\common\entities\DeliveryMethodTranslation
+ * @var $model albertgeeca\shop\common\entities\DeliveryMethod
+ * @var $modelTranslation albertgeeca\shop\common\entities\DeliveryMethodTranslation
  * @var $languages \bl\multilang\entities\Language[]
  * @var $selectedLanguage \bl\multilang\entities\Language
  */

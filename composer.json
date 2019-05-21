@@ -1,12 +1,12 @@
 {
-  "name": "albert-sointula/yii2-shop",
+  "name": "albert-gee-ca/yii2-shop",
   "description": "E-commerce module for Yii2 framework",
   "keywords": ["yii2", "shop", "e-commerce", "module"],
   "type": "yii2-extension",
   "authors": [
     {
       "name": "Albert Gainutdinov",
-      "email": "albert.sointula@gmail.com"
+      "email": "albert.gee.ca@gmail.com"
     }
   ],
   "require": {
@@ -26,14 +26,13 @@
     "marqu3s/yii2-summernote": "1.0.0",
     "evgeniyrru/yii2-slick" : "1.0.1",
     "rmrevin/yii2-fontawesome": "~2.17"
-
   },
   "reqire-dev": {
     "nojes/yii2-fancybox": "1.0.*"
   },
   "autoload": {
     "psr-4": {
-      "sointula\\shop\\": ""
+      "albertgeeca\\shop\\": ""
     }
   }
 }

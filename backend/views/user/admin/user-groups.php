@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $userGroups \sointula\shop\common\components\user\models\UserGroup[]
+ * @var $userGroups \albertgeeca\shop\common\components\user\models\UserGroup[]
  */
 
 use yii\helpers\Url;
@@ -42,7 +42,7 @@ $this->title = \Yii::t('shop', 'User groups');
                         <?= $userGroup->translation->description; ?>
                     </td>
                     <td>
-                        <?= \sointula\shop\widgets\ManageButtons::widget([
+                        <?= \albertgeeca\shop\widgets\ManageButtons::widget([
                             'model' => $userGroup,
                             'action' => 'save-user-group',
                             'deleteUrl' => Url::to(['delete-user-group', 'id' => $userGroup->id])

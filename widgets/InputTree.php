@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\widgets\assets\InputTreeAsset;
+use albertgeeca\shop\widgets\assets\InputTreeAsset;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Widget;

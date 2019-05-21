@@ -1,6 +1,6 @@
 <?php
 
-use sointula\shop\common\components\rbac\ProductOwnerRule;
+use albertgeeca\shop\common\components\rbac\ProductOwnerRule;
 use yii\db\Migration;
 
 class m160822_043749_rbac_init extends Migration

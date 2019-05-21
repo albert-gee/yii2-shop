@@ -20,13 +20,13 @@ class m160915_091719_add_filter_type_column extends Migration
             'title' => $this->string()
         ]);
         $this->insert('shop_filter_type', [
-            'class_name' => 'sointula\shop\common\entities\Vendor',
+            'class_name' => 'albertgeeca\shop\common\entities\Vendor',
             'column' => 'vendor_id',
             'displaying_column' =>'title',
             'title' => 'Filter by vendor'
         ]);
         $this->insert('shop_filter_type', [
-            'class_name' => 'sointula\shop\common\entities\ProductCountry',
+            'class_name' => 'albertgeeca\shop\common\entities\ProductCountry',
             'column' => 'country_id',
             'displaying_column' =>'translation.title',
             'title' => 'Filter by country'

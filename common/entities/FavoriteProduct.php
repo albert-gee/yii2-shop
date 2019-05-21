@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
-use sointula\shop\common\components\user\models\User;
+use albertgeeca\shop\common\components\user\models\User;
 use yii\db\ActiveRecord;
 
 /**

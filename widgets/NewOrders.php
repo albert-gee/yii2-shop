@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\entities\Order;
-use sointula\shop\common\entities\OrderStatus;
+use albertgeeca\shop\common\entities\Order;
+use albertgeeca\shop\common\entities\OrderStatus;
 use yii\base\Widget;
 
 /**

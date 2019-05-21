@@ -4,13 +4,13 @@
  *
  * @var $this yii\web\View
  * @var $selectedLanguage \bl\multilang\entities\Language
- * @var $model sointula\shop\common\entities\PaymentMethod
- * @var $modelTranslation sointula\shop\common\entities\PaymentMethodTranslation
+ * @var $model albertgeeca\shop\common\entities\PaymentMethod
+ * @var $modelTranslation albertgeeca\shop\common\entities\PaymentMethodTranslation
  */
 
 use bl\imagable\helpers\FileHelper;
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\widgets\LanguageSwitcher;
+use albertgeeca\shop\widgets\LanguageSwitcher;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;

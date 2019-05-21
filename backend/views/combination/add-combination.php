@@ -2,23 +2,23 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $combination                \sointula\shop\common\entities\Combination
- * @var $combinationTranslation     \sointula\shop\common\entities\CombinationTranslation
- * @var $combinations               \sointula\shop\common\entities\Combination[]
- * @var $product                    \sointula\shop\common\entities\Product
- * @var $productImages              \sointula\shop\common\entities\ProductImage[]
- * @var $image_form                  \sointula\shop\backend\components\form\CombinationImageForm
+ * @var $combination                \albertgeeca\shop\common\entities\Combination
+ * @var $combinationTranslation     \albertgeeca\shop\common\entities\CombinationTranslation
+ * @var $combinations               \albertgeeca\shop\common\entities\Combination[]
+ * @var $product                    \albertgeeca\shop\common\entities\Product
+ * @var $productImages              \albertgeeca\shop\common\entities\ProductImage[]
+ * @var $image_form                  \albertgeeca\shop\backend\components\form\CombinationImageForm
  * @var $language                   \bl\multilang\entities\Language
- * @var $combinationAttribute       \sointula\shop\common\entities\CombinationAttribute
- * @var $combinationAttributeForm   \sointula\shop\backend\components\form\CombinationAttributeForm
- * @var $prices                     \sointula\shop\common\entities\Price[]
+ * @var $combinationAttribute       \albertgeeca\shop\common\entities\CombinationAttribute
+ * @var $combinationAttributeForm   \albertgeeca\shop\backend\components\form\CombinationAttributeForm
+ * @var $prices                     \albertgeeca\shop\common\entities\Price[]
  *
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\backend\assets\EditCombinationAsset;
-use sointula\shop\common\entities\PriceDiscountType;
-use sointula\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\backend\assets\EditCombinationAsset;
+use albertgeeca\shop\common\entities\PriceDiscountType;
+use albertgeeca\shop\common\entities\ShopAttribute;
 use bl\imagable\helpers\FileHelper;
 use marqu3s\summernote\Summernote;
 use yii\helpers\ArrayHelper;

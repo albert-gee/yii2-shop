@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- *  @var \sointula\shop\common\components\user\models\UserAddress $address
+ *  @var \albertgeeca\shop\common\components\user\models\UserAddress $address
  */
 
 use yii\bootstrap\ActiveForm;

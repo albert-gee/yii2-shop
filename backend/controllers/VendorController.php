@@ -1,16 +1,16 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\backend\components\events\VendorEvent;
-use sointula\shop\common\entities\VendorTranslation;
+use albertgeeca\shop\backend\components\events\VendorEvent;
+use albertgeeca\shop\common\entities\VendorTranslation;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\UploadedFile;
-use sointula\shop\common\entities\Vendor;
-use sointula\shop\backend\components\form\VendorImage;
+use albertgeeca\shop\common\entities\Vendor;
+use albertgeeca\shop\backend\components\form\VendorImage;
 use yii\helpers\Url;
 
 /**

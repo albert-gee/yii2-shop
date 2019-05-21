@@ -3,11 +3,11 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel sointula\shop\common\entities\SearchFavoriteProduct
+ * @var $searchModel albertgeeca\shop\common\entities\SearchFavoriteProduct
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
-use sointula\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Category;
 use bl\multilang\entities\Language;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

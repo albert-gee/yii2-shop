@@ -2,13 +2,13 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $paymentMethods sointula\shop\common\entities\PaymentMethod[]
- * @var $order sointula\shop\common\entities\Order
+ * @var $paymentMethods albertgeeca\shop\common\entities\PaymentMethod[]
+ * @var $order albertgeeca\shop\common\entities\Order
  * @var $form \yii\bootstrap\ActiveForm
  */
 use bl\multilang\entities\Language;
 use yii\helpers\ArrayHelper;
-\sointula\shop\frontend\widgets\assets\PaymentAsset::register($this);
+\albertgeeca\shop\frontend\widgets\assets\PaymentAsset::register($this);
 $languagePrefix = (Language::getCurrent()->lang_id != Language::getDefault()->lang_id) ? '/' . Language::getCurrent()->lang_id : '';
 ?>
 

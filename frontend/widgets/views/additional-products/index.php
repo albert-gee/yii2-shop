@@ -2,7 +2,7 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $productAdditionalProducts \sointula\shop\common\entities\ProductAdditionalProduct[]
+ * @var $productAdditionalProducts \albertgeeca\shop\common\entities\ProductAdditionalProduct[]
  * @var $form \yii\widgets\ActiveForm
  * @var $model \yii\base\Model
  * @var $modelAttribute string

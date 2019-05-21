@@ -2,9 +2,9 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $model \sointula\shop\common\entities\Order
- * @var $model->orderStatus \sointula\shop\common\entities\OrderStatus
- * @var $address \sointula\shop\common\components\user\models\UserAddress
+ * @var $model \albertgeeca\shop\common\entities\Order
+ * @var $model->orderStatus \albertgeeca\shop\common\entities\OrderStatus
+ * @var $address \albertgeeca\shop\common\components\user\models\UserAddress
  */
 
 use yii\bootstrap\Html;

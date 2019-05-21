@@ -3,8 +3,8 @@
  * The block where price sum will be shown.
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $defaultCombination \sointula\shop\common\entities\Combination|null
- * @var $priceModel \sointula\shop\common\entities\Price|null
+ * @var $defaultCombination \albertgeeca\shop\common\entities\Combination|null
+ * @var $priceModel \albertgeeca\shop\common\entities\Price|null
  *
  * @var $oldPrice string
  * @var $newPrice string

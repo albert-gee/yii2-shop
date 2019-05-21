@@ -1,11 +1,11 @@
 <?php
-namespace sointula\shop\frontend\components\user\controllers;
+namespace albertgeeca\shop\frontend\components\user\controllers;
 
-use sointula\shop\common\components\user\models\Profile;
-use sointula\shop\common\components\user\models\RegistrationForm;
+use albertgeeca\shop\common\components\user\models\Profile;
+use albertgeeca\shop\common\components\user\models\RegistrationForm;
 use bl\cms\seo\StaticPageBehavior;
-use sointula\shop\common\components\user\models\User;
-use sointula\shop\frontend\components\events\UserRegistrationEvent;
+use albertgeeca\shop\common\components\user\models\User;
+use albertgeeca\shop\frontend\components\events\UserRegistrationEvent;
 use dektrium\user\Finder;
 use dektrium\user\models\ResendForm;
 use dektrium\user\traits\AjaxValidationTrait;

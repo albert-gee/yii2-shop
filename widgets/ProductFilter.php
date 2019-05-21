@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 use yii\base\Widget;
 
 

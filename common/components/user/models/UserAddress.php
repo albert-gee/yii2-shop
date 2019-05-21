@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\components\user\models;
+namespace albertgeeca\shop\common\components\user\models;
 
 use Yii;
 use yii\db\ActiveRecord;

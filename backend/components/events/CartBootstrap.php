@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\backend\components\events;
+namespace albertgeeca\shop\backend\components\events;
 
-use sointula\shop\backend\controllers\OrderController;
+use albertgeeca\shop\backend\controllers\OrderController;
 use bl\emailTemplates\data\Template;
 use bl\multilang\entities\Language;
 use Yii;

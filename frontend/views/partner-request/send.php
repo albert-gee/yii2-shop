@@ -5,8 +5,8 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var \yii\web\View $this
- * @var \sointula\shop\common\entities\PartnerRequest $partner
- * @var \sointula\shop\common\components\user\models\Profile $profile
+ * @var \albertgeeca\shop\common\entities\PartnerRequest $partner
+ * @var \albertgeeca\shop\common\components\user\models\Profile $profile
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  */

@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\ViewedProduct;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\ViewedProduct;
 use yii\base\Widget;
 
 /**

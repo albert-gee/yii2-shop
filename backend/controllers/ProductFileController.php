@@ -1,9 +1,9 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\backend\components\events\ProductEvent;
-use sointula\shop\backend\components\form\ProductFileForm;
-use sointula\shop\common\entities\{
+use albertgeeca\shop\backend\components\events\ProductEvent;
+use albertgeeca\shop\backend\components\form\ProductFileForm;
+use albertgeeca\shop\common\entities\{
     Product, ProductFile, ProductFileTranslation
 };
 use bl\multilang\entities\Language;
@@ -23,12 +23,12 @@ class ProductFileController extends Controller
 
     /**
      * Event is triggered after editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

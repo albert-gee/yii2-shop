@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\common\components\user\models\UserGroup;
+use albertgeeca\shop\common\components\user\models\UserGroup;
 use bl\seo\entities\SeoData;
 use Yii;
 use yii\base\{
@@ -12,14 +12,14 @@ use yii\helpers\{
 };
 use yii\filters\AccessControl;
 use bl\multilang\entities\Language;
-use sointula\shop\backend\components\events\ProductEvent;
+use albertgeeca\shop\backend\components\events\ProductEvent;
 use yii\web\{
     Controller, ForbiddenHttpException, NotFoundHttpException, UploadedFile
 };
-use sointula\shop\backend\components\form\{
+use albertgeeca\shop\backend\components\form\{
     ProductImageForm, ProductVideoForm
 };
-use sointula\shop\common\entities\{
+use albertgeeca\shop\common\entities\{
     Product, ProductImage, ProductImageTranslation, Price,
     ProductPrice, SearchProduct, ProductTranslation, ProductVideo
 };
@@ -33,37 +33,37 @@ class ProductController extends Controller
 
     /**
      * Event is triggered before creating new product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_CREATE_PRODUCT = 'beforeCreateProduct';
     /**
      * Event is triggered after creating new product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_CREATE_PRODUCT = 'afterCreateProduct';
     /**
      * Event is triggered after editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
     /**
      * Event is triggered before deleting product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_DELETE_PRODUCT = 'beforeDeleteProduct';
     /**
      * Event is triggered after deleting product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_DELETE_PRODUCT = 'afterDeleteProduct';
     /**
      * Event is triggered after moderator accepting partner's product.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_ACCEPT_PRODUCT = 'afterAcceptProduct';
 

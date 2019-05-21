@@ -1,9 +1,9 @@
 <?php
-namespace sointula\shop\common\components\user\models;
+namespace albertgeeca\shop\common\components\user\models;
 
-use sointula\shop\common\components\user\models\Token;
-use sointula\shop\frontend\components\user\UserMailer;
-use sointula\shop\common\entities\PartnerRequest;
+use albertgeeca\shop\common\components\user\models\Token;
+use albertgeeca\shop\frontend\components\user\UserMailer;
+use albertgeeca\shop\common\entities\PartnerRequest;
 use dektrium\user\helpers\Password;
 use dektrium\user\models\User as BaseModel;
 

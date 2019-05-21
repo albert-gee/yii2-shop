@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use bl\imagable\helpers\FileHelper;
 use bl\multilang\behaviors\TranslationBehavior;

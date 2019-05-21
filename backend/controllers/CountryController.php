@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\backend\components\events\CountryEvent;
-use sointula\shop\backend\components\form\CountryImageForm;
-use sointula\shop\common\entities\ProductCountry;
-use sointula\shop\common\entities\ProductCountryTranslation;
+use albertgeeca\shop\backend\components\events\CountryEvent;
+use albertgeeca\shop\backend\components\form\CountryImageForm;
+use albertgeeca\shop\common\entities\ProductCountry;
+use albertgeeca\shop\common\entities\ProductCountryTranslation;
 use bl\multilang\entities\Language;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;

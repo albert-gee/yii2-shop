@@ -1,9 +1,9 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\Product;
-use sointula\shop\widgets\assets\TreeWidgetAsset;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\widgets\assets\TreeWidgetAsset;
 use bl\multilang\entities\Language;
 use Yii;
 use yii\base\Widget;
@@ -21,7 +21,7 @@ use yii\web\NotFoundHttpException;
  *  'currentCategoryId' => $category->id
  * ]); ?>
  *
- * In your controller use sointula\shop\widgets\traits\TreeWidgetTrait;
+ * In your controller use albertgeeca\shop\widgets\traits\TreeWidgetTrait;
  *
  */
 class TreeWidget extends Widget

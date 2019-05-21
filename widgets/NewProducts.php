@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
-use sointula\shop\common\components\CartComponent;
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\components\CartComponent;
+use albertgeeca\shop\common\entities\Product;
 use yii\base\Widget;
 
 /**

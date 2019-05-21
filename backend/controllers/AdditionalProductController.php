@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\backend\components\events\ProductEvent;
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\ProductAdditionalProduct;
+use albertgeeca\shop\backend\components\events\ProductEvent;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\ProductAdditionalProduct;
 use bl\multilang\entities\Language;
 use Exception;
 use Yii;
@@ -19,12 +19,12 @@ class AdditionalProductController extends Controller
 
     /**
      * Event is triggered after editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_BEFORE_EDIT_PRODUCT = 'beforeEditProduct';
     /**
      * Event is triggered before editing product translation.
-     * Triggered with sointula\shop\backend\events\ProductEvent.
+     * Triggered with albertgeeca\shop\backend\events\ProductEvent.
      */
     const EVENT_AFTER_EDIT_PRODUCT = 'afterEditProduct';
 

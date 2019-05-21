@@ -1,15 +1,15 @@
 <?php
-namespace sointula\shop\frontend\widgets;
+namespace albertgeeca\shop\frontend\widgets;
 
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\RelatedProduct;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\RelatedProduct;
 use yii\base\Widget;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * Example:
- * <?= \sointula\shop\frontend\widgets\RelatedProducts::widget(['productId' => [$product->id]]); ?>
+ * <?= \albertgeeca\shop\frontend\widgets\RelatedProducts::widget(['productId' => [$product->id]]); ?>
  */
 class RelatedProducts extends Widget
 {

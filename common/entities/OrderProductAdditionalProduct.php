@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 use Yii;
 
 /**

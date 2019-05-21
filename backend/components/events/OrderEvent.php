@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\backend\components\events;
+namespace albertgeeca\shop\backend\components\events;
 
-use sointula\shop\models\Order;
+use albertgeeca\shop\models\Order;
 use yii\base\Event;
 
 /**

@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use bl\multilang\behaviors\TranslationBehavior;
 use bl\multilang\entities\Language;

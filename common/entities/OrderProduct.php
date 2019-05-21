@@ -1,11 +1,11 @@
 <?php
 
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\Combination;
-use sointula\shop\common\entities\ProductImage;
-use sointula\shop\common\entities\Price;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Combination;
+use albertgeeca\shop\common\entities\ProductImage;
+use albertgeeca\shop\common\entities\Price;
 use bl\imagable\helpers\FileHelper;
 use Yii;
 use yii\db\ActiveRecord;

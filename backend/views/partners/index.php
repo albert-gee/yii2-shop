@@ -1,12 +1,12 @@
 <?php
 
-use sointula\shop\common\entities\PartnerRequest;
+use albertgeeca\shop\common\entities\PartnerRequest;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $searchModel sointula\shop\common\entities\SearchPartnerRequest */
+/* @var $searchModel albertgeeca\shop\common\entities\SearchPartnerRequest */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('shop', 'Partner Requests');

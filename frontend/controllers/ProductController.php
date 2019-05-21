@@ -1,16 +1,16 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
 use Yii;
-use sointula\shop\frontend\components\forms\CartForm;
+use albertgeeca\shop\frontend\components\forms\CartForm;
 use yii\web\NotFoundHttpException;
 use yii\web\{
     Response, Controller
 };
-use sointula\shop\frontend\traits\EventTrait;
-use sointula\shop\common\entities\Combination;
-use sointula\shop\frontend\widgets\traits\ProductPricesTrait;
-use sointula\shop\common\entities\{
+use albertgeeca\shop\frontend\traits\EventTrait;
+use albertgeeca\shop\common\entities\Combination;
+use albertgeeca\shop\frontend\widgets\traits\ProductPricesTrait;
+use albertgeeca\shop\common\entities\{
     Category, Product, ProductTranslation
 };
 
@@ -25,13 +25,13 @@ class ProductController extends Controller
 
     /**
      * Event is triggered before.
-     * Triggered with \sointula\shop\frontend\traits\EventTrait.
+     * Triggered with \albertgeeca\shop\frontend\traits\EventTrait.
      */
     const EVENT_BEFORE_SHOW = 'beforeShow';
 
     /**
      * Event is triggered after creating RegistrationForm class.
-     * Triggered with \sointula\shop\frontend\traits\EventTrait.
+     * Triggered with \albertgeeca\shop\frontend\traits\EventTrait.
      */
     const EVENT_AFTER_SHOW = 'afterShow';
 

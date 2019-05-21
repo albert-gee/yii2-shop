@@ -10,8 +10,8 @@ use yii\helpers\Url;
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $model sointula\shop\common\entities\ProductAvailability
- * @var $modelTranslation sointula\shop\common\entities\ProductAvailabilityTranslation
+ * @var $model albertgeeca\shop\common\entities\ProductAvailability
+ * @var $modelTranslation albertgeeca\shop\common\entities\ProductAvailabilityTranslation
  * @var $languages \bl\multilang\entities\Language[]
  * @var $selectedLanguage \bl\multilang\entities\Language
  */
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'] = [
         </h1>
 
         <!--LANGUAGES-->
-        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+        <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => $selectedLanguage,
         ]); ?>
 

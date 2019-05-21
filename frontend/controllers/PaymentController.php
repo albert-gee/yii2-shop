@@ -1,7 +1,7 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\common\entities\PaymentMethod;
+use albertgeeca\shop\common\entities\PaymentMethod;
 use bl\imagable\helpers\FileHelper;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;

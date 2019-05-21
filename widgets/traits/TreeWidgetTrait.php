@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\widgets\traits;
+namespace albertgeeca\shop\widgets\traits;
 
 use bl\multilang\entities\Language;
 use yii\base\Exception;
 use yii\web\BadRequestHttpException;
-use sointula\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Category;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>

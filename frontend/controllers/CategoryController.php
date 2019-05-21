@@ -1,13 +1,13 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\widgets\traits\TreeWidgetTrait;
+use albertgeeca\shop\widgets\traits\TreeWidgetTrait;
 use Yii;
 use yii\web\Controller;
-use sointula\shop\frontend\components\forms\CartForm;
+use albertgeeca\shop\frontend\components\forms\CartForm;
 use bl\cms\seo\StaticPageBehavior;
-use sointula\shop\frontend\components\ProductSearch;
-use sointula\shop\common\entities\{
+use albertgeeca\shop\frontend\components\ProductSearch;
+use albertgeeca\shop\common\entities\{
     Category, Filter
 };
 use yii\web\NotFoundHttpException;

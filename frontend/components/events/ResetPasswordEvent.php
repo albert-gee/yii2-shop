@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace sointula\shop\frontend\components\events;
+namespace albertgeeca\shop\frontend\components\events;
 
-use sointula\shop\common\components\user\models\RecoveryForm;
-use sointula\shop\common\components\user\models\Token;
+use albertgeeca\shop\common\components\user\models\RecoveryForm;
+use albertgeeca\shop\common\components\user\models\Token;
 use yii\base\Event;
 
 /**

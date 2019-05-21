@@ -4,13 +4,13 @@
  *
  * @var $modifiedElementId  integer
  * @var $languageId         integer
- * @var $params             \sointula\shop\common\entities\Param[]
+ * @var $params             \albertgeeca\shop\common\entities\Param[]
  * @var $param_translation  ParamTranslation
  * @var $productId          integer
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\entities\ParamTranslation;
+use albertgeeca\shop\common\entities\ParamTranslation;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;

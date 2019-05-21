@@ -1,5 +1,5 @@
 <?php
-use sointula\shop\common\entities\ParamTranslation;
+use albertgeeca\shop\common\entities\ParamTranslation;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 

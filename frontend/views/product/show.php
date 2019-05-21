@@ -1,13 +1,13 @@
 <?php
-use sointula\shop\frontend\components\forms\CartForm;
-use sointula\shop\common\entities\Category;
-use sointula\shop\common\entities\Combination;
-use sointula\shop\common\entities\Param;
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\ProductCountry;
-use sointula\shop\frontend\assets\ProductAsset;
-use sointula\shop\widgets\assets\RecommendedProductsAsset;
-use sointula\shop\widgets\RecommendedProducts;
+use albertgeeca\shop\frontend\components\forms\CartForm;
+use albertgeeca\shop\common\entities\Category;
+use albertgeeca\shop\common\entities\Combination;
+use albertgeeca\shop\common\entities\Param;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\ProductCountry;
+use albertgeeca\shop\frontend\assets\ProductAsset;
+use albertgeeca\shop\widgets\assets\RecommendedProductsAsset;
+use albertgeeca\shop\widgets\RecommendedProducts;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -149,7 +149,7 @@ ProductAsset::register($this);
                     ]); ?>
 
                     <!--PRICES-->
-                    <?= \sointula\shop\frontend\widgets\ProductPrices::widget([
+                    <?= \albertgeeca\shop\frontend\widgets\ProductPrices::widget([
                         'product' => $product,
                         'form' => $form,
                         'defaultCombination' => $defaultCombination

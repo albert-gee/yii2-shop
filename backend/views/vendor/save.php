@@ -1,18 +1,18 @@
 <?php
 use marqu3s\summernote\Summernote;
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\backend\assets\EditProductAsset;
+use albertgeeca\shop\backend\assets\EditProductAsset;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-use sointula\shop\common\entities\Vendor;
-use sointula\shop\backend\components\form\VendorImage;
+use albertgeeca\shop\common\entities\Vendor;
+use albertgeeca\shop\backend\components\form\VendorImage;
 
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var Vendor $vendor
- * @var \sointula\shop\common\entities\VendorTranslation $vendorTranslation
+ * @var \albertgeeca\shop\common\entities\VendorTranslation $vendorTranslation
  * @var VendorImage $vendor_image
  */
 
@@ -28,7 +28,7 @@ EditProductAsset::register($this);
             <?= FA::i(FA::_EDIT) . ' ' . Html::encode($this->title); ?>
         </h1>
 
-        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+        <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => \bl\multilang\entities\Language::findOne($vendorTranslation->language_id)
         ]); ?>
     </div>

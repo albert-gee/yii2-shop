@@ -1,12 +1,12 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\frontend\components\forms\CartForm;
-use sointula\shop\frontend\Module;
-use sointula\shop\Mailer;
+use albertgeeca\shop\frontend\components\forms\CartForm;
+use albertgeeca\shop\frontend\Module;
+use albertgeeca\shop\Mailer;
 use bl\cms\seo\StaticPageBehavior;
-use sointula\shop\common\entities\ProductAdditionalProduct;
-use sointula\shop\frontend\widgets\models\AdditionalProductForm;
+use albertgeeca\shop\common\entities\ProductAdditionalProduct;
+use albertgeeca\shop\frontend\widgets\models\AdditionalProductForm;
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -16,12 +16,12 @@ use yii\log\Logger;
 use yii\web\{
     Controller, NotFoundHttpException, Response
 };
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\components\user\models\User;
-use sointula\shop\common\components\user\models\{
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\components\user\models\User;
+use albertgeeca\shop\common\components\user\models\{
     Profile, UserAddress
 };
-use sointula\shop\common\entities\{
+use albertgeeca\shop\common\entities\{
     DeliveryMethod, Order, OrderProduct, OrderStatus
 };
 
@@ -267,7 +267,7 @@ class CartController extends Controller
     public function actionAddAdditionalProduct() {
 
         if (\Yii::$app->request->isPost) {
-            $formModel = new \sointula\shop\common\entities\AdditionalProductForm();
+            $formModel = new \albertgeeca\shop\common\entities\AdditionalProductForm();
             if ($formModel->load(\Yii::$app->request->post())) {
                 if ($formModel->validate()) {
 

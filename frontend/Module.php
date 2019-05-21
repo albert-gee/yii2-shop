@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\frontend;
+namespace albertgeeca\shop\frontend;
 use Yii;
 
 /**
@@ -7,7 +7,7 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'sointula\shop\frontend\controllers';
+    public $controllerNamespace = 'albertgeeca\shop\frontend\controllers';
 
     /**
      * Enables attribute combinations in product card

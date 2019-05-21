@@ -5,7 +5,7 @@
  * @var $count integer
  */
 use yii\helpers\Html;
-\sointula\shop\widgets\assets\OrderCounterAsset::register($this);
+\albertgeeca\shop\widgets\assets\OrderCounterAsset::register($this);
 ?>
 
 <?= Html::tag('span',

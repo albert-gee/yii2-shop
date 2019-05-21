@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\backend\assets;
+namespace albertgeeca\shop\backend\assets;
 use yii\web\AssetBundle;
 
 /**
@@ -20,8 +20,8 @@ class EditProductAsset extends AssetBundle
     ];
 
     public $depends = [
-        'sointula\shop\backend\assets\ProductAsset',
-        'sointula\shop\backend\assets\InputTreeAsset',
+        'albertgeeca\shop\backend\assets\ProductAsset',
+        'albertgeeca\shop\backend\assets\InputTreeAsset',
         'yii\bootstrap\BootstrapPluginAsset'
     ];
 }

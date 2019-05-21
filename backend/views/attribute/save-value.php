@@ -2,11 +2,11 @@
 /**
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
- * @var $attributeValueTranslation \sointula\shop\common\entities\ShopAttributeValueTranslation
+ * @var $attributeValueTranslation \albertgeeca\shop\common\entities\ShopAttributeValueTranslation
  * @var $languageId integer
  */
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\entities\ShopAttributeType;
+use albertgeeca\shop\common\entities\ShopAttributeType;
 use kartik\file\FileInput;
 use kartik\widgets\ColorInput;
 use yii\helpers\Html;
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1>
             <?= FA::i(FA::_EDIT) . ' ' . Yii::t('shop', 'Change attribute value'); ?>
         </h1>
-        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+        <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => \bl\multilang\entities\Language::findOne($attributeValueTranslation->language_id)
         ]); ?>
     </div>

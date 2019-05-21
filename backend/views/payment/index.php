@@ -2,12 +2,12 @@
 use bl\imagable\helpers\FileHelper;
 use bl\multilang\entities\Language;
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\widgets\ManageButtons;
+use albertgeeca\shop\widgets\ManageButtons;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model sointula\shop\common\entities\PaymentMethod */
+/* @var $model albertgeeca\shop\common\entities\PaymentMethod */
 
 $this->title = Yii::t('payment', 'Payment Methods');
 $this->params['breadcrumbs'][] = $this->title;

@@ -1,10 +1,10 @@
 <?php
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\common\entities\DeliveryMethodTranslation;
+use albertgeeca\shop\common\entities\DeliveryMethodTranslation;
 use bl\multilang\entities\Language;
 use Yii;
-use sointula\shop\common\entities\DeliveryMethod;
+use albertgeeca\shop\common\entities\DeliveryMethod;
 use yii\filters\AccessControl;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;

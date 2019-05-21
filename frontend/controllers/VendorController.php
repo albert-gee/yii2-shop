@@ -1,14 +1,14 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\common\entities\Product;
-use sointula\shop\common\entities\Vendor;
+use albertgeeca\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Vendor;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
  * Class VendorController
- * @package sointula\shop\frontend\controllers
+ * @package albertgeeca\shop\frontend\controllers
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 class VendorController extends Controller

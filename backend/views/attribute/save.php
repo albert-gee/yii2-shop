@@ -3,25 +3,25 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this                       yii\web\View
- * @var $attribute                  sointula\shop\common\entities\ShopAttribute
- * @var $attributeTranslation       sointula\shop\common\entities\ShopAttributeTranslation
- * @var $attributeType              sointula\shop\common\entities\ShopAttributeType[]
+ * @var $attribute                  albertgeeca\shop\common\entities\ShopAttribute
+ * @var $attributeTranslation       albertgeeca\shop\common\entities\ShopAttributeTranslation
+ * @var $attributeType              albertgeeca\shop\common\entities\ShopAttributeType[]
  * @var $selectedLanguage           Language
  * @var $dataProvider               ActiveDataProvider
  * @var $valueModel                 ShopAttributeValue
  * @var $valueModelTranslation      ShopAttributeValueTranslation
- * @var $attributeTextureModel      \sointula\shop\backend\components\form\AttributeTextureForm
+ * @var $attributeTextureModel      \albertgeeca\shop\backend\components\form\AttributeTextureForm
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\entities\ShopAttribute;
-use sointula\shop\common\entities\ShopAttributeType;
-use sointula\shop\common\entities\ShopAttributeValue;
-use sointula\shop\common\entities\ShopAttributeValueColorTexture;
+use albertgeeca\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\ShopAttributeType;
+use albertgeeca\shop\common\entities\ShopAttributeValue;
+use albertgeeca\shop\common\entities\ShopAttributeValueColorTexture;
 use bl\multilang\entities\Language;
 use kartik\widgets\ColorInput;
 use kartik\widgets\FileInput;
-use sointula\shop\common\entities\ShopAttributeValueTranslation;
+use albertgeeca\shop\common\entities\ShopAttributeValueTranslation;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= FA::i(FA::_EDIT) . ' ' . Html::encode($this->title) ?></h1>
 
         <!--LANGUAGES-->
-        <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+        <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
             'selectedLanguage' => $selectedLanguage,
         ]); ?>
 
@@ -124,7 +124,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             'value' => function ($model) {
 
-                                return \sointula\shop\widgets\ManageButtons::widget([
+                                return \albertgeeca\shop\widgets\ManageButtons::widget([
                                     'model' => $model,
                                     'action' => 'save-value',
                                     'deleteUrl' => Url::to(['remove-attribute-value', 'attributeValueId' => $model->id])

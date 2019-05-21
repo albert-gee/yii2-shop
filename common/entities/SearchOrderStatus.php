@@ -1,11 +1,11 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SearchOrderStatus represents the model behind the search form about `sointula\shop\common\entities\OrderStatus`.
+ * SearchOrderStatus represents the model behind the search form about `albertgeeca\shop\common\entities\OrderStatus`.
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  */
 class SearchOrderStatus extends OrderStatus

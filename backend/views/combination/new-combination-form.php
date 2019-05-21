@@ -1,20 +1,20 @@
 <?php
 /**
  * @var integer $languageId
- * @var \sointula\shop\common\entities\Product $product
- * @var \sointula\shop\common\entities\Combination $combination
- * @var \sointula\shop\common\entities\CombinationTranslation $combinationTranslation
- * @var \sointula\shop\backend\components\form\CombinationImageForm $image_form
- * @var \sointula\shop\common\entities\Price[] $prices
- * @var \sointula\shop\backend\components\form\CombinationAttributeForm $combinationAttributeForm
- * @var \sointula\shop\common\entities\ProductImage[] $productImages
+ * @var \albertgeeca\shop\common\entities\Product $product
+ * @var \albertgeeca\shop\common\entities\Combination $combination
+ * @var \albertgeeca\shop\common\entities\CombinationTranslation $combinationTranslation
+ * @var \albertgeeca\shop\backend\components\form\CombinationImageForm $image_form
+ * @var \albertgeeca\shop\common\entities\Price[] $prices
+ * @var \albertgeeca\shop\backend\components\form\CombinationAttributeForm $combinationAttributeForm
+ * @var \albertgeeca\shop\common\entities\ProductImage[] $productImages
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\components\user\models\UserGroup;
-use sointula\shop\common\entities\PriceDiscountType;
-use sointula\shop\common\entities\ProductAvailability;
-use sointula\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\components\user\models\UserGroup;
+use albertgeeca\shop\common\entities\PriceDiscountType;
+use albertgeeca\shop\common\entities\ProductAvailability;
+use albertgeeca\shop\common\entities\ShopAttribute;
 use bl\imagable\helpers\FileHelper;
 use marqu3s\summernote\Summernote;
 use yii\bootstrap\ActiveForm;

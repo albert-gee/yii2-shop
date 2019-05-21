@@ -6,9 +6,9 @@
  * @var $languages[]            bl\multilang\entities\Language
  * @var $selectedLanguage       bl\multilang\entities\Language
  * @var $maxPosition            integer
- * @var $category               \sointula\shop\common\entities\Category
- * @var $categories             \sointula\shop\common\entities\Category[]
- * @var $categoryTranslation    \sointula\shop\common\entities\CategoryTranslation
+ * @var $category               \albertgeeca\shop\common\entities\Category
+ * @var $categories             \albertgeeca\shop\common\entities\Category[]
+ * @var $categoryTranslation    \albertgeeca\shop\common\entities\CategoryTranslation
  */
 
 use marqu3s\summernote\Summernote;
@@ -51,7 +51,7 @@ use yii\widgets\ActiveForm;
             </a>
 
             <!-- LANGUAGES -->
-            <?= \sointula\shop\widgets\LanguageSwitcher::widget([
+            <?= \albertgeeca\shop\widgets\LanguageSwitcher::widget([
                 'selectedLanguage' => $selectedLanguage,
             ]); ?>
         </section>
@@ -70,8 +70,8 @@ use yii\widgets\ActiveForm;
             <!-- PARENT CATEGORY -->
             <div class="col-md-6">
                 <?=
-                \sointula\shop\widgets\InputTree::widget([
-                    'className' => \sointula\shop\common\entities\Category::className(),
+                \albertgeeca\shop\widgets\InputTree::widget([
+                    'className' => \albertgeeca\shop\common\entities\Category::className(),
                     'form' => $addForm,
                     'model' => $category,
                     'attribute' => 'parent_id',

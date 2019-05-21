@@ -3,12 +3,12 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $searchModel sointula\shop\common\entities\SearchOrder
+ * @var $searchModel albertgeeca\shop\common\entities\SearchOrder
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
 use rmrevin\yii\fontawesome\FA;
-use sointula\shop\common\entities\OrderStatus;
+use albertgeeca\shop\common\entities\OrderStatus;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;

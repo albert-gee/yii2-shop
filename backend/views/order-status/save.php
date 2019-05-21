@@ -3,8 +3,8 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * @var $this yii\web\View
- * @var $model sointula\shop\common\entities\OrderStatus
- * @var $modelTranslation sointula\shop\common\entities\OrderStatusTranslation
+ * @var $model albertgeeca\shop\common\entities\OrderStatus
+ * @var $modelTranslation albertgeeca\shop\common\entities\OrderStatusTranslation
  * @var $selectedLanguage \bl\multilang\entities\Language
  * @var $languages \bl\multilang\entities\Language[]
  */
@@ -15,7 +15,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use sointula\shop\widgets\LanguageSwitcher;
+use albertgeeca\shop\widgets\LanguageSwitcher;
 use marqu3s\summernote\Summernote;
 
 $this->title = ($modelTranslation->isNewRecord) ?

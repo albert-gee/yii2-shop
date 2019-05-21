@@ -1,19 +1,19 @@
 <?php
 
-namespace sointula\shop\backend\controllers;
+namespace albertgeeca\shop\backend\controllers;
 
-use sointula\shop\backend\components\events\AttributeEvent;
-use sointula\shop\backend\components\form\AttributeTextureForm;
-use sointula\shop\common\entities\SearchAttributeValue;
-use sointula\shop\common\entities\ShopAttributeTranslation;
-use sointula\shop\common\entities\ShopAttributeType;
-use sointula\shop\common\entities\ShopAttributeValue;
-use sointula\shop\common\entities\ShopAttributeValueColorTexture;
-use sointula\shop\common\entities\ShopAttributeValueTranslation;
+use albertgeeca\shop\backend\components\events\AttributeEvent;
+use albertgeeca\shop\backend\components\form\AttributeTextureForm;
+use albertgeeca\shop\common\entities\SearchAttributeValue;
+use albertgeeca\shop\common\entities\ShopAttributeTranslation;
+use albertgeeca\shop\common\entities\ShopAttributeType;
+use albertgeeca\shop\common\entities\ShopAttributeValue;
+use albertgeeca\shop\common\entities\ShopAttributeValueColorTexture;
+use albertgeeca\shop\common\entities\ShopAttributeValueTranslation;
 use bl\multilang\entities\Language;
 use Yii;
-use sointula\shop\common\entities\ShopAttribute;
-use sointula\shop\common\entities\SearchAttribute;
+use albertgeeca\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\SearchAttribute;
 use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
@@ -96,7 +96,7 @@ class AttributeController extends Controller
         }
         $selectedLanguage = Language::findOne($languageId);
         $attributeType = ArrayHelper::toArray(ShopAttributeType::find()->all(), [
-            'sointula\shop\common\entities\ShopAttributeType' =>
+            'albertgeeca\shop\common\entities\ShopAttributeType' =>
                 [
                     'id',
                     'title' => function ($attributeType) {
@@ -364,7 +364,7 @@ class AttributeController extends Controller
                 ->where(['attribute_id' => $attributeId])->all();
 
             $attributeValuesArray = ArrayHelper::toArray($attributeValues, [
-                'sointula\shop\common\entities\ShopAttributeValue' => [
+                'albertgeeca\shop\common\entities\ShopAttributeValue' => [
                     'id',
                     'attribute_id',
                     'translation' => 'translation'

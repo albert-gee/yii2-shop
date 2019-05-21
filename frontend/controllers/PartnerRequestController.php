@@ -1,12 +1,12 @@
 <?php
-namespace sointula\shop\frontend\controllers;
+namespace albertgeeca\shop\frontend\controllers;
 
-use sointula\shop\common\components\user\models\Profile;
-use sointula\shop\common\components\user\models\RegistrationForm;
-use sointula\shop\common\components\user\models\User;
+use albertgeeca\shop\common\components\user\models\Profile;
+use albertgeeca\shop\common\components\user\models\RegistrationForm;
+use albertgeeca\shop\common\components\user\models\User;
 use bl\cms\seo\StaticPageBehavior;
-use sointula\shop\frontend\components\events\PartnersEvents;
-use sointula\shop\common\entities\PartnerRequest;
+use albertgeeca\shop\frontend\components\events\PartnersEvents;
+use albertgeeca\shop\common\entities\PartnerRequest;
 use Yii;
 use yii\base\Exception;
 use yii\web\Controller;

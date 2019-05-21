@@ -1,7 +1,7 @@
 <?php
 
-namespace sointula\shop\backend\components\form;
-use sointula\shop\common\entities\Product;
+namespace albertgeeca\shop\backend\components\form;
+use albertgeeca\shop\common\entities\Product;
 use Yii;
 use yii\base\Model;
 

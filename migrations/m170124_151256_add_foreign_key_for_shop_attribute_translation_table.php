@@ -1,7 +1,7 @@
 <?php
 
-use sointula\shop\common\entities\ShopAttribute;
-use sointula\shop\common\entities\ShopAttributeTranslation;
+use albertgeeca\shop\common\entities\ShopAttribute;
+use albertgeeca\shop\common\entities\ShopAttributeTranslation;
 use yii\db\Migration;
 
 class m170124_151256_add_foreign_key_for_shop_attribute_translation_table extends Migration

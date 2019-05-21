@@ -1,8 +1,8 @@
 <?php
-namespace sointula\shop\frontend\components\user;
+namespace albertgeeca\shop\frontend\components\user;
 
-use sointula\shop\common\components\user\models\Token;
-use sointula\shop\common\components\user\models\User;
+use albertgeeca\shop\common\components\user\models\Token;
+use albertgeeca\shop\common\components\user\models\User;
 use bl\emailTemplates\data\Template;
 use bl\multilang\entities\Language;
 use Yii;

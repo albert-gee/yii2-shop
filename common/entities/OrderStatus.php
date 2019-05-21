@@ -1,5 +1,5 @@
 <?php
-namespace sointula\shop\common\entities;
+namespace albertgeeca\shop\common\entities;
 
 use bl\emailTemplates\models\entities\EmailTemplate;
 use bl\multilang\behaviors\TranslationBehavior;

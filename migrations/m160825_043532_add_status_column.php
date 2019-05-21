@@ -1,6 +1,6 @@
 <?php
 
-use sointula\shop\common\entities\Product;
+use albertgeeca\shop\common\entities\Product;
 use yii\db\Migration;
 
 class m160825_043532_add_status_column extends Migration

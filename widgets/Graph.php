@@ -3,7 +3,7 @@
  * @author Albert Gainutdinov <xalbert.einsteinx@gmail.com>
  *
  * A points on y-axis for graph drawing
- * Ex.: \sointula\shop\widgets\Graph::widget([
+ * Ex.: \albertgeeca\shop\widgets\Graph::widget([
  * 'graphPoints' => [
  *      ['Jan', 240],
  *      ['Feb', 120],
@@ -14,7 +14,7 @@
  * ]);
  */
 
-namespace sointula\shop\widgets;
+namespace albertgeeca\shop\widgets;
 
 use yii\base\Widget;
 

@@ -81,7 +81,7 @@ to the require section of your composer.json.
                 'rules' => [
                     
                     [
-                        'class' => sointula\shop\UrlRule::className(),
+                        'class' => albertgeeca\shop\UrlRule::className(),
                         'prefix' => 'shop'
                     ],
                     [
@@ -106,16 +106,16 @@ in frontend config:
     
     'user' => [
                 'modelMap' => [
-                    'RegistrationForm' => sointula\shop\common\components\user\models\RegistrationForm::className(),
-                    'RecoveryForm' => sointula\shop\common\components\user\models\RecoveryForm::className(),
-                    'LoginForm' => sointula\shop\common\components\user\models\LoginForm::className(),
-                    'SettingsForm' => sointula\shop\common\components\user\models\SettingsForm::className(),
+                    'RegistrationForm' => albertgeeca\shop\common\components\user\models\RegistrationForm::className(),
+                    'RecoveryForm' => albertgeeca\shop\common\components\user\models\RecoveryForm::className(),
+                    'LoginForm' => albertgeeca\shop\common\components\user\models\LoginForm::className(),
+                    'SettingsForm' => albertgeeca\shop\common\components\user\models\SettingsForm::className(),
                 ],
                 'controllerMap' => [
-                    'registration' => sointula\shop\frontend\components\user\controllers\RegistrationController::className(),
-                    'settings' => sointula\shop\frontend\components\user\controllers\SettingsController::className(),
-                    'security' => sointula\shop\frontend\components\user\controllers\SecurityController::className(),
-                    'recovery' => sointula\shop\frontend\components\user\controllers\RecoveryController::className()
+                    'registration' => albertgeeca\shop\frontend\components\user\controllers\RegistrationController::className(),
+                    'settings' => albertgeeca\shop\frontend\components\user\controllers\SettingsController::className(),
+                    'security' => albertgeeca\shop\frontend\components\user\controllers\SecurityController::className(),
+                    'recovery' => albertgeeca\shop\frontend\components\user\controllers\RecoveryController::className()
                 ],
                 'as frontend' => dektrium\user\filters\FrontendFilter::className(),
                 'enableFlashMessages' => false
@@ -129,7 +129,7 @@ in frontend config:
  
     ...
     'user' => [
-                'identityClass' => sointula\shop\common\components\user\models\User::className(),
+                'identityClass' => albertgeeca\shop\common\components\user\models\User::className(),
                 'enableAutoLogin' => true,
                 'identityCookie' => [
                     'name'     => '_frontendIdentity',
@@ -159,8 +159,8 @@ in backend config:
                 'admins' => ['admin'],
                 'adminPermission' => 'rbacManager',
                 'controllerMap' => [
-                    'admin' => sointula\shop\backend\components\user\controllers\AdminController::className(),
-                    'security' => sointula\shop\frontend\components\user\controllers\SecurityController::className()
+                    'admin' => albertgeeca\shop\backend\components\user\controllers\AdminController::className(),
+                    'security' => albertgeeca\shop\frontend\components\user\controllers\SecurityController::className()
                 ],
                 'as backend' => [
                     'class' => 'dektrium\user\filters\BackendFilter',
@@ -206,8 +206,8 @@ in common configuration file:
         'user' => [
             'class' => dektrium\user\Module::className(),
             'modelMap' => [
-                'Profile' => sointula\shop\common\components\user\models\Profile::className(),
-                'User' => sointula\shop\common\components\user\models\User::className()
+                'Profile' => albertgeeca\shop\common\components\user\models\Profile::className(),
+                'User' => albertgeeca\shop\common\components\user\models\User::className()
             ],
         ],
 ```
@@ -363,13 +363,13 @@ in common configuration file:
 ### 8. Add module to your backend config
 ```php
     'bootstrap' => [
-        //'sointula\shop\backend\components\events\PartnersBootstrap',
-        'sointula\shop\backend\components\events\ShopLogBootstrap',
-        'sointula\shop\backend\components\events\CartBootstrap',
+        //'albertgeeca\shop\backend\components\events\PartnersBootstrap',
+        'albertgeeca\shop\backend\components\events\ShopLogBootstrap',
+        'albertgeeca\shop\backend\components\events\CartBootstrap',
     ],
     'modules' => [
         'shop' => [
-            'class' => 'sointula\shop\backend\Module',
+            'class' => 'albertgeeca\shop\backend\Module',
             'enableCurrencyConversion' => true
         ]
     ]
@@ -380,7 +380,7 @@ in common configuration file:
     'modules' => [
     	...
         'shop' => [
-                    'class' => sointula\shop\frontend\Module::className(),
+                    'class' => albertgeeca\shop\frontend\Module::className(),
                     'enableCurrencyConversion' => true,
                     'partnerManagerEmail' => $params['partnerManagerEmail'],
                     'senderEmail' => $params['senderEmail'],
@@ -412,8 +412,8 @@ in common configuration file:
     ]
 
     'bootstrap' => [
-        'sointula\shop\frontend\components\events\PartnersBootstrap',
-        'sointula\shop\frontend\components\events\UserRegistrationBootstrap'
+        'albertgeeca\shop\frontend\components\events\PartnersBootstrap',
+        'albertgeeca\shop\frontend\components\events\UserRegistrationBootstrap'
     ],
 ```
 
@@ -523,11 +523,11 @@ extends permissions from all managers.
 
 _Example:_
 ```
-<?= \sointula\shop\widgets\RecommendedProducts::widget([
+<?= \albertgeeca\shop\widgets\RecommendedProducts::widget([
     'id' => $product->id,
 ]); ?>
 ```
-Also you may use sointula\shop\widgets\assets\RecommendedProductsAsset in your view.
+Also you may use albertgeeca\shop\widgets\assets\RecommendedProductsAsset in your view.
 
 
 *Filtration widget*
